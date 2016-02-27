@@ -6,7 +6,7 @@ deploy:
   provider: releases
   api_key:
     secure: mVH7dfsTbx9Oc0zpi+IjAdTZeqb6Y/B9c6k0L0+RHk74In6XMcxg+WEHzNeswODpRxOwryn53Fwrk615JFPQjXS2SgG4z08LYiExiRBCdzMu/FRqlen3WqO0Qlv/tzDVrSd+9EvCmWXa84M2e3U1trFDjr2MOwSvDfSWXfo/dqPXaVawwe8W5k+VapFxCW9xX3hfnzcIjJbAmGAOs6dpo5tABPJ7uXoi2VNP8nYMi6q4xd8Q8/KKlw4BFYDQwNO4a9WqyfvRc1h2haZx11u2+yg5aVyX81nsZv7KxzPvmFC0hzGB7jH2iwvPS9LnZg+O1Vug1TlC1DYDz1M2JIxNZfp1CMcHS6opllKR8THMcnfs/44AoKpLj5FpEYeglpQ5FyucQ9sLb2/lVNP/ZMSYKLoqZsTHSTee3s8kgJ0bIx9bEdUXfYozp3Jk4mzzN2JRZ0a9dQK/Hmchr4T4Rk7dKMHS8tinJUbt3vRaTLOpVqsKAQFOGlxs6zBYLu04eKKdtDTpKqRk6Fjwh2q12ztq0M8fglqKEwNxumA8PBXilgX5/pzJ+UeSNbcbFlI8eliVqKXpcaUN4RxBn4NJY9s2oJD4kKzgb8CZmkrICA/hlj+hwMVCX3kvaMW/n/mpTyBcgK0AiB5MwUXZZ51RI2tCi09WSH9i0zHd7QBIeUGMcTA=
-  files:
+  file:
     - build/distributions/ppt-museum-0.0.1.zip
     - build/distributions/ppt-museum-${TRAVIS_TAG}.zip
   skip_cleanup: true
