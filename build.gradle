@@ -1,20 +1,16 @@
-group 'org.kaakaa'
-version '0.0.2'
-
-buildscript {
-    repositories {
-        maven { url "https://plugins.gradle.org/m2/" }
-    }
-    dependencies {
-        classpath 'com.moowork.gradle:gradle-grunt-plugin:0.11'
-        classpath 'com.moowork.gradle:gradle-node-plugin:0.11'
-    }
+plugins {
+    id 'java'
+    id 'groovy'
+    id 'jacoco'
+    id 'war'
+    id 'application'
+    id 'com.moowork.grunt' version '0.11'
+    id 'com.moowork.node' version '0.11'
+    id 'com.github.kt3k.coveralls' version '2.5.0'
 }
 
-apply plugin: 'java'
-apply plugin: 'application'
-apply plugin: 'com.moowork.grunt'
-apply plugin: 'com.moowork.node'
+group 'org.kaakaa'
+version '0.0.2'
 
 mainClassName = 'org.kaakaa.pptmuseum.Main'
 
@@ -38,6 +34,7 @@ dependencies {
     compile 'org.apache.httpcomponents:httpclient:4.5.1'
     compile 'org.apache.httpcomponents:httpmime:4.5.1'
     compile 'org.apache.pdfbox:pdfbox:2.0.0-SNAPSHOT'
+    providedCompile 'org.projectlombok:lombok:1.16.4'
 
     testCompile 'org.spockframework:spock-core:1.0-groovy-2.4'
 }
@@ -49,11 +46,17 @@ jar {
     }
 }
 
-task startWeb(type:Exec) {
-    commandLine "$buildDir/install/$project.name/bin/ppt-museum"
+jacocoTestReport {
+    reports {
+        xml.enabled true
+        csv.enabled false
+        html.destination "${buildDir}/jacocoHtml"
+    }
 }
 
-startWeb.dependsOn 'installDist'
+test {
+    finalizedBy jacocoTestReport
+}
 
 // for installing node
 node {

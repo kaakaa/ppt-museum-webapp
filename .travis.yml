@@ -2,6 +2,8 @@ language: java
 jdk:
 - oraclejdk8
 script: ./gradlew assembleDist
+after_success:
+  - ./gradlew jacocoTestReport coveralls
 deploy:
   provider: releases
   api_key:
