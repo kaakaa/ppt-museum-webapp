@@ -1,6 +1,12 @@
 language: java
 jdk:
 - oraclejdk8
+env:
+  global:
+    - secure: "aqduf+scGmL0pIEpQ7+nO8hHc733FT8xAwxcwXsNgeCWv1fl72k1U4NZ9so5x/NU+8a7ZQxw0oG/HZuJzT7WsIrY7ZNW1PEHBf/0uYAiJdRSsppQ2ZDys2ikNo9FDoh6GcodqCEldsKlePTgyVpj5U+vc6Nvis93sDPDsYb8+NItZUwQ+OU1YN0/Q/rOPFapl1TRG4J4H9SB5tD4iYSah9sfuf7hs/zj09KnlpliPZLCfwYjAcWMSsiXKczV6OBXlsLKpKdhZ4xgAFgFcnST8IapY+gaTDY/6QeBoOdR+Hjwwr3x4h0LqWJyLiGSFlPoDEgD9qSVlKxx9GIZmjpGfJBzJjlr/RGA8t2UlY79gr3QnGEkiQGEqArqVI5JE2iPW6QHMSlP9pdLzaBqv6opXkk3WjgCjq1rVEVsImr42KBt0vgtP4SPnfMI32yuj7X+oQo6zmLTf8M+YSQfyk2NyVSmXcYRP+agutU7GNFtRg4ih45eAM7RMOX6V7+NjAsEC1X49OCa+aE3EiZfdzPrsTp9cnS+CpSxHJq3yktexETTXPwscMhg1kPfkE0lT1z+6D1ZOslglrQzcS+bKvP4BqXD4FyXN5HZP2cBjwRb+JLiPLl10PxTLn2qPDtbKJibhAbJssyPoizH30RIu77Prv7sxtwDsT5HjbI0gH6qHgc="
+    - secure: "Y9+i18z7+wk4SVPuEWXG4hNwJkwbauNv6K3VTQASoOpUm66kW83zu/5Pu0zfMHacJS1CGWDY+T+wRD4BV2CI602Aqf15Ui+HA/zMcUjpF5deRSJQjkmSmG9FDIvCKr1gss+SeUC+2jaZ/WkZa17EIsM69E8iQ3GxzOtdowwXA/NEqh677Xl1UYCVnSPAARSPxsH+Y6OwgGvQjfZ0/VRDrnx0zgRcezyWAp5gWr5+xKjxVHKB9btgTc0UosCi2StOXAPKzOIF3jy5xYE7H2YrUmGjvy6lX2RM+NdSZoNeTcC94hfw7QXxdn3VwB8tZuv5xAzHz+OBOOhj7ofMMCUV5DY87NWeDwGDHWjxX3t+AMwuoT957skIFDDFmn41/2SXYPHFxDmShpdo5nJvHKomCgOoFwXORy5w2qVYVaUOhRgS2/3YjU/Uc3G2AyQmke55RM6IXrBKaHdGc501J8IAKZ/aAE2r5+qbarr7D5G2bD2B2EEkSNeIrCRMMFmHoY0xStj8pjRgJxJPMjarLlXuZKicEcaS6dDTnkZ1j/mY1JMID00XuSxToMVAM7B5OM7GQdAX/68C2BQbz9Ly4+QIEYeLMCD//X8KsL7sydA0ydifaHEoA0HXYbrv20GKpknwdxaEi+d0uuRG2MlShpA/Udq5D899yrE59SGBm2c+a5k="
+    - secure: "SwjQknc0uGh/1L5Uy6all/AbPUjuuffn83HlKOWBigkaXI/Q83Og9efxr3H9KCCC8kSJ6fBGYeE75osrjMKZtjjGyNjCX+hM9ZVYym5a+xukQIc/UB2jXUe+xUCyFqM4FEfsoN63flEgdWVJycW4/xUsJtR18txELsUXkDN+McvvpIW8WQEexia878JlwmJI2SrDVGHBhcrEeZhJWZYh6FrhsufmJr2FFxRSQWjt5a7t8X/aPq/uS5MTzIbOFro7MZwFJwM9u6eIE5hz+i1VK2tNH8eekOTeA7qeSPygpIC8OAFvd7TH4rHU3YstZggx84JkxorOjz9Ov6n07Gzea76qCszyn6Kx1QbzlrraY/qv+Tm0BJAs+xjaJaApmqWVHX0rSwjAuoJlH8amwOCAl6rcygp4QKmd2IIQc1h6EKjk6zZiFDgAqIv1Yd2pN8iKa+5s6X6WgAgge7vMC0HH1Z052kimrhC3BI3Rqbzi34EEnt3c4FmlebMJhBZgHwqtbRjeRPmT4rHSIsdW/h0+lX13RY8YvYWeu9GEwWnexLK5q80sSlzzmRynQD0GXTKJEfH8Li6tBVO+WHCYuZBf4x0jLLyuN5SjNJFWcvtwZuM2lpY2j2mW09fzqzRxp4WtXwVBZnep5V8TAFuaFgEg2zOhFrG6rkVfGg38vNu492Q="
+    - COMMIT=${TRAVIS_COMMIT::8}
 script: ./gradlew build
 after_success:
   - ./gradlew coveralls
@@ -16,4 +22,11 @@ deploy:
   on:
     repo: kaakaa/ppt-museum-webapp
     tags: true
-  
+after_deploy:
+  - docker login -e $DOCKEREMAIL -u $DOCKER_USER -p $DOCKER_PASS
+  - export REPO=kaakaa/ppt-museum-web
+  - export TAG=`if [ "$TRAVIS_BRANCH" == "master" ]; then echo "latest"; else echo $TRAVIS_BRANCH ; fi`
+  - docker build -f Dockerfile -t $REPO:$COMMIT .
+  - docker tag $REPO:$COMMIT $REPO:$TAG
+  - docker tag $REPO:$COMMIT $REPO:travis-$TRAVIS_BUILD_NUMBER
+  - docker push $REPO
