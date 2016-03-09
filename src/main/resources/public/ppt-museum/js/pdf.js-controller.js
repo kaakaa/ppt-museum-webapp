@@ -1,145 +1,4 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
-// Polyfill for creating CustomEvents on IE9/10/11
-
-// code pulled from:
-// https://github.com/d4tocchini/customevent-polyfill
-// https://developer.mozilla.org/en-US/docs/Web/API/CustomEvent#Polyfill
-
-try {
-  new window.CustomEvent("test");
-} catch(e) {
- var CustomEvent = function(event, params) {
-      var evt;
-      params = params || {
-          bubbles: false,
-          cancelable: false,
-          detail: undefined
-      };
-
-      evt = document.createEvent("CustomEvent");
-      evt.initCustomEvent(event, params.bubbles, params.cancelable, params.detail);
-      return evt;
-  };
-
-  CustomEvent.prototype = window.Event.prototype;
-  window.CustomEvent = CustomEvent; // expose definition to window
-}
-
-},{}],2:[function(require,module,exports){
-
-/**
- * Expose `parse`.
- */
-
-module.exports = parse;
-
-/**
- * Tests for browser support.
- */
-
-var innerHTMLBug = false;
-var bugTestDiv;
-if (typeof document !== 'undefined') {
-  bugTestDiv = document.createElement('div');
-  // Setup
-  bugTestDiv.innerHTML = '  <link/><table></table><a href="/a">a</a><input type="checkbox"/>';
-  // Make sure that link elements get serialized correctly by innerHTML
-  // This requires a wrapper element in IE
-  innerHTMLBug = !bugTestDiv.getElementsByTagName('link').length;
-  bugTestDiv = undefined;
-}
-
-/**
- * Wrap map from jquery.
- */
-
-var map = {
-  legend: [1, '<fieldset>', '</fieldset>'],
-  tr: [2, '<table><tbody>', '</tbody></table>'],
-  col: [2, '<table><tbody></tbody><colgroup>', '</colgroup></table>'],
-  // for script/link/style tags to work in IE6-8, you have to wrap
-  // in a div with a non-whitespace character in front, ha!
-  _default: innerHTMLBug ? [1, 'X<div>', '</div>'] : [0, '', '']
-};
-
-map.td =
-map.th = [3, '<table><tbody><tr>', '</tr></tbody></table>'];
-
-map.option =
-map.optgroup = [1, '<select multiple="multiple">', '</select>'];
-
-map.thead =
-map.tbody =
-map.colgroup =
-map.caption =
-map.tfoot = [1, '<table>', '</table>'];
-
-map.polyline =
-map.ellipse =
-map.polygon =
-map.circle =
-map.text =
-map.line =
-map.path =
-map.rect =
-map.g = [1, '<svg xmlns="http://www.w3.org/2000/svg" version="1.1">','</svg>'];
-
-/**
- * Parse `html` and return a DOM Node instance, which could be a TextNode,
- * HTML DOM Node of some kind (<div> for example), or a DocumentFragment
- * instance, depending on the contents of the `html` string.
- *
- * @param {String} html - HTML string to "domify"
- * @param {Document} doc - The `document` instance to create the Node for
- * @return {DOMNode} the TextNode, DOM Node, or DocumentFragment instance
- * @api private
- */
-
-function parse(html, doc) {
-  if ('string' != typeof html) throw new TypeError('String expected');
-
-  // default to the global `document` object
-  if (!doc) doc = document;
-
-  // tag name
-  var m = /<([\w:]+)/.exec(html);
-  if (!m) return doc.createTextNode(html);
-
-  html = html.replace(/^\s+|\s+$/g, ''); // Remove leading/trailing whitespace
-
-  var tag = m[1];
-
-  // body support
-  if (tag == 'body') {
-    var el = doc.createElement('html');
-    el.innerHTML = html;
-    return el.removeChild(el.lastChild);
-  }
-
-  // wrap map
-  var wrap = map[tag] || map._default;
-  var depth = wrap[0];
-  var prefix = wrap[1];
-  var suffix = wrap[2];
-  var el = doc.createElement('div');
-  el.innerHTML = prefix + html + suffix;
-  while (depth--) el = el.lastChild;
-
-  // one element
-  if (el.firstChild == el.lastChild) {
-    return el.removeChild(el.firstChild);
-  }
-
-  // several elements
-  var fragment = doc.createDocumentFragment();
-  while (el.firstChild) {
-    fragment.appendChild(el.removeChild(el.firstChild));
-  }
-
-  return fragment;
-}
-
-},{}],3:[function(require,module,exports){
 (function (global){
 // LICENSE : MIT
 'use strict';
@@ -366,7 +225,7 @@ module.exports = (function () {
 })();
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"./dom-map":4,"./pdf.js-contrib/text_layer_builder":5,"custom-event-polyfill":1,"domify":2,"pdfjs-dist/build/pdf.combined.js":6,"pdfjs-dist/web/compatibility.js":7}],4:[function(require,module,exports){
+},{"./dom-map":2,"./pdf.js-contrib/text_layer_builder":3,"custom-event-polyfill":4,"domify":5,"pdfjs-dist/build/pdf.combined.js":6,"pdfjs-dist/web/compatibility.js":7}],2:[function(require,module,exports){
 /**
  * Created by azu on 2014/09/27.
  * LICENSE : MIT
@@ -389,7 +248,7 @@ function domMap(parentNode, mapping) {
 }
 module.exports = domMap;
 
-},{}],5:[function(require,module,exports){
+},{}],3:[function(require,module,exports){
 /* Copyright 2012 Mozilla Foundation
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -736,6 +595,147 @@ module.exports = {
   TextLayerBuilder: TextLayerBuilder
 };
 
+},{}],4:[function(require,module,exports){
+// Polyfill for creating CustomEvents on IE9/10/11
+
+// code pulled from:
+// https://github.com/d4tocchini/customevent-polyfill
+// https://developer.mozilla.org/en-US/docs/Web/API/CustomEvent#Polyfill
+
+try {
+  new window.CustomEvent("test");
+} catch(e) {
+ var CustomEvent = function(event, params) {
+      var evt;
+      params = params || {
+          bubbles: false,
+          cancelable: false,
+          detail: undefined
+      };
+
+      evt = document.createEvent("CustomEvent");
+      evt.initCustomEvent(event, params.bubbles, params.cancelable, params.detail);
+      return evt;
+  };
+
+  CustomEvent.prototype = window.Event.prototype;
+  window.CustomEvent = CustomEvent; // expose definition to window
+}
+
+},{}],5:[function(require,module,exports){
+
+/**
+ * Expose `parse`.
+ */
+
+module.exports = parse;
+
+/**
+ * Tests for browser support.
+ */
+
+var innerHTMLBug = false;
+var bugTestDiv;
+if (typeof document !== 'undefined') {
+  bugTestDiv = document.createElement('div');
+  // Setup
+  bugTestDiv.innerHTML = '  <link/><table></table><a href="/a">a</a><input type="checkbox"/>';
+  // Make sure that link elements get serialized correctly by innerHTML
+  // This requires a wrapper element in IE
+  innerHTMLBug = !bugTestDiv.getElementsByTagName('link').length;
+  bugTestDiv = undefined;
+}
+
+/**
+ * Wrap map from jquery.
+ */
+
+var map = {
+  legend: [1, '<fieldset>', '</fieldset>'],
+  tr: [2, '<table><tbody>', '</tbody></table>'],
+  col: [2, '<table><tbody></tbody><colgroup>', '</colgroup></table>'],
+  // for script/link/style tags to work in IE6-8, you have to wrap
+  // in a div with a non-whitespace character in front, ha!
+  _default: innerHTMLBug ? [1, 'X<div>', '</div>'] : [0, '', '']
+};
+
+map.td =
+map.th = [3, '<table><tbody><tr>', '</tr></tbody></table>'];
+
+map.option =
+map.optgroup = [1, '<select multiple="multiple">', '</select>'];
+
+map.thead =
+map.tbody =
+map.colgroup =
+map.caption =
+map.tfoot = [1, '<table>', '</table>'];
+
+map.polyline =
+map.ellipse =
+map.polygon =
+map.circle =
+map.text =
+map.line =
+map.path =
+map.rect =
+map.g = [1, '<svg xmlns="http://www.w3.org/2000/svg" version="1.1">','</svg>'];
+
+/**
+ * Parse `html` and return a DOM Node instance, which could be a TextNode,
+ * HTML DOM Node of some kind (<div> for example), or a DocumentFragment
+ * instance, depending on the contents of the `html` string.
+ *
+ * @param {String} html - HTML string to "domify"
+ * @param {Document} doc - The `document` instance to create the Node for
+ * @return {DOMNode} the TextNode, DOM Node, or DocumentFragment instance
+ * @api private
+ */
+
+function parse(html, doc) {
+  if ('string' != typeof html) throw new TypeError('String expected');
+
+  // default to the global `document` object
+  if (!doc) doc = document;
+
+  // tag name
+  var m = /<([\w:]+)/.exec(html);
+  if (!m) return doc.createTextNode(html);
+
+  html = html.replace(/^\s+|\s+$/g, ''); // Remove leading/trailing whitespace
+
+  var tag = m[1];
+
+  // body support
+  if (tag == 'body') {
+    var el = doc.createElement('html');
+    el.innerHTML = html;
+    return el.removeChild(el.lastChild);
+  }
+
+  // wrap map
+  var wrap = map[tag] || map._default;
+  var depth = wrap[0];
+  var prefix = wrap[1];
+  var suffix = wrap[2];
+  var el = doc.createElement('div');
+  el.innerHTML = prefix + html + suffix;
+  while (depth--) el = el.lastChild;
+
+  // one element
+  if (el.firstChild == el.lastChild) {
+    return el.removeChild(el.firstChild);
+  }
+
+  // several elements
+  var fragment = doc.createDocumentFragment();
+  while (el.firstChild) {
+    fragment.appendChild(el.removeChild(el.firstChild));
+  }
+
+  return fragment;
+}
+
 },{}],6:[function(require,module,exports){
 (function (global){
 /* Copyright 2012 Mozilla Foundation
@@ -768,8 +768,8 @@ factory((root.pdfjsDistBuildPdfCombined = {}));
   // Use strict in our context only - users might not want it
   'use strict';
 
-var pdfjsVersion = '1.4.81';
-var pdfjsBuild = '8cdb696';
+var pdfjsVersion = '1.4.124';
+var pdfjsBuild = 'ec1cf28';
 
   var pdfjsFilePath =
     typeof document !== 'undefined' && document.currentScript ?
@@ -2390,264 +2390,6 @@ exports.JpegImage = JpegImage;
 }));
 
 
-
-
-var NetworkManager = (function NetworkManagerClosure() {
-
-  var OK_RESPONSE = 200;
-  var PARTIAL_CONTENT_RESPONSE = 206;
-
-  function NetworkManager(url, args) {
-    this.url = url;
-    args = args || {};
-    this.isHttp = /^https?:/i.test(url);
-    this.httpHeaders = (this.isHttp && args.httpHeaders) || {};
-    this.withCredentials = args.withCredentials || false;
-    this.getXhr = args.getXhr ||
-      function NetworkManager_getXhr() {
-        return new XMLHttpRequest();
-      };
-
-    this.currXhrId = 0;
-    this.pendingRequests = Object.create(null);
-    this.loadedRequests = Object.create(null);
-  }
-
-  function getArrayBuffer(xhr) {
-    var data = xhr.response;
-    if (typeof data !== 'string') {
-      return data;
-    }
-    var length = data.length;
-    var array = new Uint8Array(length);
-    for (var i = 0; i < length; i++) {
-      array[i] = data.charCodeAt(i) & 0xFF;
-    }
-    return array.buffer;
-  }
-
-  var supportsMozChunked = (function supportsMozChunkedClosure() {
-    try {
-      var x = new XMLHttpRequest();
-      // Firefox 37- required .open() to be called before setting responseType.
-      // https://bugzilla.mozilla.org/show_bug.cgi?id=707484
-      // Even though the URL is not visited, .open() could fail if the URL is
-      // blocked, e.g. via the connect-src CSP directive or the NoScript addon.
-      // When this error occurs, this feature detection method will mistakenly
-      // report that moz-chunked-arraybuffer is not supported in Firefox 37-.
-      x.open('GET', 'https://example.com');
-      x.responseType = 'moz-chunked-arraybuffer';
-      return x.responseType === 'moz-chunked-arraybuffer';
-    } catch (e) {
-      return false;
-    }
-  })();
-
-  NetworkManager.prototype = {
-    requestRange: function NetworkManager_requestRange(begin, end, listeners) {
-      var args = {
-        begin: begin,
-        end: end
-      };
-      for (var prop in listeners) {
-        args[prop] = listeners[prop];
-      }
-      return this.request(args);
-    },
-
-    requestFull: function NetworkManager_requestFull(listeners) {
-      return this.request(listeners);
-    },
-
-    request: function NetworkManager_request(args) {
-      var xhr = this.getXhr();
-      var xhrId = this.currXhrId++;
-      var pendingRequest = this.pendingRequests[xhrId] = {
-        xhr: xhr
-      };
-
-      xhr.open('GET', this.url);
-      xhr.withCredentials = this.withCredentials;
-      for (var property in this.httpHeaders) {
-        var value = this.httpHeaders[property];
-        if (typeof value === 'undefined') {
-          continue;
-        }
-        xhr.setRequestHeader(property, value);
-      }
-      if (this.isHttp && 'begin' in args && 'end' in args) {
-        var rangeStr = args.begin + '-' + (args.end - 1);
-        xhr.setRequestHeader('Range', 'bytes=' + rangeStr);
-        pendingRequest.expectedStatus = 206;
-      } else {
-        pendingRequest.expectedStatus = 200;
-      }
-
-      var useMozChunkedLoading = supportsMozChunked && !!args.onProgressiveData;
-      if (useMozChunkedLoading) {
-        xhr.responseType = 'moz-chunked-arraybuffer';
-        pendingRequest.onProgressiveData = args.onProgressiveData;
-        pendingRequest.mozChunked = true;
-      } else {
-        xhr.responseType = 'arraybuffer';
-      }
-
-      if (args.onError) {
-        xhr.onerror = function(evt) {
-          args.onError(xhr.status);
-        };
-      }
-      xhr.onreadystatechange = this.onStateChange.bind(this, xhrId);
-      xhr.onprogress = this.onProgress.bind(this, xhrId);
-
-      pendingRequest.onHeadersReceived = args.onHeadersReceived;
-      pendingRequest.onDone = args.onDone;
-      pendingRequest.onError = args.onError;
-      pendingRequest.onProgress = args.onProgress;
-
-      xhr.send(null);
-
-      return xhrId;
-    },
-
-    onProgress: function NetworkManager_onProgress(xhrId, evt) {
-      var pendingRequest = this.pendingRequests[xhrId];
-      if (!pendingRequest) {
-        // Maybe abortRequest was called...
-        return;
-      }
-
-      if (pendingRequest.mozChunked) {
-        var chunk = getArrayBuffer(pendingRequest.xhr);
-        pendingRequest.onProgressiveData(chunk);
-      }
-
-      var onProgress = pendingRequest.onProgress;
-      if (onProgress) {
-        onProgress(evt);
-      }
-    },
-
-    onStateChange: function NetworkManager_onStateChange(xhrId, evt) {
-      var pendingRequest = this.pendingRequests[xhrId];
-      if (!pendingRequest) {
-        // Maybe abortRequest was called...
-        return;
-      }
-
-      var xhr = pendingRequest.xhr;
-      if (xhr.readyState >= 2 && pendingRequest.onHeadersReceived) {
-        pendingRequest.onHeadersReceived();
-        delete pendingRequest.onHeadersReceived;
-      }
-
-      if (xhr.readyState !== 4) {
-        return;
-      }
-
-      if (!(xhrId in this.pendingRequests)) {
-        // The XHR request might have been aborted in onHeadersReceived()
-        // callback, in which case we should abort request
-        return;
-      }
-
-      delete this.pendingRequests[xhrId];
-
-      // success status == 0 can be on ftp, file and other protocols
-      if (xhr.status === 0 && this.isHttp) {
-        if (pendingRequest.onError) {
-          pendingRequest.onError(xhr.status);
-        }
-        return;
-      }
-      var xhrStatus = xhr.status || OK_RESPONSE;
-
-      // From http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.35.2:
-      // "A server MAY ignore the Range header". This means it's possible to
-      // get a 200 rather than a 206 response from a range request.
-      var ok_response_on_range_request =
-          xhrStatus === OK_RESPONSE &&
-          pendingRequest.expectedStatus === PARTIAL_CONTENT_RESPONSE;
-
-      if (!ok_response_on_range_request &&
-          xhrStatus !== pendingRequest.expectedStatus) {
-        if (pendingRequest.onError) {
-          pendingRequest.onError(xhr.status);
-        }
-        return;
-      }
-
-      this.loadedRequests[xhrId] = true;
-
-      var chunk = getArrayBuffer(xhr);
-      if (xhrStatus === PARTIAL_CONTENT_RESPONSE) {
-        var rangeHeader = xhr.getResponseHeader('Content-Range');
-        var matches = /bytes (\d+)-(\d+)\/(\d+)/.exec(rangeHeader);
-        var begin = parseInt(matches[1], 10);
-        pendingRequest.onDone({
-          begin: begin,
-          chunk: chunk
-        });
-      } else if (pendingRequest.onProgressiveData) {
-        pendingRequest.onDone(null);
-      } else if (chunk) {
-        pendingRequest.onDone({
-          begin: 0,
-          chunk: chunk
-        });
-      } else if (pendingRequest.onError) {
-        pendingRequest.onError(xhr.status);
-      }
-    },
-
-    hasPendingRequests: function NetworkManager_hasPendingRequests() {
-      for (var xhrId in this.pendingRequests) {
-        return true;
-      }
-      return false;
-    },
-
-    getRequestXhr: function NetworkManager_getXhr(xhrId) {
-      return this.pendingRequests[xhrId].xhr;
-    },
-
-    isStreamingRequest: function NetworkManager_isStreamingRequest(xhrId) {
-      return !!(this.pendingRequests[xhrId].onProgressiveData);
-    },
-
-    isPendingRequest: function NetworkManager_isPendingRequest(xhrId) {
-      return xhrId in this.pendingRequests;
-    },
-
-    isLoadedRequest: function NetworkManager_isLoadedRequest(xhrId) {
-      return xhrId in this.loadedRequests;
-    },
-
-    abortAllRequests: function NetworkManager_abortAllRequests() {
-      for (var xhrId in this.pendingRequests) {
-        this.abortRequest(xhrId | 0);
-      }
-    },
-
-    abortRequest: function NetworkManager_abortRequest(xhrId) {
-      var xhr = this.pendingRequests[xhrId].xhr;
-      delete this.pendingRequests[xhrId];
-      xhr.abort();
-    }
-  };
-
-  return NetworkManager;
-})();
-
-(function (root, factory) {
-  {
-    factory((root.pdfjsCoreNetwork = {}));
-  }
-}(this, function (exports) {
-  exports.NetworkManager = NetworkManager;
-}));
-
-
 (function (root, factory) {
   {
     factory((root.pdfjsSharedGlobal = {}));
@@ -3432,6 +3174,17 @@ var UNSUPPORTED_FEATURES = PDFJS.UNSUPPORTED_FEATURES = {
   font: 'font'
 };
 
+// Gets the file name from a given URL.
+function getFilenameFromUrl(url) {
+  var anchor = url.indexOf('#');
+  var query = url.indexOf('?');
+  var end = Math.min(
+    anchor > 0 ? anchor : url.length,
+    query > 0 ? query : url.length);
+  return url.substring(url.lastIndexOf('/', end) + 1, end);
+}
+PDFJS.getFilenameFromUrl = getFilenameFromUrl;
+
 // Combines two URLs. The baseUrl shall be absolute URL. If the url is an
 // absolute URL, it will be returned as is.
 function combineUrl(baseUrl, url) {
@@ -3711,6 +3464,55 @@ function stringToBytes(str) {
     bytes[i] = str.charCodeAt(i) & 0xFF;
   }
   return bytes;
+}
+
+/**
+ * Gets length of the array (Array, Uint8Array, or string) in bytes.
+ * @param {Array|Uint8Array|string} arr
+ * @returns {number}
+ */
+function arrayByteLength(arr) {
+  if (arr.length !== undefined) {
+    return arr.length;
+  }
+  assert(arr.byteLength !== undefined);
+  return arr.byteLength;
+}
+
+/**
+ * Combines array items (arrays) into single Uint8Array object.
+ * @param {Array} arr - the array of the arrays (Array, Uint8Array, or string).
+ * @returns {Uint8Array}
+ */
+function arraysToBytes(arr) {
+  // Shortcut: if first and only item is Uint8Array, return it.
+  if (arr.length === 1 && (arr[0] instanceof Uint8Array)) {
+    return arr[0];
+  }
+  var resultLength = 0;
+  var i, ii = arr.length;
+  var item, itemLength ;
+  for (i = 0; i < ii; i++) {
+    item = arr[i];
+    itemLength = arrayByteLength(item);
+    resultLength += itemLength;
+  }
+  var pos = 0;
+  var data = new Uint8Array(resultLength);
+  for (i = 0; i < ii; i++) {
+    item = arr[i];
+    if (!(item instanceof Uint8Array)) {
+      if (typeof item === 'string') {
+        item = stringToBytes(item);
+      } else {
+        item = new Uint8Array(item);
+      }
+    }
+    itemLength = item.byteLength;
+    data.set(item, pos);
+    pos += itemLength;
+  }
+  return data;
 }
 
 function string32(value) {
@@ -5497,12 +5299,15 @@ exports.UnexpectedResponseException = UnexpectedResponseException;
 exports.UnknownErrorException = UnknownErrorException;
 exports.Util = Util;
 exports.XRefParseException = XRefParseException;
+exports.arrayByteLength = arrayByteLength;
+exports.arraysToBytes = arraysToBytes;
 exports.assert = assert;
 exports.bytesToString = bytesToString;
 exports.combineUrl = combineUrl;
 exports.createPromiseCapability = createPromiseCapability;
 exports.deprecated = deprecated;
 exports.error = error;
+exports.getFilenameFromUrl = getFilenameFromUrl;
 exports.getLookupTableFactory = getLookupTableFactory;
 exports.info = info;
 exports.isArray = isArray;
@@ -5539,6 +5344,8 @@ exports.warn = warn;
 }(this, function (exports, sharedUtil) {
 
 var MissingDataException = sharedUtil.MissingDataException;
+var arrayByteLength = sharedUtil.arrayByteLength;
+var arraysToBytes = sharedUtil.arraysToBytes;
 var assert = sharedUtil.assert;
 var createPromiseCapability = sharedUtil.createPromiseCapability;
 var isInt = sharedUtil.isInt;
@@ -5790,37 +5597,16 @@ var ChunkedStream = (function ChunkedStreamClosure() {
 
 var ChunkedStreamManager = (function ChunkedStreamManagerClosure() {
 
-  function ChunkedStreamManager(length, chunkSize, url, args) {
+  function ChunkedStreamManager(pdfNetworkStream, args) {
+    var chunkSize = args.rangeChunkSize;
+    var length = args.length;
     this.stream = new ChunkedStream(length, chunkSize, this);
     this.length = length;
     this.chunkSize = chunkSize;
-    this.url = url;
+    this.pdfNetworkStream = pdfNetworkStream;
+    this.url = args.url;
     this.disableAutoFetch = args.disableAutoFetch;
-    var msgHandler = this.msgHandler = args.msgHandler;
-
-    if (args.chunkedViewerLoading) {
-      msgHandler.on('OnDataRange', this.onReceiveData.bind(this));
-      msgHandler.on('OnDataProgress', this.onProgress.bind(this));
-      this.sendRequest = function ChunkedStreamManager_sendRequest(begin, end) {
-        msgHandler.send('RequestDataRange', { begin: begin, end: end });
-      };
-    } else {
-
-      var getXhr = function getXhr() {
-        return new XMLHttpRequest();
-      };
-      this.networkManager = new NetworkManager(this.url, {
-        getXhr: getXhr,
-        httpHeaders: args.httpHeaders,
-        withCredentials: args.withCredentials
-      });
-      this.sendRequest = function ChunkedStreamManager_sendRequest(begin, end) {
-        this.networkManager.requestRange(begin, end, {
-          onDone: this.onReceiveData.bind(this),
-          onProgress: this.onProgress.bind(this)
-        });
-      };
-    }
+    this.msgHandler = args.msgHandler;
 
     this.currRequestId = 0;
 
@@ -5828,17 +5614,52 @@ var ChunkedStreamManager = (function ChunkedStreamManagerClosure() {
     this.requestsByChunk = Object.create(null);
     this.promisesByRequest = Object.create(null);
     this.progressiveDataLength = 0;
+    this.aborted = false;
 
     this._loadedStreamCapability = createPromiseCapability();
-
-    if (args.initialData) {
-      this.onReceiveData({chunk: args.initialData});
-    }
   }
 
   ChunkedStreamManager.prototype = {
     onLoadedStream: function ChunkedStreamManager_getLoadedStream() {
       return this._loadedStreamCapability.promise;
+    },
+
+    sendRequest: function ChunkedStreamManager_sendRequest(begin, end) {
+      var rangeReader = this.pdfNetworkStream.getRangeReader(begin, end);
+      if (!rangeReader.isStreamingSupported) {
+        rangeReader.onProgress = this.onProgress.bind(this);
+      }
+      var chunks = [], loaded = 0;
+      var manager = this;
+      var promise = new Promise(function (resolve, reject) {
+        var readChunk = function (chunk) {
+          try {
+            if (!chunk.done) {
+              var data = chunk.value;
+              chunks.push(data);
+              loaded += arrayByteLength(data);
+              if (rangeReader.isStreamingSupported) {
+                manager.onProgress({loaded: loaded});
+              }
+              rangeReader.read().then(readChunk, reject);
+              return;
+            }
+            var chunkData = arraysToBytes(chunks);
+            chunks = null;
+            resolve(chunkData);
+          } catch (e) {
+            reject(e);
+          }
+        };
+        rangeReader.read().then(readChunk, reject);
+      });
+      promise.then(function (data) {
+        if (this.aborted) {
+          return; // ignoring any data after abort
+        }
+        this.onReceiveData({chunk: data, begin: begin});
+      }.bind(this));
+      // TODO check errors
     },
 
     // Get all the chunks that are not yet loaded and groups them into
@@ -6060,8 +5881,9 @@ var ChunkedStreamManager = (function ChunkedStreamManagerClosure() {
     },
 
     abort: function ChunkedStreamManager_abort() {
-      if (this.networkManager) {
-        this.networkManager.abortAllRequests();
+      this.aborted = true;
+      if (this.pdfNetworkStream) {
+        this.pdfNetworkStream.cancelAllRequests('abort');
       }
       for(var requestId in this.promisesByRequest) {
         var capability = this.promisesByRequest[requestId];
@@ -19152,6 +18974,7 @@ var AnnotationBorderStyleType = sharedUtil.AnnotationBorderStyleType;
 var AnnotationType = sharedUtil.AnnotationType;
 var Util = sharedUtil.Util;
 var addLinkAttributes = sharedUtil.addLinkAttributes;
+var getFilenameFromUrl = sharedUtil.getFilenameFromUrl;
 var warn = sharedUtil.warn;
 var CustomStyle = displayDOMUtils.CustomStyle;
 
@@ -19162,6 +18985,7 @@ var CustomStyle = displayDOMUtils.CustomStyle;
  * @property {PDFPage} page
  * @property {PageViewport} viewport
  * @property {IPDFLinkService} linkService
+ * @property {DownloadManager} downloadManager
  */
 
 /**
@@ -19203,6 +19027,9 @@ AnnotationElementFactory.prototype =
       case AnnotationType.STRIKEOUT:
         return new StrikeOutAnnotationElement(parameters);
 
+      case AnnotationType.FILEATTACHMENT:
+        return new FileAttachmentAnnotationElement(parameters);
+
       default:
         return new AnnotationElement(parameters);
     }
@@ -19221,6 +19048,7 @@ var AnnotationElement = (function AnnotationElementClosure() {
     this.page = parameters.page;
     this.viewport = parameters.viewport;
     this.linkService = parameters.linkService;
+    this.downloadManager = parameters.downloadManager;
 
     if (isRenderable) {
       this.container = this._createContainer();
@@ -19317,6 +19145,43 @@ var AnnotationElement = (function AnnotationElementClosure() {
       container.style.height = height + 'px';
 
       return container;
+    },
+
+    /**
+     * Create a popup for the annotation's HTML element. This is used for
+     * annotations that do not have a Popup entry in the dictionary, but
+     * are of a type that works with popups (such as Highlight annotations).
+     *
+     * @private
+     * @param {HTMLSectionElement} container
+     * @param {HTMLDivElement|HTMLImageElement|null} trigger
+     * @param {Object} data
+     * @memberof AnnotationElement
+     */
+    _createPopup:
+        function AnnotationElement_createPopup(container, trigger, data) {
+      // If no trigger element is specified, create it.
+      if (!trigger) {
+        trigger = document.createElement('div');
+        trigger.style.height = container.style.height;
+        trigger.style.width = container.style.width;
+        container.appendChild(trigger);
+      }
+
+      var popupElement = new PopupElement({
+        container: container,
+        trigger: trigger,
+        color: data.color,
+        title: data.title,
+        contents: data.contents,
+        hideWrapper: true
+      });
+      var popup = popupElement.render();
+
+      // Position the popup next to the annotation's container.
+      popup.style.left = container.style.width;
+
+      container.appendChild(popup);
     },
 
     /**
@@ -19447,20 +19312,7 @@ var TextAnnotationElement = (function TextAnnotationElementClosure() {
       image.dataset.l10nArgs = JSON.stringify({type: this.data.name});
 
       if (!this.data.hasPopup) {
-        var popupElement = new PopupElement({
-          container: this.container,
-          trigger: image,
-          color: this.data.color,
-          title: this.data.title,
-          contents: this.data.contents,
-          hideWrapper: true
-        });
-        var popup = popupElement.render();
-
-        // Position the popup next to the Text annotation's container.
-        popup.style.left = image.style.width;
-
-        this.container.appendChild(popup);
+        this._createPopup(this.container, image, this.data);
       }
 
       this.container.appendChild(image);
@@ -19737,7 +19589,9 @@ var PopupElement = (function PopupElementClosure() {
 var HighlightAnnotationElement = (
     function HighlightAnnotationElementClosure() {
   function HighlightAnnotationElement(parameters) {
-    AnnotationElement.call(this, parameters, true);
+    var isRenderable = !!(parameters.data.hasPopup ||
+                          parameters.data.title || parameters.data.contents);
+    AnnotationElement.call(this, parameters, isRenderable);
   }
 
   Util.inherit(HighlightAnnotationElement, AnnotationElement, {
@@ -19750,6 +19604,11 @@ var HighlightAnnotationElement = (
      */
     render: function HighlightAnnotationElement_render() {
       this.container.className = 'highlightAnnotation';
+
+      if (!this.data.hasPopup) {
+        this._createPopup(this.container, null, this.data);
+      }
+
       return this.container;
     }
   });
@@ -19764,7 +19623,9 @@ var HighlightAnnotationElement = (
 var UnderlineAnnotationElement = (
     function UnderlineAnnotationElementClosure() {
   function UnderlineAnnotationElement(parameters) {
-    AnnotationElement.call(this, parameters, true);
+    var isRenderable = !!(parameters.data.hasPopup ||
+                          parameters.data.title || parameters.data.contents);
+    AnnotationElement.call(this, parameters, isRenderable);
   }
 
   Util.inherit(UnderlineAnnotationElement, AnnotationElement, {
@@ -19777,6 +19638,11 @@ var UnderlineAnnotationElement = (
      */
     render: function UnderlineAnnotationElement_render() {
       this.container.className = 'underlineAnnotation';
+
+      if (!this.data.hasPopup) {
+        this._createPopup(this.container, null, this.data);
+      }
+
       return this.container;
     }
   });
@@ -19790,7 +19656,9 @@ var UnderlineAnnotationElement = (
  */
 var SquigglyAnnotationElement = (function SquigglyAnnotationElementClosure() {
   function SquigglyAnnotationElement(parameters) {
-    AnnotationElement.call(this, parameters, true);
+    var isRenderable = !!(parameters.data.hasPopup ||
+                          parameters.data.title || parameters.data.contents);
+    AnnotationElement.call(this, parameters, isRenderable);
   }
 
   Util.inherit(SquigglyAnnotationElement, AnnotationElement, {
@@ -19803,6 +19671,11 @@ var SquigglyAnnotationElement = (function SquigglyAnnotationElementClosure() {
      */
     render: function SquigglyAnnotationElement_render() {
       this.container.className = 'squigglyAnnotation';
+
+      if (!this.data.hasPopup) {
+        this._createPopup(this.container, null, this.data);
+      }
+
       return this.container;
     }
   });
@@ -19817,7 +19690,9 @@ var SquigglyAnnotationElement = (function SquigglyAnnotationElementClosure() {
 var StrikeOutAnnotationElement = (
     function StrikeOutAnnotationElementClosure() {
   function StrikeOutAnnotationElement(parameters) {
-    AnnotationElement.call(this, parameters, true);
+    var isRenderable = !!(parameters.data.hasPopup ||
+                          parameters.data.title || parameters.data.contents);
+    AnnotationElement.call(this, parameters, isRenderable);
   }
 
   Util.inherit(StrikeOutAnnotationElement, AnnotationElement, {
@@ -19830,11 +19705,72 @@ var StrikeOutAnnotationElement = (
      */
     render: function StrikeOutAnnotationElement_render() {
       this.container.className = 'strikeoutAnnotation';
+
+      if (!this.data.hasPopup) {
+        this._createPopup(this.container, null, this.data);
+      }
+
       return this.container;
     }
   });
 
   return StrikeOutAnnotationElement;
+})();
+
+/**
+ * @class
+ * @alias FileAttachmentAnnotationElement
+ */
+var FileAttachmentAnnotationElement = (
+    function FileAttachmentAnnotationElementClosure() {
+  function FileAttachmentAnnotationElement(parameters) {
+    AnnotationElement.call(this, parameters, true);
+
+    this.filename = getFilenameFromUrl(parameters.data.file.filename);
+    this.content = parameters.data.file.content;
+  }
+
+  Util.inherit(FileAttachmentAnnotationElement, AnnotationElement, {
+    /**
+     * Render the file attachment annotation's HTML element in the empty
+     * container.
+     *
+     * @public
+     * @memberof FileAttachmentAnnotationElement
+     * @returns {HTMLSectionElement}
+     */
+    render: function FileAttachmentAnnotationElement_render() {
+      this.container.className = 'fileAttachmentAnnotation';
+
+      var trigger = document.createElement('div');
+      trigger.style.height = this.container.style.height;
+      trigger.style.width = this.container.style.width;
+      trigger.addEventListener('dblclick', this._download.bind(this));
+
+      if (!this.data.hasPopup && (this.data.title || this.data.contents)) {
+        this._createPopup(this.container, trigger, this.data);
+      }
+
+      this.container.appendChild(trigger);
+      return this.container;
+    },
+
+    /**
+     * Download the file attachment associated with this annotation.
+     *
+     * @private
+     * @memberof FileAttachmentAnnotationElement
+     */
+    _download: function FileAttachmentAnnotationElement_download() {
+      if (!this.downloadManager) {
+        warn('Download cannot be started due to unavailable download manager');
+        return;
+      }
+      this.downloadManager.downloadData(this.content, this.filename, '');
+    }
+  });
+
+  return FileAttachmentAnnotationElement;
 })();
 
 /**
@@ -19873,7 +19809,8 @@ var AnnotationLayer = (function AnnotationLayerClosure() {
           layer: parameters.div,
           page: parameters.page,
           viewport: parameters.viewport,
-          linkService: parameters.linkService
+          linkService: parameters.linkService,
+          downloadManager: parameters.downloadManager
         };
         var element = annotationElementFactory.create(properties);
         if (element.isRenderable) {
@@ -30576,15 +30513,19 @@ var CanvasGraphics = (function CanvasGraphicsClosure() {
           }
         }
 
-        if (simpleFillText && !accent) {
-          // common case
-          ctx.fillText(character, scaledX, scaledY);
-        } else {
-          this.paintChar(character, scaledX, scaledY);
-          if (accent) {
-            scaledAccentX = scaledX + accent.offset.x / fontSizeScale;
-            scaledAccentY = scaledY - accent.offset.y / fontSizeScale;
-            this.paintChar(accent.fontChar, scaledAccentX, scaledAccentY);
+        // Only attempt to draw the glyph if it is actually in the embedded font
+        // file or if there isn't a font file so the fallback font is shown.
+        if (glyph.isInFont || font.missingFile) {
+          if (simpleFillText && !accent) {
+            // common case
+            ctx.fillText(character, scaledX, scaledY);
+          } else {
+            this.paintChar(character, scaledX, scaledY);
+            if (accent) {
+              scaledAccentX = scaledX + accent.offset.x / fontSizeScale;
+              scaledAccentY = scaledY - accent.offset.y / fontSizeScale;
+              this.paintChar(accent.fontChar, scaledAccentX, scaledAccentY);
+            }
           }
         }
 
@@ -34732,7 +34673,7 @@ function getFontType(type, subtype) {
 
 var Glyph = (function GlyphClosure() {
   function Glyph(fontChar, unicode, accent, width, vmetric, operatorListId,
-                 isSpace) {
+                 isSpace, isInFont) {
     this.fontChar = fontChar;
     this.unicode = unicode;
     this.accent = accent;
@@ -34740,17 +34681,20 @@ var Glyph = (function GlyphClosure() {
     this.vmetric = vmetric;
     this.operatorListId = operatorListId;
     this.isSpace = isSpace;
+    this.isInFont = isInFont;
   }
 
   Glyph.prototype.matchesForCache = function(fontChar, unicode, accent, width,
-                                             vmetric, operatorListId, isSpace) {
+                                             vmetric, operatorListId, isSpace,
+                                             isInFont) {
     return this.fontChar === fontChar &&
            this.unicode === unicode &&
            this.accent === accent &&
            this.width === width &&
            this.vmetric === vmetric &&
            this.operatorListId === operatorListId &&
-           this.isSpace === isSpace;
+           this.isSpace === isSpace &&
+           this.isInFont === isInFont;
   };
 
   return Glyph;
@@ -35009,6 +34953,7 @@ var Font = (function FontClosure() {
     this.loadedName = properties.loadedName;
     this.isType3Font = properties.isType3Font;
     this.sizes = [];
+    this.missingFile = false;
 
     this.glyphCache = Object.create(null);
 
@@ -36373,6 +36318,9 @@ var Font = (function FontClosure() {
         }
         for (i = 0, ii = records.length; i < ii; i++) {
           var record = records[i];
+          if (record.length <= 0) {
+            continue; // Nothing to process, ignoring.
+          }
           var pos = start + stringsStart + record.offset;
           if (pos + record.length > end) {
             continue; // outside of name table, ignoring
@@ -36820,7 +36768,7 @@ var Font = (function FontClosure() {
           assert(cid <= 0xffff, 'Max size of CID is 65,535');
           var glyphId = -1;
           if (isCidToGidMapEmpty) {
-            glyphId = charCode;
+            glyphId = cid;
           } else if (cidToGidMap[cid] !== undefined) {
             glyphId = cidToGidMap[cid];
           }
@@ -37348,6 +37296,7 @@ var Font = (function FontClosure() {
         unicode = String.fromCharCode(unicode);
       }
 
+      var isInFont = charcode in this.toFontChar;
       // First try the toFontChar map, if it's not there then try falling
       // back to the char code.
       fontCharCode = this.toFontChar[charcode] || charcode;
@@ -37362,6 +37311,7 @@ var Font = (function FontClosure() {
 
       var accent = null;
       if (this.seacMap && this.seacMap[charcode]) {
+        isInFont = true;
         var seac = this.seacMap[charcode];
         fontCharCode = seac.baseFontCharCode;
         accent = {
@@ -37375,9 +37325,9 @@ var Font = (function FontClosure() {
       var glyph = this.glyphCache[charcode];
       if (!glyph ||
           !glyph.matchesForCache(fontChar, unicode, accent, width, vmetric,
-                                 operatorListId, isSpace)) {
+                                 operatorListId, isSpace, isInFont)) {
         glyph = new Glyph(fontChar, unicode, accent, width, vmetric,
-                          operatorListId, isSpace);
+                          operatorListId, isSpace, isInFont);
         this.glyphCache[charcode] = glyph;
       }
       return glyph;
@@ -44788,6 +44738,7 @@ var ObjectLoader = (function() {
 exports.Catalog = Catalog;
 exports.ObjectLoader = ObjectLoader;
 exports.XRef = XRef;
+exports.FileSpec = FileSpec;
 }));
 
 
@@ -48598,6 +48549,7 @@ var isName = corePrimitives.isName;
 var Stream = coreStream.Stream;
 var ColorSpace = coreColorSpace.ColorSpace;
 var ObjectLoader = coreObj.ObjectLoader;
+var FileSpec = coreObj.FileSpec;
 var OperatorList = coreEvaluator.OperatorList;
 
 /**
@@ -48623,6 +48575,7 @@ AnnotationFactory.prototype = /** @lends AnnotationFactory.prototype */ {
 
     // Return the right annotation object based on the subtype and field type.
     var parameters = {
+      xref: xref,
       dict: dict,
       ref: ref
     };
@@ -48655,6 +48608,9 @@ AnnotationFactory.prototype = /** @lends AnnotationFactory.prototype */ {
 
       case 'StrikeOut':
         return new StrikeOutAnnotation(parameters);
+
+      case 'FileAttachment':
+        return new FileAttachmentAnnotation(parameters);
 
       default:
         warn('Unimplemented annotation type "' + subtype + '", ' +
@@ -48887,6 +48843,24 @@ var Annotation = (function AnnotationClosure() {
         // See also https://github.com/mozilla/pdf.js/issues/6179.
         this.borderStyle.setWidth(0);
       }
+    },
+
+    /**
+     * Prepare the annotation for working with a popup in the display layer.
+     *
+     * @private
+     * @memberof Annotation
+     * @param {Dict} dict - The annotation's data dictionary
+     */
+    _preparePopup: function Annotation_preparePopup(dict) {
+      if (!dict.has('C')) {
+        // Fall back to the default background color.
+        this.data.color = null;
+      }
+
+      this.data.hasPopup = dict.has('Popup');
+      this.data.title = stringToPDFString(dict.get('T') || '');
+      this.data.contents = stringToPDFString(dict.get('Contents') || '');
     },
 
     loadResources: function Annotation_loadResources(keys) {
@@ -49206,27 +49180,15 @@ var TextAnnotation = (function TextAnnotationClosure() {
 
     this.data.annotationType = AnnotationType.TEXT;
 
-    var dict = parameters.dict;
     if (this.data.hasAppearance) {
       this.data.name = 'NoIcon';
     } else {
       this.data.rect[1] = this.data.rect[3] - DEFAULT_ICON_SIZE;
       this.data.rect[2] = this.data.rect[0] + DEFAULT_ICON_SIZE;
-      this.data.name = dict.has('Name') ? dict.get('Name').name : 'Note';
+      this.data.name = parameters.dict.has('Name') ?
+                       parameters.dict.get('Name').name : 'Note';
     }
-
-    if (!dict.has('C')) {
-      // Fall back to the default background color.
-      this.data.color = null;
-    }
-
-    this.data.hasPopup = dict.has('Popup');
-    if (!this.data.hasPopup) {
-      // There is no associated Popup annotation, so the Text annotation
-      // must create its own popup.
-      this.data.title = stringToPDFString(dict.get('T') || '');
-      this.data.contents = stringToPDFString(dict.get('Contents') || '');
-    }
+    this._preparePopup(parameters.dict);
   }
 
   Util.inherit(TextAnnotation, Annotation, {});
@@ -49345,6 +49307,7 @@ var HighlightAnnotation = (function HighlightAnnotationClosure() {
     Annotation.call(this, parameters);
 
     this.data.annotationType = AnnotationType.HIGHLIGHT;
+    this._preparePopup(parameters.dict);
 
     // PDF viewers completely ignore any border styles.
     this.data.borderStyle.setWidth(0);
@@ -49360,6 +49323,7 @@ var UnderlineAnnotation = (function UnderlineAnnotationClosure() {
     Annotation.call(this, parameters);
 
     this.data.annotationType = AnnotationType.UNDERLINE;
+    this._preparePopup(parameters.dict);
 
     // PDF viewers completely ignore any border styles.
     this.data.borderStyle.setWidth(0);
@@ -49375,6 +49339,7 @@ var SquigglyAnnotation = (function SquigglyAnnotationClosure() {
     Annotation.call(this, parameters);
 
     this.data.annotationType = AnnotationType.SQUIGGLY;
+    this._preparePopup(parameters.dict);
 
     // PDF viewers completely ignore any border styles.
     this.data.borderStyle.setWidth(0);
@@ -49390,6 +49355,7 @@ var StrikeOutAnnotation = (function StrikeOutAnnotationClosure() {
     Annotation.call(this, parameters);
 
     this.data.annotationType = AnnotationType.STRIKEOUT;
+    this._preparePopup(parameters.dict);
 
     // PDF viewers completely ignore any border styles.
     this.data.borderStyle.setWidth(0);
@@ -49398,6 +49364,22 @@ var StrikeOutAnnotation = (function StrikeOutAnnotationClosure() {
   Util.inherit(StrikeOutAnnotation, Annotation, {});
 
   return StrikeOutAnnotation;
+})();
+
+var FileAttachmentAnnotation = (function FileAttachmentAnnotationClosure() {
+  function FileAttachmentAnnotation(parameters) {
+    Annotation.call(this, parameters);
+
+    var file = new FileSpec(parameters.dict.get('FS'), parameters.xref);
+
+    this.data.annotationType = AnnotationType.FILEATTACHMENT;
+    this.data.file = file.serializable;
+    this._preparePopup(parameters.dict);
+  }
+
+  Util.inherit(FileAttachmentAnnotation, Annotation, {});
+
+  return FileAttachmentAnnotation;
 })();
 
 exports.Annotation = Annotation;
@@ -50124,21 +50106,18 @@ var LocalPdfManager = (function LocalPdfManagerClosure() {
 })();
 
 var NetworkPdfManager = (function NetworkPdfManagerClosure() {
-  function NetworkPdfManager(docId, args, msgHandler) {
+  function NetworkPdfManager(docId, pdfNetworkStream, args) {
     this._docId = docId;
-    this.msgHandler = msgHandler;
+    this.msgHandler = args.msgHandler;
 
     var params = {
-      msgHandler: msgHandler,
-      httpHeaders: args.httpHeaders,
-      withCredentials: args.withCredentials,
-      chunkedViewerLoading: args.chunkedViewerLoading,
+      msgHandler: args.msgHandler,
+      url: args.url,
+      length: args.length,
       disableAutoFetch: args.disableAutoFetch,
-      initialData: args.initialData
+      rangeChunkSize: args.rangeChunkSize
     };
-    this.streamManager = new ChunkedStreamManager(args.length,
-                                                  args.rangeChunkSize,
-                                                  args.url, params);
+    this.streamManager = new ChunkedStreamManager(pdfNetworkStream, params);
     this.pdfDocument = new PDFDocument(this, this.streamManager.getStream(),
                                        args.password);
   }
@@ -50220,10 +50199,12 @@ var PasswordException = sharedUtil.PasswordException;
 var PasswordResponses = sharedUtil.PasswordResponses;
 var UnknownErrorException = sharedUtil.UnknownErrorException;
 var XRefParseException = sharedUtil.XRefParseException;
+var arrayByteLength = sharedUtil.arrayByteLength;
+var arraysToBytes = sharedUtil.arraysToBytes;
+var assert = sharedUtil.assert;
 var createPromiseCapability = sharedUtil.createPromiseCapability;
 var error = sharedUtil.error;
 var info = sharedUtil.info;
-var isInt = sharedUtil.isInt;
 var warn = sharedUtil.warn;
 var Ref = corePrimitives.Ref;
 var LocalPdfManager = corePdfManager.LocalPdfManager;
@@ -50260,6 +50241,221 @@ var WorkerTask = (function WorkerTaskClosure() {
 
   return WorkerTask;
 })();
+
+
+/** @implements {IPDFStream} */
+var PDFWorkerStream = (function PDFWorkerStreamClosure() {
+  function PDFWorkerStream(params, msgHandler) {
+    this._queuedChunks = [];
+    var initialData = params.initialData;
+    if (initialData && initialData.length > 0) {
+      this._queuedChunks.push(initialData);
+    }
+    this._msgHandler = msgHandler;
+
+    this._isRangeSupported = !(params.disableRange);
+    this._isStreamingSupported = !(params.disableStream);
+    this._contentLength = params.length;
+
+    this._fullRequestReader = null;
+    this._rangeReaders = [];
+
+    msgHandler.on('OnDataRange', this._onReceiveData.bind(this));
+    msgHandler.on('OnDataProgress', this._onProgress.bind(this));
+  }
+  PDFWorkerStream.prototype = {
+    _onReceiveData: function PDFWorkerStream_onReceiveData(args) {
+       if (args.begin === undefined) {
+         if (this._fullRequestReader) {
+           this._fullRequestReader._enqueue(args.chunk);
+         } else {
+           this._queuedChunks.push(args.chunk);
+         }
+       } else {
+         var found = this._rangeReaders.some(function (rangeReader) {
+           if (rangeReader._begin !== args.begin) {
+             return false;
+           }
+           rangeReader._enqueue(args.chunk);
+           return true;
+         });
+         assert(found);
+       }
+    },
+
+    _onProgress: function PDFWorkerStream_onProgress(evt) {
+       if (this._rangeReaders.length > 0) {
+         // Reporting to first range reader.
+         var firstReader = this._rangeReaders[0];
+         if (firstReader.onProgress) {
+           firstReader.onProgress({loaded: evt.loaded});
+         }
+       }
+    },
+
+    _removeRangeReader: function PDFWorkerStream_removeRangeReader(reader) {
+      var i = this._rangeReaders.indexOf(reader);
+      if (i >= 0) {
+        this._rangeReaders.splice(i, 1);
+      }
+    },
+
+    getFullReader: function PDFWorkerStream_getFullReader() {
+      assert(!this._fullRequestReader);
+      var queuedChunks = this._queuedChunks;
+      this._queuedChunks = null;
+      return new PDFWorkerStreamReader(this, queuedChunks);
+    },
+
+    getRangeReader: function PDFWorkerStream_getRangeReader(begin, end) {
+      var reader = new PDFWorkerStreamRangeReader(this, begin, end);
+      this._msgHandler.send('RequestDataRange', { begin: begin, end: end });
+      this._rangeReaders.push(reader);
+      return reader;
+    },
+
+    cancelAllRequests: function PDFWorkerStream_cancelAllRequests(reason) {
+      if (this._fullRequestReader) {
+        this._fullRequestReader.cancel(reason);
+      }
+      var readers = this._rangeReaders.slice(0);
+      readers.forEach(function (rangeReader) {
+        rangeReader.cancel(reason);
+      });
+    }
+  };
+
+  /** @implements {IPDFStreamReader} */
+  function PDFWorkerStreamReader(stream, queuedChunks) {
+    this._stream = stream;
+    this._done = false;
+    this._queuedChunks = queuedChunks || [];
+    this._requests = [];
+    this._headersReady = Promise.resolve();
+    stream._fullRequestReader = this;
+
+    this.onProgress = null; // not used
+  }
+  PDFWorkerStreamReader.prototype = {
+    _enqueue: function PDFWorkerStreamReader_enqueue(chunk) {
+      if (this._done) {
+        return; // ignore new data
+      }
+      if (this._requests.length > 0) {
+        var requestCapability = this._requests.shift();
+        requestCapability.resolve({value: chunk, done: false});
+        return;
+      }
+      this._queuedChunks.push(chunk);
+    },
+
+    get headersReady() {
+      return this._headersReady;
+    },
+
+    get isRangeSupported() {
+      return this._stream._isRangeSupported;
+    },
+
+    get isStreamingSupported() {
+      return this._stream._isStreamingSupported;
+    },
+
+    get contentLength() {
+      return this._stream._contentLength;
+    },
+
+    read: function PDFWorkerStreamReader_read() {
+      if (this._queuedChunks.length > 0) {
+        var chunk = this._queuedChunks.shift();
+        return Promise.resolve({value: chunk, done: false});
+      }
+      if (this._done) {
+        return Promise.resolve({value: undefined, done: true});
+      }
+      var requestCapability = createPromiseCapability();
+      this._requests.push(requestCapability);
+      return requestCapability.promise;
+    },
+
+    cancel: function PDFWorkerStreamReader_cancel(reason) {
+      this._done = true;
+      this._requests.forEach(function (requestCapability) {
+        requestCapability.resolve({value: undefined, done: true});
+      });
+      this._requests = [];
+    }
+  };
+
+  /** @implements {IPDFStreamRangeReader} */
+  function PDFWorkerStreamRangeReader(stream, begin, end) {
+    this._stream = stream;
+    this._begin = begin;
+    this._end = end;
+    this._queuedChunk = null;
+    this._requests = [];
+    this._done = false;
+
+    this.onProgress = null;
+  }
+  PDFWorkerStreamRangeReader.prototype = {
+    _enqueue: function PDFWorkerStreamRangeReader_enqueue(chunk) {
+      if (this._done) {
+        return; // ignore new data
+      }
+      if (this._requests.length === 0) {
+        this._queuedChunk = chunk;
+      } else {
+        var requestsCapability = this._requests.shift();
+        requestsCapability.resolve({value: chunk, done: false});
+        this._requests.forEach(function (requestCapability) {
+          requestCapability.resolve({value: undefined, done: true});
+        });
+        this._requests = [];
+      }
+      this._done = true;
+      this._stream._removeRangeReader(this);
+    },
+
+    get isStreamingSupported() {
+      return false;
+    },
+
+    read: function PDFWorkerStreamRangeReader_read() {
+      if (this._queuedChunk) {
+        return Promise.resolve({value: this._queuedChunk, done: false});
+      }
+      if (this._done) {
+        return Promise.resolve({value: undefined, done: true});
+      }
+      var requestCapability = createPromiseCapability();
+      this._requests.push(requestCapability);
+      return requestCapability.promise;
+    },
+
+    cancel: function PDFWorkerStreamRangeReader_cancel(reason) {
+      this._done = true;
+      this._requests.forEach(function (requestCapability) {
+        requestCapability.resolve({value: undefined, done: true});
+      });
+      this._requests = [];
+      this._stream._removeRangeReader(this);
+    }
+  };
+
+  return PDFWorkerStream;
+})();
+
+/** @type IPDFStream */
+var PDFNetworkStream;
+
+/**
+ * Sets PDFNetworkStream class to be used as alternative PDF data transport.
+ * @param {IPDFStream} cls - the PDF data transport.
+ */
+function setPDFNetworkStreamClass(cls) {
+  PDFNetworkStream = cls;
+}
 
 var WorkerMessageHandler = PDFJS.WorkerMessageHandler = {
   setup: function wphSetup(handler, port) {
@@ -50367,7 +50563,6 @@ var WorkerMessageHandler = PDFJS.WorkerMessageHandler = {
       var pdfManager;
 
       var source = data.source;
-      var disableRange = data.disableRange;
       if (source.data) {
         try {
           pdfManager = new LocalPdfManager(docId, source.data, source.password);
@@ -50376,143 +50571,113 @@ var WorkerMessageHandler = PDFJS.WorkerMessageHandler = {
           pdfManagerCapability.reject(ex);
         }
         return pdfManagerCapability.promise;
-      } else if (source.chunkedViewerLoading) {
+      }
+
+      var pdfStream;
+      try {
+        if (source.chunkedViewerLoading) {
+          pdfStream = new PDFWorkerStream(source, handler);
+        } else {
+          assert(PDFNetworkStream, 'pdfjs/core/network module is not loaded');
+          pdfStream = new PDFNetworkStream(data);
+        }
+      } catch (ex) {
+        pdfManagerCapability.reject(ex);
+        return pdfManagerCapability.promise;
+      }
+
+      var fullRequest = pdfStream.getFullReader();
+      fullRequest.headersReady.then(function () {
+        if (!fullRequest.isStreamingSupported ||
+            !fullRequest.isRangeSupported) {
+          // If stream or range are disabled, it's our only way to report
+          // loading progress.
+          fullRequest.onProgress = function (evt) {
+            handler.send('DocProgress', {
+              loaded: evt.loaded,
+              total: evt.total
+            });
+          };
+        }
+
+        if (!fullRequest.isRangeSupported) {
+          return;
+        }
+
+        // We don't need auto-fetch when streaming is enabled.
+        var disableAutoFetch = source.disableAutoFetch ||
+                               fullRequest.isStreamingSupported;
+        pdfManager = new NetworkPdfManager(docId, pdfStream, {
+          msgHandler: handler,
+          url: source.url,
+          password: source.password,
+          length: fullRequest.contentLength,
+          disableAutoFetch: disableAutoFetch,
+          rangeChunkSize: source.rangeChunkSize
+        });
+        pdfManagerCapability.resolve(pdfManager);
+        cancelXHRs = null;
+      }).catch(function (reason) {
+        pdfManagerCapability.reject(reason);
+        cancelXHRs = null;
+      });
+
+      var cachedChunks = [], loaded = 0;
+      var flushChunks = function () {
+        var pdfFile = arraysToBytes(cachedChunks);
+        if (source.length && pdfFile.length !== source.length) {
+          warn('reported HTTP length is different from actual');
+        }
+        // the data is array, instantiating directly from it
         try {
-          pdfManager = new NetworkPdfManager(docId, source, handler);
+          pdfManager = new LocalPdfManager(docId, pdfFile, source.password);
           pdfManagerCapability.resolve(pdfManager);
         } catch (ex) {
           pdfManagerCapability.reject(ex);
         }
-        return pdfManagerCapability.promise;
-      }
-
-      var networkManager = new NetworkManager(source.url, {
-        httpHeaders: source.httpHeaders,
-        withCredentials: source.withCredentials
-      });
-      var cachedChunks = [];
-      var fullRequestXhrId = networkManager.requestFull({
-        onHeadersReceived: function onHeadersReceived() {
-          if (disableRange) {
-            return;
-          }
-
-          var fullRequestXhr = networkManager.getRequestXhr(fullRequestXhrId);
-          if (fullRequestXhr.getResponseHeader('Accept-Ranges') !== 'bytes') {
-            return;
-          }
-
-          var contentEncoding =
-            fullRequestXhr.getResponseHeader('Content-Encoding') || 'identity';
-          if (contentEncoding !== 'identity') {
-            return;
-          }
-
-          var length = fullRequestXhr.getResponseHeader('Content-Length');
-          length = parseInt(length, 10);
-          if (!isInt(length)) {
-            return;
-          }
-          source.length = length;
-          if (length <= 2 * source.rangeChunkSize) {
-            // The file size is smaller than the size of two chunks, so it does
-            // not make any sense to abort the request and retry with a range
-            // request.
-            return;
-          }
-
-          if (networkManager.isStreamingRequest(fullRequestXhrId)) {
-            // We can continue fetching when progressive loading is enabled,
-            // and we don't need the autoFetch feature.
-            source.disableAutoFetch = true;
-          } else {
-            // NOTE: by cancelling the full request, and then issuing range
-            // requests, there will be an issue for sites where you can only
-            // request the pdf once. However, if this is the case, then the
-            // server should not be returning that it can support range
-            // requests.
-            networkManager.abortRequest(fullRequestXhrId);
-          }
-
+        cachedChunks = [];
+      };
+      var readPromise = new Promise(function (resolve, reject) {
+        var readChunk = function (chunk) {
           try {
-            pdfManager = new NetworkPdfManager(docId, source, handler);
-            pdfManagerCapability.resolve(pdfManager);
-          } catch (ex) {
-            pdfManagerCapability.reject(ex);
-          }
-          cancelXHRs = null;
-        },
-
-        onProgressiveData: source.disableStream ? null :
-            function onProgressiveData(chunk) {
-          if (!pdfManager) {
-            cachedChunks.push(chunk);
-            return;
-          }
-          pdfManager.sendProgressiveData(chunk);
-        },
-
-        onDone: function onDone(args) {
-          if (pdfManager) {
-            return; // already processed
-          }
-
-          var pdfFile;
-          if (args === null) {
-            // TODO add some streaming manager, e.g. for unknown length files.
-            // The data was returned in the onProgressiveData, combining...
-            var pdfFileLength = 0, pos = 0;
-            cachedChunks.forEach(function (chunk) {
-              pdfFileLength += chunk.byteLength;
-            });
-            if (source.length && pdfFileLength !== source.length) {
-              warn('reported HTTP length is different from actual');
+            ensureNotTerminated();
+            if (chunk.done) {
+              if (!pdfManager) {
+                flushChunks();
+              }
+              cancelXHRs = null;
+              return;
             }
-            var pdfFileArray = new Uint8Array(pdfFileLength);
-            cachedChunks.forEach(function (chunk) {
-              pdfFileArray.set(new Uint8Array(chunk), pos);
-              pos += chunk.byteLength;
-            });
-            pdfFile = pdfFileArray.buffer;
-          } else {
-            pdfFile = args.chunk;
-          }
 
-          // the data is array, instantiating directly from it
-          try {
-            pdfManager = new LocalPdfManager(docId, pdfFile, source.password);
-            pdfManagerCapability.resolve(pdfManager);
-          } catch (ex) {
-            pdfManagerCapability.reject(ex);
-          }
-          cancelXHRs = null;
-        },
+            var data = chunk.value;
+            loaded += arrayByteLength(data);
+            if (!fullRequest.isStreamingSupported) {
+              handler.send('DocProgress', {
+                loaded: loaded,
+                total: Math.max(loaded, fullRequest.contentLength || 0)
+              });
+            }
 
-        onError: function onError(status) {
-          var exception;
-          if (status === 404 || status === 0 && /^file:/.test(source.url)) {
-            exception = new MissingPDFException('Missing PDF "' +
-                                                source.url + '".');
-            handler.send('MissingPDF', exception);
-          } else {
-            exception = new UnexpectedResponseException(
-              'Unexpected server response (' + status +
-              ') while retrieving PDF "' + source.url + '".', status);
-            handler.send('UnexpectedResponse', exception);
-          }
-          cancelXHRs = null;
-        },
+            if (pdfManager) {
+              pdfManager.sendProgressiveData(data);
+            } else {
+              cachedChunks.push(data);
+            }
 
-        onProgress: function onProgress(evt) {
-          handler.send('DocProgress', {
-            loaded: evt.loaded,
-            total: evt.lengthComputable ? evt.total : source.length
-          });
-        }
+            fullRequest.read().then(readChunk, reject);
+          } catch (e) {
+            reject(e);
+          }
+        };
+        fullRequest.read().then(readChunk, reject);
+      });
+      readPromise.catch(function (e) {
+        pdfManagerCapability.reject(e);
+        cancelXHRs = null;
       });
 
       cancelXHRs = function () {
-        networkManager.abortRequest(fullRequestXhrId);
+        pdfStream.cancelAllRequests('abort');
       };
 
       return pdfManagerCapability.promise;
@@ -50853,8 +51018,600 @@ if (typeof window === 'undefined' &&
   initializeWorker();
 }
 
+exports.setPDFNetworkStreamClass = setPDFNetworkStreamClass;
 exports.WorkerTask = WorkerTask;
 exports.WorkerMessageHandler = WorkerMessageHandler;
+}));
+
+
+
+
+var NetworkManager = (function NetworkManagerClosure() {
+
+  var OK_RESPONSE = 200;
+  var PARTIAL_CONTENT_RESPONSE = 206;
+
+  function NetworkManager(url, args) {
+    this.url = url;
+    args = args || {};
+    this.isHttp = /^https?:/i.test(url);
+    this.httpHeaders = (this.isHttp && args.httpHeaders) || {};
+    this.withCredentials = args.withCredentials || false;
+    this.getXhr = args.getXhr ||
+      function NetworkManager_getXhr() {
+        return new XMLHttpRequest();
+      };
+
+    this.currXhrId = 0;
+    this.pendingRequests = Object.create(null);
+    this.loadedRequests = Object.create(null);
+  }
+
+  function getArrayBuffer(xhr) {
+    var data = xhr.response;
+    if (typeof data !== 'string') {
+      return data;
+    }
+    var length = data.length;
+    var array = new Uint8Array(length);
+    for (var i = 0; i < length; i++) {
+      array[i] = data.charCodeAt(i) & 0xFF;
+    }
+    return array.buffer;
+  }
+
+  var supportsMozChunked = (function supportsMozChunkedClosure() {
+    try {
+      var x = new XMLHttpRequest();
+      // Firefox 37- required .open() to be called before setting responseType.
+      // https://bugzilla.mozilla.org/show_bug.cgi?id=707484
+      // Even though the URL is not visited, .open() could fail if the URL is
+      // blocked, e.g. via the connect-src CSP directive or the NoScript addon.
+      // When this error occurs, this feature detection method will mistakenly
+      // report that moz-chunked-arraybuffer is not supported in Firefox 37-.
+      x.open('GET', 'https://example.com');
+      x.responseType = 'moz-chunked-arraybuffer';
+      return x.responseType === 'moz-chunked-arraybuffer';
+    } catch (e) {
+      return false;
+    }
+  })();
+
+  NetworkManager.prototype = {
+    requestRange: function NetworkManager_requestRange(begin, end, listeners) {
+      var args = {
+        begin: begin,
+        end: end
+      };
+      for (var prop in listeners) {
+        args[prop] = listeners[prop];
+      }
+      return this.request(args);
+    },
+
+    requestFull: function NetworkManager_requestFull(listeners) {
+      return this.request(listeners);
+    },
+
+    request: function NetworkManager_request(args) {
+      var xhr = this.getXhr();
+      var xhrId = this.currXhrId++;
+      var pendingRequest = this.pendingRequests[xhrId] = {
+        xhr: xhr
+      };
+
+      xhr.open('GET', this.url);
+      xhr.withCredentials = this.withCredentials;
+      for (var property in this.httpHeaders) {
+        var value = this.httpHeaders[property];
+        if (typeof value === 'undefined') {
+          continue;
+        }
+        xhr.setRequestHeader(property, value);
+      }
+      if (this.isHttp && 'begin' in args && 'end' in args) {
+        var rangeStr = args.begin + '-' + (args.end - 1);
+        xhr.setRequestHeader('Range', 'bytes=' + rangeStr);
+        pendingRequest.expectedStatus = 206;
+      } else {
+        pendingRequest.expectedStatus = 200;
+      }
+
+      var useMozChunkedLoading = supportsMozChunked && !!args.onProgressiveData;
+      if (useMozChunkedLoading) {
+        xhr.responseType = 'moz-chunked-arraybuffer';
+        pendingRequest.onProgressiveData = args.onProgressiveData;
+        pendingRequest.mozChunked = true;
+      } else {
+        xhr.responseType = 'arraybuffer';
+      }
+
+      if (args.onError) {
+        xhr.onerror = function(evt) {
+          args.onError(xhr.status);
+        };
+      }
+      xhr.onreadystatechange = this.onStateChange.bind(this, xhrId);
+      xhr.onprogress = this.onProgress.bind(this, xhrId);
+
+      pendingRequest.onHeadersReceived = args.onHeadersReceived;
+      pendingRequest.onDone = args.onDone;
+      pendingRequest.onError = args.onError;
+      pendingRequest.onProgress = args.onProgress;
+
+      xhr.send(null);
+
+      return xhrId;
+    },
+
+    onProgress: function NetworkManager_onProgress(xhrId, evt) {
+      var pendingRequest = this.pendingRequests[xhrId];
+      if (!pendingRequest) {
+        // Maybe abortRequest was called...
+        return;
+      }
+
+      if (pendingRequest.mozChunked) {
+        var chunk = getArrayBuffer(pendingRequest.xhr);
+        pendingRequest.onProgressiveData(chunk);
+      }
+
+      var onProgress = pendingRequest.onProgress;
+      if (onProgress) {
+        onProgress(evt);
+      }
+    },
+
+    onStateChange: function NetworkManager_onStateChange(xhrId, evt) {
+      var pendingRequest = this.pendingRequests[xhrId];
+      if (!pendingRequest) {
+        // Maybe abortRequest was called...
+        return;
+      }
+
+      var xhr = pendingRequest.xhr;
+      if (xhr.readyState >= 2 && pendingRequest.onHeadersReceived) {
+        pendingRequest.onHeadersReceived();
+        delete pendingRequest.onHeadersReceived;
+      }
+
+      if (xhr.readyState !== 4) {
+        return;
+      }
+
+      if (!(xhrId in this.pendingRequests)) {
+        // The XHR request might have been aborted in onHeadersReceived()
+        // callback, in which case we should abort request
+        return;
+      }
+
+      delete this.pendingRequests[xhrId];
+
+      // success status == 0 can be on ftp, file and other protocols
+      if (xhr.status === 0 && this.isHttp) {
+        if (pendingRequest.onError) {
+          pendingRequest.onError(xhr.status);
+        }
+        return;
+      }
+      var xhrStatus = xhr.status || OK_RESPONSE;
+
+      // From http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.35.2:
+      // "A server MAY ignore the Range header". This means it's possible to
+      // get a 200 rather than a 206 response from a range request.
+      var ok_response_on_range_request =
+          xhrStatus === OK_RESPONSE &&
+          pendingRequest.expectedStatus === PARTIAL_CONTENT_RESPONSE;
+
+      if (!ok_response_on_range_request &&
+          xhrStatus !== pendingRequest.expectedStatus) {
+        if (pendingRequest.onError) {
+          pendingRequest.onError(xhr.status);
+        }
+        return;
+      }
+
+      this.loadedRequests[xhrId] = true;
+
+      var chunk = getArrayBuffer(xhr);
+      if (xhrStatus === PARTIAL_CONTENT_RESPONSE) {
+        var rangeHeader = xhr.getResponseHeader('Content-Range');
+        var matches = /bytes (\d+)-(\d+)\/(\d+)/.exec(rangeHeader);
+        var begin = parseInt(matches[1], 10);
+        pendingRequest.onDone({
+          begin: begin,
+          chunk: chunk
+        });
+      } else if (pendingRequest.onProgressiveData) {
+        pendingRequest.onDone(null);
+      } else if (chunk) {
+        pendingRequest.onDone({
+          begin: 0,
+          chunk: chunk
+        });
+      } else if (pendingRequest.onError) {
+        pendingRequest.onError(xhr.status);
+      }
+    },
+
+    hasPendingRequests: function NetworkManager_hasPendingRequests() {
+      for (var xhrId in this.pendingRequests) {
+        return true;
+      }
+      return false;
+    },
+
+    getRequestXhr: function NetworkManager_getXhr(xhrId) {
+      return this.pendingRequests[xhrId].xhr;
+    },
+
+    isStreamingRequest: function NetworkManager_isStreamingRequest(xhrId) {
+      return !!(this.pendingRequests[xhrId].onProgressiveData);
+    },
+
+    isPendingRequest: function NetworkManager_isPendingRequest(xhrId) {
+      return xhrId in this.pendingRequests;
+    },
+
+    isLoadedRequest: function NetworkManager_isLoadedRequest(xhrId) {
+      return xhrId in this.loadedRequests;
+    },
+
+    abortAllRequests: function NetworkManager_abortAllRequests() {
+      for (var xhrId in this.pendingRequests) {
+        this.abortRequest(xhrId | 0);
+      }
+    },
+
+    abortRequest: function NetworkManager_abortRequest(xhrId) {
+      var xhr = this.pendingRequests[xhrId].xhr;
+      delete this.pendingRequests[xhrId];
+      xhr.abort();
+    }
+  };
+
+  return NetworkManager;
+})();
+
+(function (root, factory) {
+  {
+    factory((root.pdfjsCoreNetwork = {}), root.pdfjsSharedUtil,
+      root.pdfjsCoreWorker);
+  }
+}(this, function (exports, sharedUtil, coreWorker) {
+
+  var assert = sharedUtil.assert;
+  var createPromiseCapability = sharedUtil.createPromiseCapability;
+  var isInt = sharedUtil.isInt;
+  var MissingPDFException = sharedUtil.MissingPDFException;
+  var UnexpectedResponseException = sharedUtil.UnexpectedResponseException;
+
+  /** @implements {IPDFStream} */
+  function PDFNetworkStream(options) {
+    this._options = options;
+    var source = options.source;
+    this._manager = new NetworkManager(source.url, {
+      httpHeaders: source.httpHeaders,
+      withCredentials: source.withCredentials
+    });
+    this._rangeChunkSize = source.rangeChunkSize;
+    this._fullRequestReader = null;
+    this._rangeRequestReaders = [];
+  }
+
+  PDFNetworkStream.prototype = {
+    _onRangeRequestReaderClosed:
+        function PDFNetworkStream_onRangeRequestReaderClosed(reader) {
+      var i = this._rangeRequestReaders.indexOf(reader);
+      if (i >= 0) {
+        this._rangeRequestReaders.splice(i, 1);
+      }
+    },
+
+    getFullReader: function PDFNetworkStream_getFullReader() {
+      assert(!this._fullRequestReader);
+      this._fullRequestReader =
+        new PDFNetworkStreamFullRequestReader(this._manager, this._options);
+      return this._fullRequestReader;
+    },
+
+    getRangeReader: function PDFNetworkStream_getRangeReader(begin, end) {
+      var reader = new PDFNetworkStreamRangeRequestReader(this._manager,
+                                                          begin, end);
+      reader.onClosed = this._onRangeRequestReaderClosed.bind(this);
+      this._rangeRequestReaders.push(reader);
+      return reader;
+    },
+
+    cancelAllRequests: function PDFNetworkStream_cancelAllRequests(reason) {
+      if (this._fullRequestReader) {
+        this._fullRequestReader.cancel(reason);
+      }
+      var readers = this._rangeRequestReaders.slice(0);
+      readers.forEach(function (reader) {
+        reader.cancel(reason);
+      });
+    }
+  };
+
+  /** @implements {IPDFStreamReader} */
+  function PDFNetworkStreamFullRequestReader(manager, options) {
+    this._manager = manager;
+
+    var source = options.source;
+    var args = {
+      onHeadersReceived: this._onHeadersReceived.bind(this),
+      onProgressiveData: source.disableStream ? null :
+                         this._onProgressiveData.bind(this),
+      onDone: this._onDone.bind(this),
+      onError: this._onError.bind(this),
+      onProgress: this._onProgress.bind(this)
+    };
+    this._url = source.url;
+    this._fullRequestId = manager.requestFull(args);
+    this._headersReceivedCapability = createPromiseCapability();
+    this._disableRange = options.disableRange || false;
+    this._contentLength = source.length; // optional
+    this._rangeChunkSize = source.rangeChunkSize;
+    if (!this._rangeChunkSize && !this._disableRange) {
+      this._disableRange = true;
+    }
+
+    this._isStreamingSupported = false;
+    this._isRangeSupported = false;
+
+    this._cachedChunks = [];
+    this._requests = [];
+    this._done = false;
+    this._storedError = undefined;
+
+    this.onProgress = null;
+  }
+
+  PDFNetworkStreamFullRequestReader.prototype = {
+    _validateRangeRequestCapabilities: function
+        PDFNetworkStreamFullRequestReader_validateRangeRequestCapabilities() {
+
+      if (this._disableRange) {
+        return false;
+      }
+
+      var networkManager = this._manager;
+      var fullRequestXhrId = this._fullRequestId;
+      var fullRequestXhr = networkManager.getRequestXhr(fullRequestXhrId);
+      if (fullRequestXhr.getResponseHeader('Accept-Ranges') !== 'bytes') {
+        return false;
+      }
+
+      var contentEncoding =
+        fullRequestXhr.getResponseHeader('Content-Encoding') || 'identity';
+      if (contentEncoding !== 'identity') {
+        return false;
+      }
+
+      var length = fullRequestXhr.getResponseHeader('Content-Length');
+      length = parseInt(length, 10);
+      if (!isInt(length)) {
+        return false;
+      }
+
+      this._contentLength = length; // setting right content length
+
+      if (length <= 2 * this._rangeChunkSize) {
+        // The file size is smaller than the size of two chunks, so it does
+        // not make any sense to abort the request and retry with a range
+        // request.
+        return false;
+      }
+
+      return true;
+    },
+
+    _onHeadersReceived:
+        function PDFNetworkStreamFullRequestReader_onHeadersReceived() {
+
+      if (this._validateRangeRequestCapabilities()) {
+        this._isRangeSupported = true;
+      }
+
+      var networkManager = this._manager;
+      var fullRequestXhrId = this._fullRequestId;
+      if (networkManager.isStreamingRequest(fullRequestXhrId)) {
+        // We can continue fetching when progressive loading is enabled,
+        // and we don't need the autoFetch feature.
+        this._isStreamingSupported = true;
+      } else if (this._isRangeSupported) {
+        // NOTE: by cancelling the full request, and then issuing range
+        // requests, there will be an issue for sites where you can only
+        // request the pdf once. However, if this is the case, then the
+        // server should not be returning that it can support range
+        // requests.
+        networkManager.abortRequest(fullRequestXhrId);
+      }
+
+      this._headersReceivedCapability.resolve();
+    },
+
+    _onProgressiveData:
+        function PDFNetworkStreamFullRequestReader_onProgressiveData(chunk) {
+      if (this._requests.length > 0) {
+        var requestCapability = this._requests.shift();
+        requestCapability.resolve({value: chunk, done: false});
+      } else {
+        this._cachedChunks.push(chunk);
+      }
+    },
+
+    _onDone: function PDFNetworkStreamFullRequestReader_onDone(args) {
+      if (args) {
+        this._onProgressiveData(args.chunk);
+      }
+      this._done = true;
+      if (this._cachedChunks.length > 0) {
+        return;
+      }
+      this._requests.forEach(function (requestCapability) {
+        requestCapability.resolve({value: undefined, done: true});
+      });
+      this._requests = [];
+    },
+
+    _onError: function PDFNetworkStreamFullRequestReader_onError(status) {
+      var url = this._url;
+      var exception;
+      if (status === 404 || status === 0 && /^file:/.test(url)) {
+        exception = new MissingPDFException('Missing PDF "' + url + '".');
+      } else {
+        exception = new UnexpectedResponseException(
+          'Unexpected server response (' + status +
+          ') while retrieving PDF "' + url + '".', status);
+      }
+      this._storedError = exception;
+      this._headersReceivedCapability.reject(exception);
+      this._requests.forEach(function (requestCapability) {
+        requestCapability.reject(exception);
+      });
+      this._requests = [];
+      this._cachedChunks = [];
+    },
+
+    _onProgress: function PDFNetworkStreamFullRequestReader_onProgress(data) {
+      if (this.onProgress) {
+        this.onProgress({
+          loaded: data.loaded,
+          total: data.lengthComputable ? data.total : this._contentLength
+        });
+      }
+    },
+
+    get isRangeSupported() {
+      return this._isRangeSupported;
+    },
+
+    get isStreamingSupported() {
+      return this._isStreamingSupported;
+    },
+
+    get contentLength() {
+      return this._contentLength;
+    },
+
+    get headersReady() {
+      return this._headersReceivedCapability.promise;
+    },
+
+    read: function PDFNetworkStreamFullRequestReader_read() {
+      if (this._storedError) {
+        return Promise.reject(this._storedError);
+      }
+      if (this._cachedChunks.length > 0) {
+        var chunk = this._cachedChunks.shift();
+        return Promise.resolve(chunk);
+      }
+      if (this._done) {
+        return Promise.resolve({value: undefined, done: true});
+      }
+      var requestCapability = createPromiseCapability();
+      this._requests.push(requestCapability);
+      return requestCapability.promise;
+    },
+
+    cancel: function PDFNetworkStreamFullRequestReader_cancel(reason) {
+      this._done = true;
+      this._headersReceivedCapability.reject(reason);
+      this._requests.forEach(function (requestCapability) {
+        requestCapability.resolve({value: undefined, done: true});
+      });
+      this._requests = [];
+      if (this._manager.isPendingRequest(this._fullRequestId)) {
+        this._manager.abortRequest(this._fullRequestId);
+      }
+      this._fullRequestReader = null;
+    }
+  };
+
+  /** @implements {IPDFStreamRangeReader} */
+  function PDFNetworkStreamRangeRequestReader(manager, begin, end) {
+    this._manager = manager;
+    var args = {
+      onDone: this._onDone.bind(this),
+      onProgress: this._onProgress.bind(this)
+    };
+    this._requestId = manager.requestRange(begin, end, args);
+    this._requests = [];
+    this._queuedChunk = null;
+    this._done = false;
+
+    this.onProgress = null;
+    this.onClosed = null;
+  }
+
+  PDFNetworkStreamRangeRequestReader.prototype = {
+    _close: function PDFNetworkStreamRangeRequestReader_close() {
+      if (this.onClosed) {
+        this.onClosed(this);
+      }
+    },
+
+    _onDone: function PDFNetworkStreamRangeRequestReader_onDone(data) {
+      var chunk = data.chunk;
+      if (this._requests.length > 0) {
+        var requestCapability = this._requests.shift();
+        requestCapability.resolve({value: chunk, done: false});
+      } else {
+        this._queuedChunk = chunk;
+      }
+      this._done = true;
+      this._requests.forEach(function (requestCapability) {
+        requestCapability.resolve({value: undefined, done: true});
+      });
+      this._requests = [];
+      this._close();
+    },
+
+    _onProgress: function PDFNetworkStreamRangeRequestReader_onProgress(evt) {
+      if (!this.isStreamingSupported && this.onProgress) {
+        this.onProgress({
+          loaded: evt.loaded
+        });
+      }
+    },
+
+    get isStreamingSupported() {
+      return false; // TODO allow progressive range bytes loading
+    },
+
+    read: function PDFNetworkStreamRangeRequestReader_read() {
+      if (this._queuedChunk !== null) {
+        var chunk = this._queuedChunk;
+        this._queuedChunk = null;
+        return Promise.resolve({value: chunk, done: false});
+      }
+      if (this._done) {
+        return Promise.resolve({value: undefined, done: true});
+      }
+      var requestCapability = createPromiseCapability();
+      this._requests.push(requestCapability);
+      return requestCapability.promise;
+    },
+
+    cancel: function PDFNetworkStreamRangeRequestReader_cancel(reason) {
+      this._done = true;
+      this._requests.forEach(function (requestCapability) {
+        requestCapability.resolve({value: undefined, done: true});
+      });
+      this._requests = [];
+      if (this._manager.isPendingRequest(this._requestId)) {
+        this._manager.abortRequest(this._requestId);
+      }
+      this._close();
+    }
+  };
+
+  coreWorker.setPDFNetworkStreamClass(PDFNetworkStream);
+
+  exports.PDFNetworkStream = PDFNetworkStream;
+  exports.NetworkManager = NetworkManager;
 }));
 
 
@@ -51521,4 +52278,4 @@ function initializedEvent() {
 }
 
 
-},{"pdf.js-controller":3}]},{},[8]);
+},{"pdf.js-controller":1}]},{},[8]);

@@ -1,8 +1,6 @@
 package org.kaakaa.pptmuseum.db;
 
 import org.bson.types.ObjectId;
-import org.kaakaa.pptmuseum.db.document.Comment;
-import org.kaakaa.pptmuseum.db.document.Comments;
 import org.kaakaa.pptmuseum.db.document.Document;
 import org.kaakaa.pptmuseum.db.document.Slide;
 import org.kaakaa.pptmuseum.db.mongo.MongoConnectionHelper;
@@ -53,27 +51,6 @@ public class MongoDBClient {
         return datastore.get(Document.class, new ObjectId(id));
     }
 
-    public String getComments(String id) {
-        Comments comments = datastore.find(Comments.class, "slideId =", id).get();
-        if (null == comments) {
-            return "No Comments.";
-        } else {
-            return comments.toHtml();
-        }
-    }
-
-    public Key<Comments> addComments(String id, String name, String comment) {
-        Comments comments = datastore.find(Comments.class, "slideId =", id).get();
-        if (null == comments) {
-            comments = new Comments();
-            comments.setSlideId(id);
-        }
-        Comment c = new Comment(name, comment);
-        // save commments
-        comments.addComment(c);
-        return datastore.save(comments);
-    }
-
     /**
      * <p>DELETE uploaded slides</p>
      *
@@ -83,8 +60,6 @@ public class MongoDBClient {
         datastore.delete(Slide.class, new ObjectId(id));
         Query<Document> documentQuery = datastore.createQuery(Document.class).filter("id =", new ObjectId(id));
         datastore.delete(documentQuery);
-        Query<Comments> commentsQuery = datastore.createQuery(Comments.class).filter("slideId =", id);
-        datastore.delete(commentsQuery);
     }
 
     public byte[] getThumbnail(String id) {

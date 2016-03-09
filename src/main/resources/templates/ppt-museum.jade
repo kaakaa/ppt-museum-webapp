@@ -60,22 +60,6 @@ html(lang="ja")
     script(src="/ppt-museum/startbootstrap-3-col-portfolio/js/jquery.js")
     script(src="/ppt-museum/startbootstrap-3-col-portfolio/js/bootstrap.min.js")
     :js
-      $("button[id^='show-comment-']").on('click', function() {
-        var id = $(this).data('id');
-        $('.comment-body-' + id).html('loading');
-
-        $.ajax({
-          type: 'GET',
-          url: '/ppt-museum/slide/comments/' + id,
-          success: function(data) {
-            $('#comment-body-' + id).html(data);
-          },
-          error: function(err) {
-            alert("error" + JSON.stringify(err));
-          }
-        });
-      });
-
       $("button[id^='remove-slide-']").on('click', function() {
         var id = $(this).data('id');
         $.ajax({
@@ -90,22 +74,3 @@ html(lang="ja")
           }
         });
       });
-
-      $('#comment-form-*').submit(function(event) {
-        event.preventDefault();
-
-        var form = $(this);
-        var id = $(this).data('id');
-        $.ajax({
-          type: 'POST',
-          url: 'pptmuseum/slide/comments/' + id,
-          data: form.serialize(),
-          success: function(data) {
-            console.log(data);
-          },
-          error: function(err) {
-            alert("error" + JSON.stringify(err));
-          }
-        })
-      });
-
