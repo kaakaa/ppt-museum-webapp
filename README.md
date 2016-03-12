@@ -15,7 +15,5 @@ This is webapp for [kaakaa/ppt-museum: ppt/pptx file uploader](https://github.co
 ## Build Docker image
 
 ```
-./gradlew installDist
-
-docker build -t ppt-museum-web .
+./gradlew buildDockerIMage 
 ```
