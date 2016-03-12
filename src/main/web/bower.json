@@ -21,24 +21,27 @@
     "tests"
   ],
   "dependencies": {
-    "bootstrap": "^3.3.6",
+    "bootswatch-dist": "superhero",
     "bootstrap-validator": "^0.10.1",
     "pdfjs-dist": "^1.4.135"
   },
   "overrides": {
-    "bootstrap": {
+    "bootswatch-dist": {
       "main": [
-        "dist/css/bootstrap.min.css",
-        "dist/css/bootstrap-theme.min.css",
-        "dist/fonts/*",
-        "dist/js/bootstrap.min.js"
+        "css/bootstrap.min.css",
+        "fonts/*",
+        "js/bootstrap.min.js"
       ]
     },
     "bootstrap-validator": {
-      "main": ["dist/validator.min.js"]
+      "main": [
+        "dist/validator.min.js"
+      ]
     },
     "jquery": {
-      "main": ["dist/jquery.min.js"]
+      "main": [
+        "dist/jquery.min.js"
+      ]
     },
     "pdfjs-dist": {
       "main": [

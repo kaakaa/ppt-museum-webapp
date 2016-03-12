@@ -8,6 +8,7 @@ html(lang="ja")
     meta(name="description", content="powerpoint uploader")
     meta(name="author", content="kaakaa")
 
+    link(href="/ppt-museum/css/style.css", rel="stylesheet")
     // bower:css
     link(rel='stylesheet', href='/ppt-museum/bootswatch-dist/css/bootstrap.min.css')
     // endbower
@@ -25,36 +26,47 @@ html(lang="ja")
           ul.nav.navbar-nav
             li
               a(href="/ppt-museum/upload") upload
+
     .container
-      .row
-        .col-lg-12
-          h3.page-header Upload Slide
+      block content
 
-      .row
-        form(method="post", action="/ppt-museum/upload", enctype="multipart/form-data", data-toggle="validator", role="form")
-          fieldset.form-group
-            label(for="slideTitle") Slide Title (required)
-            input.form-control(type="text", name="title", placeholder="Enter Slide Title", id="slide-title", required)
-          fieldset.form-group
-            label(for="Description") Description
-            input.form-control(type="text", name="desc", placeholder="Enter The Description")
-          fieldset.form-group
-            label(for="Description") Tags
-            input.form-control(type="text", name="tags", placeholder="exmple - java, morphia, docker")
-            small.text-muted Input keyword separated comma.
-          fieldset.form-group
-            label(for="Description") File (required)
-            input.form-control(type="file", name="file", required)
-            small.text-muted File format you can upload are .ppt/.pptx/.pdf .
-          button.btn.btn-primary(type="submit") Upload
-
-        footer
-          .row
-            .col-lg-12
-          p Copyright &copy; kaakaa 2016
+      footer
+        .row
+          .col-lg-12
+            p Copyright &copy; kaakaa 2016
 
     // bower:js
     script(src='/ppt-museum/jquery/dist/jquery.min.js')
     script(src='/ppt-museum/bootswatch-dist/js/bootstrap.min.js')
     script(src='/ppt-museum/bootstrap-validator/dist/validator.min.js')
     // endbower
+    :js
+      (function ($) {
+        $(document).ready(function() {
+          $(".navbar").hide();
+
+          $(function() {
+            $(window).scroll(function() {
+              if ($(this).scrollTop() > 300) {
+                $('.navbar').fadeIn();
+              } else {
+                $('.navbar').fadeOut();
+              }
+            });
+          });
+        });
+      }(jQuery));
+      $("button[id^='remove-slide-']").on('click', function() {
+        var id = $(this).data('id');
+        $.ajax({
+          type: 'DELETE',
+          url: '/ppt-museum/slide/delete/' + id,
+          success: function(data) {
+            console.log(data);
+            location.reload();
+          },
+          error: function(err) {
+            alert("error" + JSON.stringify(err));
+          }
+        });
+      });

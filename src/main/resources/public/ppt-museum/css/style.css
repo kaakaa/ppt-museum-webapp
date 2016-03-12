@@ -1,4 +1,7 @@
 /* my style */
+body {
+    padding-top: 20px;
+}
 @media (min-width: 768px)
 {
     .row-relative { position: relative; }

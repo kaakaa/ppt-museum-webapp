@@ -1,87 +1,29 @@
-doctype html
-html(lang="ja")
-  head
-    title= "ppt-museum"
-    meta(charset="utf-8")
-    meta(http-equiv="X-UA-Compatible", content="IE=edge")
-    meta(name="viewport",content="width=device-width, initial-scale=1")
-    meta(name="description", content="powerpoint uploader")
-    meta(name="author", content="kaakaa")
+extends ./layout
 
-    link(href="/ppt-museum/css/style.css", rel="stylesheet")
-    // bower:css
-    link(rel='stylesheet', href='/ppt-museum/bootstrap/dist/css/bootstrap.min.css')
-    link(rel='stylesheet', href='/ppt-museum/bootstrap/dist/css/bootstrap-theme.min.css')
-    // endbower
-  body
-    nav.navbar.navbar-inverse.navbar-fixed-top(role="navigation")
-      .container
-        .navbar-header
-          button.navbar-toggle(type="button", data-toggle="collapse", data-target="#bs-example-navbar-collapse-1")
-            span.sr-only Toggle navigation
-            span.icon-bar
-            span.icon-bar
-            span.icon-bar
-          a.navbar-brand(href="/") PPT-MUSEUM
-        .collapse.navbar-collapse#bs-example-navbar-collapse-1
-          ul.nav.navbar-nav
-            li
-              a(href="/ppt-museum/upload") upload
-    .container
-      .row
-        .col-lg-12
-          h1.page-header PPT-MUSEUM
-            small slide uploader
+block content
+  each tmp in helper.eachSlice(slides, 3)
+    .row.row-relative
+      each slide in tmp
+        include content
 
-      each tmp in helper.eachSlice(slides, 3)
-        .row.row-relative
-          each slide in tmp
-            include content
+  .row.text-center
+    .col-lg-12
+      if helper.getCeilSize() > 1
+        ul.pagination
+          if index - 1 > 0
+            li.page-item
+              a.page-link(href="/ppt-museum/slides/#{index-1}") &laquo;
+          else
+            li.page-item.disabled
+              a.page-link &laquo;
 
-      .row.text-center
-        .col-lg-12
-          if helper.getCeilSize() > 1
-            ul.pagination
-              if index - 1 > 0
-                li.page-item
-                  a.page-link(href="/ppt-museum/slides/#{index-1}") &laquo;
-              else
-                li.page-item.disabled
-                  a.page-link &laquo;
-  
-              each i in helper.getPagination()
-                li.page-item(class="#{i == index ? 'active' : '#'}")
-                  a.page-link(href="/ppt-museum/slides/#{i}") #{i}
-  
-              if index != helper.getCeilSize()
-                li.page-item
-                  a.page-link(href="/ppt-museum/slides/#{index+1}") &raquo;
-              else
-                li.page-item.disabled
-                  a.page-link &raquo;
+          each i in helper.getPagination()
+            li.page-item(class="#{i == index ? 'active' : '#'}")
+              a.page-link(href="/ppt-museum/slides/#{i}") #{i}
 
-      footer
-        .row
-          .col-lg-12
-            p Copyright &copy; kaakaa 2016
-
-    // bower:js
-    script(src='/ppt-museum/jquery/dist/jquery.min.js')
-    script(src='/ppt-museum/bootstrap/dist/js/bootstrap.min.js')
-    script(src='/ppt-museum/bootstrap-validator/dist/validator.min.js')
-    // endbower
-    :js
-      $("button[id^='remove-slide-']").on('click', function() {
-        var id = $(this).data('id');
-        $.ajax({
-          type: 'DELETE',
-          url: '/ppt-museum/slide/delete/' + id,
-          success: function(data) {
-            console.log(data);
-            location.reload();
-          },
-          error: function(err) {
-            alert("error" + JSON.stringify(err));
-          }
-        });
-      });
+          if index != helper.getCeilSize()
+            li.page-item
+              a.page-link(href="/ppt-museum/slides/#{index+1}") &raquo;
+          else
+            li.page-item.disabled
+              a.page-link &raquo;
