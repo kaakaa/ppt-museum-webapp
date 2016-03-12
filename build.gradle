@@ -6,6 +6,7 @@ plugins {
     id 'application'
     id 'com.moowork.grunt' version '0.11'
     id 'com.moowork.node' version '0.11'
+    id 'com.bmuschko.docker-remote-api' version '2.6.6'
     id 'com.github.kt3k.coveralls' version '2.5.0'
 }
 
@@ -67,3 +68,17 @@ node {
 grunt_build.dependsOn 'installGrunt'
 grunt_build.dependsOn 'npmInstall'
 processResources.dependsOn grunt_build
+
+// build Dockerfile
+docker {
+    url = 'unix:///var/run/docker.sock'
+}
+
+import com.bmuschko.gradle.docker.tasks.image.DockerBuildImage
+
+installDist.dependsOn assemble
+task buildImage(type: DockerBuildImage) {
+    dependsOn installDist
+    inputDir = rootDir
+    tag = 'kaakaa/ppt-museum-web'
+}
