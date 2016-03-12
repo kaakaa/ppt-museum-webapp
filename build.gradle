@@ -40,6 +40,15 @@ dependencies {
     testCompile 'org.spockframework:spock-core:1.0-groovy-2.4'
 }
 
+sourceSets {
+    main {
+        resources {
+            srcDir 'src/main/resources' // default
+            srcDir 'src/main/web/dist_packages' // frontend packages
+        }
+    }
+}
+
 jar {
     manifest {
         attributes 'Implementation-Title': 'ppt-museum', 'Implementation-Versio': version
@@ -61,7 +70,6 @@ test {
 // for installing node
 node {
     version = '4.4.0'
-    // version = '0.10.22'
     download = true
     workDir = file("${project.projectDir}/src/main/web")
     nodeModulesDir = file("${project.projectDir}/src/main/web")
@@ -84,7 +92,7 @@ docker {
 import com.bmuschko.gradle.docker.tasks.image.DockerBuildImage
 
 installDist.dependsOn assemble
-task buildImage(type: DockerBuildImage) {
+task buildDockerImage(type: DockerBuildImage) {
     dependsOn installDist
     inputDir = rootDir
     tag = 'kaakaa/ppt-museum-web'
