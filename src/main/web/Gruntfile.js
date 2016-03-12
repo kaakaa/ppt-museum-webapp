@@ -31,7 +31,7 @@ module.exports = function(grunt) {
     bower: {
       dev: {
         base: 'components/public/ppt-museum',
-        dest: 'dist_packages/public/ppt-museum/',
+        dest: 'dist_packages/public/ppt-museum',
         options: {
           paths: {
             bowerDirectory: "components/public/ppt-museum"
