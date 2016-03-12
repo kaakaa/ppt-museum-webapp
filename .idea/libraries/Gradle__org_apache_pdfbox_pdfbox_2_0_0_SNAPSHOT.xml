@@ -1,11 +1,11 @@
 <component name="libraryTable">
   <library name="Gradle: org.apache.pdfbox:pdfbox:2.0.0-SNAPSHOT">
     <CLASSES>
-      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.pdfbox/pdfbox/2.0.0-SNAPSHOT/560a769d5d14d69696313fd6f81f7a932cc8edcb/pdfbox-2.0.0-SNAPSHOT.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.pdfbox/pdfbox/2.0.0-SNAPSHOT/626efa27e7fee4340e4e7eea6e210f28c4626e10/pdfbox-2.0.0-SNAPSHOT.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>
-      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.pdfbox/pdfbox/2.0.0-SNAPSHOT/1352cc4782f2ec62159125b01fb925258ae54a98/pdfbox-2.0.0-SNAPSHOT-sources.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.pdfbox/pdfbox/2.0.0-SNAPSHOT/59ae435f261a6936fee45254ebe42632a45d2134/pdfbox-2.0.0-SNAPSHOT-sources.jar!/" />
     </SOURCES>
   </library>
 </component>

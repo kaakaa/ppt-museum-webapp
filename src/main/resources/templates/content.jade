@@ -3,7 +3,7 @@
     img.img-responsive(src="/ppt-museum/thumbnail/#{slide.id}")
   h3
     a(href="/ppt-museum/slide/#{slide.id}") #{slide.title}
-    small.text-muted "- #{slide.getTime()}"
+    small.text-muted - #{slide.getTime()}
     button.btn.btn-info-outline(id="remove-slide-#{slide.id}", type="button", data-id="#{slide.id}")
       span.glyphicon.glyphicon-remove
   p #{slide.description}

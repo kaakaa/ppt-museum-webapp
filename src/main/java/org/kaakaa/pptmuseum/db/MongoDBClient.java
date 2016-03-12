@@ -37,8 +37,12 @@ public class MongoDBClient {
      *
      * @return all slide information
      */
-    public List<Slide> searchAll() {
-        return datastore.createQuery(Slide.class).asList();
+    public List<Slide> searchAll(int offset, int limit) {
+        return datastore.createQuery(Slide.class).order("-_id").offset((offset - 1) * limit).limit(limit).asList();
+    }
+
+    public int allSlideSize() {
+        return datastore.createQuery(Slide.class).asList().size();
     }
 
     /**

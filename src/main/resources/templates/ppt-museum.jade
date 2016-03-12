@@ -38,19 +38,25 @@ html(lang="ja")
 
       .row.text-center
         .col-lg-12
-          ul.pagination
-            li
-              a(href="#") &laquo;
-            li.active
-              a(href="#") 1
-            li
-              a(href="#") 2
-            li
-              a(href="#") 3
-            li
-              a(href="#") 4
-            li
-              a(href="#") &raquo;
+          if helper.getCeilSize() > 1
+            ul.pagination
+              if index - 1 > 0
+                li.page-item
+                  a.page-link(href="/ppt-museum/slides/#{index-1}") &laquo;
+              else
+                li.page-item.disabled
+                  a.page-link &laquo;
+  
+              each i in helper.getPagination()
+                li.page-item(class="#{i == index ? 'active' : '#'}")
+                  a.page-link(href="/ppt-museum/slides/#{i}") #{i}
+  
+              if index != helper.getCeilSize()
+                li.page-item
+                  a.page-link(href="/ppt-museum/slides/#{index+1}") &raquo;
+              else
+                li.page-item.disabled
+                  a.page-link &raquo;
 
       footer
         .row

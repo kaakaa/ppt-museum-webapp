@@ -8,14 +8,17 @@ import org.kaakaa.pptmuseum.db.document.Document;
 import org.kaakaa.pptmuseum.db.document.Slide;
 import org.kaakaa.pptmuseum.http.RequestUtil;
 import org.kaakaa.pptmuseum.jade.ListHelper;
-import spark.ModelAndView;
+import spark.*;
 import spark.template.jade.JadeTemplateEngine;
 
 import java.net.UnknownHostException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.CompletionStage;
 import java.util.concurrent.TimeoutException;
+import java.util.function.BiFunction;
+import java.util.function.IntFunction;
 
 import static spark.Spark.*;
 
@@ -33,16 +36,10 @@ public class Main {
         staticFileLocation("/public");
 
         // top page
-        get("/", (rq, rs) -> {
-            rs.redirect("/ppt-museum");
-            return "redirect to /";
-        });
-        get("/ppt-museum", (rq, rs) -> {
-            Map<String, Object> map = new HashMap<>();
-            map.put("slides", mongoDBClient.searchAll());
-            map.put("helper", new ListHelper());
-            return new ModelAndView(map, "ppt-museum");
-        }, new JadeTemplateEngine());
+        get("/", (rq, rs) -> getTopPageView("1"), new JadeTemplateEngine());
+        get("/ppt-museum", (rq, rs) -> getTopPageView("1"), new JadeTemplateEngine());
+        get("/ppt-museum/slides", (rq, rs) -> getTopPageView("1"), new JadeTemplateEngine());
+        get("/ppt-museum/slides/:index", (rq, rs) -> getTopPageView(rq.params("index")), new JadeTemplateEngine());
 
 
         // upload page
@@ -95,5 +92,19 @@ public class Main {
             rs.raw().getOutputStream().close();
             return rs.raw();
         });
+    }
+
+    private static ModelAndView getTopPageView(String index) {
+        int i = 0;
+        try {
+            i = Integer.parseInt(index);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        Map<String, Object> map = new HashMap<>();
+        map.put("slides", mongoDBClient.searchAll(i, 15));
+        map.put("helper", new ListHelper(mongoDBClient.allSlideSize(), 15));
+        map.put("index", index);
+        return new ModelAndView(map, "ppt-museum");
     }
 }
