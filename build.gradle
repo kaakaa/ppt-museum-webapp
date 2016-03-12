@@ -67,6 +67,8 @@ test {
     finalizedBy jacocoTestReport
 }
 
+build.dependsOn installDist
+
 // for installing node
 node {
     version = '4.4.0'
