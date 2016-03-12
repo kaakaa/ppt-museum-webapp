@@ -93,7 +93,7 @@ import com.bmuschko.gradle.docker.tasks.image.DockerBuildImage
 
 installDist.dependsOn assemble
 task buildDockerImage(type: DockerBuildImage) {
-    dependsOn installDist
+    dependsOn clean, installDist
     inputDir = rootDir
     tag = 'kaakaa/ppt-museum-web'
 }

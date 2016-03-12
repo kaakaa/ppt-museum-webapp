@@ -8,9 +8,11 @@ html(lang="ja")
     meta(name="description", content="powerpoint uploader")
     meta(name="author", content="kaakaa")
 
-    link(href="/ppt-museum/startbootstrap-3-col-portfolio/css/bootstrap.min.css", rel="stylesheet")
-    link(href="/ppt-museum/startbootstrap-3-col-portfolio/css/3-col-portfolio.css", rel="stylesheet")
     link(href="/ppt-museum/css/style.css", rel="stylesheet")
+    // bower:css
+    link(rel='stylesheet', href='/ppt-museum/bootstrap/dist/css/bootstrap.min.css')
+    link(rel='stylesheet', href='/ppt-museum/bootstrap/dist/css/bootstrap-theme.min.css')
+    // endbower
   body
     nav.navbar.navbar-inverse.navbar-fixed-top(role="navigation")
       .container
@@ -63,8 +65,11 @@ html(lang="ja")
           .col-lg-12
             p Copyright &copy; kaakaa 2016
 
-    script(src="/ppt-museum/startbootstrap-3-col-portfolio/js/jquery.js")
-    script(src="/ppt-museum/startbootstrap-3-col-portfolio/js/bootstrap.min.js")
+    // bower:js
+    script(src='/ppt-museum/jquery/dist/jquery.min.js')
+    script(src='/ppt-museum/bootstrap/dist/js/bootstrap.min.js')
+    script(src='/ppt-museum/bootstrap-validator/dist/validator.min.js')
+    // endbower
     :js
       $("button[id^='remove-slide-']").on('click', function() {
         var id = $(this).data('id');

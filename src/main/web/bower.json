@@ -16,11 +16,34 @@
     "**/.*",
     "node_modules",
     "bower_components",
+    "components",
     "test",
     "tests"
   ],
   "dependencies": {
+    "bootstrap": "^3.3.6",
     "bootstrap-validator": "^0.10.1",
-    "bootstrap": "^3.3.6"
+    "pdfjs-dist": "^1.4.135"
+  },
+  "overrides": {
+    "bootstrap": {
+      "main": [
+        "dist/css/bootstrap.min.css",
+        "dist/css/bootstrap-theme.min.css",
+        "dist/fonts/*",
+        "dist/js/bootstrap.min.js"
+      ]
+    },
+    "bootstrap-validator": {
+      "main": ["dist/validator.min.js"]
+    },
+    "jquery": {
+      "main": ["dist/jquery.min.js"]
+    },
+    "pdfjs-dist": {
+      "main": [
+        "cmaps/*"
+      ]
+    }
   }
 }

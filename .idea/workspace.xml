@@ -2,12 +2,198 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="edba5995-bfca-4709-b7bf-0bc42d7d9548" name="Default" comment="">
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Gruntfile.js" afterPath="$PROJECT_DIR$/src/main/web/Gruntfile.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/src/main/web/package.json" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/public/ppt-museum/cmaps/78-EUC-H.bcmap" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/public/ppt-museum/cmaps/78-EUC-V.bcmap" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/public/ppt-museum/cmaps/78-H.bcmap" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/public/ppt-museum/cmaps/78-RKSJ-H.bcmap" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/public/ppt-museum/cmaps/78-RKSJ-V.bcmap" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/public/ppt-museum/cmaps/78-V.bcmap" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/public/ppt-museum/cmaps/78ms-RKSJ-H.bcmap" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/public/ppt-museum/cmaps/78ms-RKSJ-V.bcmap" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/public/ppt-museum/cmaps/83pv-RKSJ-H.bcmap" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/public/ppt-museum/cmaps/90ms-RKSJ-H.bcmap" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/public/ppt-museum/cmaps/90ms-RKSJ-V.bcmap" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/public/ppt-museum/cmaps/90msp-RKSJ-H.bcmap" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/public/ppt-museum/cmaps/90msp-RKSJ-V.bcmap" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/public/ppt-museum/cmaps/90pv-RKSJ-H.bcmap" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/public/ppt-museum/cmaps/90pv-RKSJ-V.bcmap" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/public/ppt-museum/cmaps/Add-H.bcmap" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/public/ppt-museum/cmaps/Add-RKSJ-H.bcmap" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/public/ppt-museum/cmaps/Add-RKSJ-V.bcmap" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/public/ppt-museum/cmaps/Add-V.bcmap" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/public/ppt-museum/cmaps/Adobe-CNS1-0.bcmap" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/public/ppt-museum/cmaps/Adobe-CNS1-1.bcmap" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/public/ppt-museum/cmaps/Adobe-CNS1-2.bcmap" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/public/ppt-museum/cmaps/Adobe-CNS1-3.bcmap" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/public/ppt-museum/cmaps/Adobe-CNS1-4.bcmap" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/public/ppt-museum/cmaps/Adobe-CNS1-5.bcmap" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/public/ppt-museum/cmaps/Adobe-CNS1-6.bcmap" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/public/ppt-museum/cmaps/Adobe-CNS1-UCS2.bcmap" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/public/ppt-museum/cmaps/Adobe-GB1-0.bcmap" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/public/ppt-museum/cmaps/Adobe-GB1-1.bcmap" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/public/ppt-museum/cmaps/Adobe-GB1-2.bcmap" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/public/ppt-museum/cmaps/Adobe-GB1-3.bcmap" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/public/ppt-museum/cmaps/Adobe-GB1-4.bcmap" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/public/ppt-museum/cmaps/Adobe-GB1-5.bcmap" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/public/ppt-museum/cmaps/Adobe-GB1-UCS2.bcmap" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/public/ppt-museum/cmaps/Adobe-Japan1-0.bcmap" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/public/ppt-museum/cmaps/Adobe-Japan1-1.bcmap" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/public/ppt-museum/cmaps/Adobe-Japan1-2.bcmap" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/public/ppt-museum/cmaps/Adobe-Japan1-3.bcmap" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/public/ppt-museum/cmaps/Adobe-Japan1-4.bcmap" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/public/ppt-museum/cmaps/Adobe-Japan1-5.bcmap" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/public/ppt-museum/cmaps/Adobe-Japan1-6.bcmap" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/public/ppt-museum/cmaps/Adobe-Japan1-UCS2.bcmap" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/public/ppt-museum/cmaps/Adobe-Korea1-0.bcmap" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/public/ppt-museum/cmaps/Adobe-Korea1-1.bcmap" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/public/ppt-museum/cmaps/Adobe-Korea1-2.bcmap" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/public/ppt-museum/cmaps/Adobe-Korea1-UCS2.bcmap" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/public/ppt-museum/cmaps/B5-H.bcmap" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/public/ppt-museum/cmaps/B5-V.bcmap" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/public/ppt-museum/cmaps/B5pc-H.bcmap" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/public/ppt-museum/cmaps/B5pc-V.bcmap" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/public/ppt-museum/cmaps/CNS-EUC-H.bcmap" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/public/ppt-museum/cmaps/CNS-EUC-V.bcmap" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/public/ppt-museum/cmaps/CNS1-H.bcmap" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/public/ppt-museum/cmaps/CNS1-V.bcmap" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/public/ppt-museum/cmaps/CNS2-H.bcmap" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/public/ppt-museum/cmaps/CNS2-V.bcmap" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/public/ppt-museum/cmaps/ETHK-B5-H.bcmap" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/public/ppt-museum/cmaps/ETHK-B5-V.bcmap" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/public/ppt-museum/cmaps/ETen-B5-H.bcmap" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/public/ppt-museum/cmaps/ETen-B5-V.bcmap" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/public/ppt-museum/cmaps/ETenms-B5-H.bcmap" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/public/ppt-museum/cmaps/ETenms-B5-V.bcmap" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/public/ppt-museum/cmaps/EUC-H.bcmap" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/public/ppt-museum/cmaps/EUC-V.bcmap" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/public/ppt-museum/cmaps/Ext-H.bcmap" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/public/ppt-museum/cmaps/Ext-RKSJ-H.bcmap" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/public/ppt-museum/cmaps/Ext-RKSJ-V.bcmap" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/public/ppt-museum/cmaps/Ext-V.bcmap" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/public/ppt-museum/cmaps/GB-EUC-H.bcmap" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/public/ppt-museum/cmaps/GB-EUC-V.bcmap" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/public/ppt-museum/cmaps/GB-H.bcmap" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/public/ppt-museum/cmaps/GB-V.bcmap" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/public/ppt-museum/cmaps/GBK-EUC-H.bcmap" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/public/ppt-museum/cmaps/GBK-EUC-V.bcmap" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/public/ppt-museum/cmaps/GBK2K-H.bcmap" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/public/ppt-museum/cmaps/GBK2K-V.bcmap" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/public/ppt-museum/cmaps/GBKp-EUC-H.bcmap" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/public/ppt-museum/cmaps/GBKp-EUC-V.bcmap" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/public/ppt-museum/cmaps/GBT-EUC-H.bcmap" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/public/ppt-museum/cmaps/GBT-EUC-V.bcmap" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/public/ppt-museum/cmaps/GBT-H.bcmap" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/public/ppt-museum/cmaps/GBT-V.bcmap" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/public/ppt-museum/cmaps/GBTpc-EUC-H.bcmap" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/public/ppt-museum/cmaps/GBTpc-EUC-V.bcmap" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/public/ppt-museum/cmaps/GBpc-EUC-H.bcmap" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/public/ppt-museum/cmaps/GBpc-EUC-V.bcmap" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/public/ppt-museum/cmaps/H.bcmap" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/public/ppt-museum/cmaps/HKdla-B5-H.bcmap" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/public/ppt-museum/cmaps/HKdla-B5-V.bcmap" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/public/ppt-museum/cmaps/HKdlb-B5-H.bcmap" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/public/ppt-museum/cmaps/HKdlb-B5-V.bcmap" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/public/ppt-museum/cmaps/HKgccs-B5-H.bcmap" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/public/ppt-museum/cmaps/HKgccs-B5-V.bcmap" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/public/ppt-museum/cmaps/HKm314-B5-H.bcmap" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/public/ppt-museum/cmaps/HKm314-B5-V.bcmap" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/public/ppt-museum/cmaps/HKm471-B5-H.bcmap" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/public/ppt-museum/cmaps/HKm471-B5-V.bcmap" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/public/ppt-museum/cmaps/HKscs-B5-H.bcmap" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/public/ppt-museum/cmaps/HKscs-B5-V.bcmap" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/public/ppt-museum/cmaps/Hankaku.bcmap" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/public/ppt-museum/cmaps/Hiragana.bcmap" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/public/ppt-museum/cmaps/KSC-EUC-H.bcmap" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/public/ppt-museum/cmaps/KSC-EUC-V.bcmap" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/public/ppt-museum/cmaps/KSC-H.bcmap" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/public/ppt-museum/cmaps/KSC-Johab-H.bcmap" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/public/ppt-museum/cmaps/KSC-Johab-V.bcmap" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/public/ppt-museum/cmaps/KSC-V.bcmap" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/public/ppt-museum/cmaps/KSCms-UHC-H.bcmap" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/public/ppt-museum/cmaps/KSCms-UHC-HW-H.bcmap" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/public/ppt-museum/cmaps/KSCms-UHC-HW-V.bcmap" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/public/ppt-museum/cmaps/KSCms-UHC-V.bcmap" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/public/ppt-museum/cmaps/KSCpc-EUC-H.bcmap" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/public/ppt-museum/cmaps/KSCpc-EUC-V.bcmap" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/public/ppt-museum/cmaps/Katakana.bcmap" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/public/ppt-museum/cmaps/LICENSE" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/public/ppt-museum/cmaps/NWP-H.bcmap" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/public/ppt-museum/cmaps/NWP-V.bcmap" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/public/ppt-museum/cmaps/RKSJ-H.bcmap" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/public/ppt-museum/cmaps/RKSJ-V.bcmap" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/public/ppt-museum/cmaps/Roman.bcmap" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/public/ppt-museum/cmaps/UniCNS-UCS2-H.bcmap" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/public/ppt-museum/cmaps/UniCNS-UCS2-V.bcmap" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/public/ppt-museum/cmaps/UniCNS-UTF16-H.bcmap" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/public/ppt-museum/cmaps/UniCNS-UTF16-V.bcmap" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/public/ppt-museum/cmaps/UniCNS-UTF32-H.bcmap" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/public/ppt-museum/cmaps/UniCNS-UTF32-V.bcmap" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/public/ppt-museum/cmaps/UniCNS-UTF8-H.bcmap" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/public/ppt-museum/cmaps/UniCNS-UTF8-V.bcmap" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/public/ppt-museum/cmaps/UniGB-UCS2-H.bcmap" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/public/ppt-museum/cmaps/UniGB-UCS2-V.bcmap" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/public/ppt-museum/cmaps/UniGB-UTF16-H.bcmap" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/public/ppt-museum/cmaps/UniGB-UTF16-V.bcmap" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/public/ppt-museum/cmaps/UniGB-UTF32-H.bcmap" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/public/ppt-museum/cmaps/UniGB-UTF32-V.bcmap" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/public/ppt-museum/cmaps/UniGB-UTF8-H.bcmap" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/public/ppt-museum/cmaps/UniGB-UTF8-V.bcmap" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/public/ppt-museum/cmaps/UniJIS-UCS2-H.bcmap" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/public/ppt-museum/cmaps/UniJIS-UCS2-HW-H.bcmap" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/public/ppt-museum/cmaps/UniJIS-UCS2-HW-V.bcmap" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/public/ppt-museum/cmaps/UniJIS-UCS2-V.bcmap" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/public/ppt-museum/cmaps/UniJIS-UTF16-H.bcmap" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/public/ppt-museum/cmaps/UniJIS-UTF16-V.bcmap" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/public/ppt-museum/cmaps/UniJIS-UTF32-H.bcmap" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/public/ppt-museum/cmaps/UniJIS-UTF32-V.bcmap" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/public/ppt-museum/cmaps/UniJIS-UTF8-H.bcmap" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/public/ppt-museum/cmaps/UniJIS-UTF8-V.bcmap" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/public/ppt-museum/cmaps/UniJIS2004-UTF16-H.bcmap" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/public/ppt-museum/cmaps/UniJIS2004-UTF16-V.bcmap" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/public/ppt-museum/cmaps/UniJIS2004-UTF32-H.bcmap" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/public/ppt-museum/cmaps/UniJIS2004-UTF32-V.bcmap" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/public/ppt-museum/cmaps/UniJIS2004-UTF8-H.bcmap" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/public/ppt-museum/cmaps/UniJIS2004-UTF8-V.bcmap" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/public/ppt-museum/cmaps/UniJISPro-UCS2-HW-V.bcmap" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/public/ppt-museum/cmaps/UniJISPro-UCS2-V.bcmap" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/public/ppt-museum/cmaps/UniJISPro-UTF8-V.bcmap" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/public/ppt-museum/cmaps/UniJISX0213-UTF32-H.bcmap" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/public/ppt-museum/cmaps/UniJISX0213-UTF32-V.bcmap" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/public/ppt-museum/cmaps/UniJISX02132004-UTF32-H.bcmap" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/public/ppt-museum/cmaps/UniJISX02132004-UTF32-V.bcmap" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/public/ppt-museum/cmaps/UniKS-UCS2-H.bcmap" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/public/ppt-museum/cmaps/UniKS-UCS2-V.bcmap" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/public/ppt-museum/cmaps/UniKS-UTF16-H.bcmap" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/public/ppt-museum/cmaps/UniKS-UTF16-V.bcmap" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/public/ppt-museum/cmaps/UniKS-UTF32-H.bcmap" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/public/ppt-museum/cmaps/UniKS-UTF32-V.bcmap" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/public/ppt-museum/cmaps/UniKS-UTF8-H.bcmap" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/public/ppt-museum/cmaps/UniKS-UTF8-V.bcmap" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/public/ppt-museum/cmaps/V.bcmap" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/public/ppt-museum/cmaps/WP-Symbol.bcmap" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/public/ppt-museum/startbootstrap-3-col-portfolio/LICENSE" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/public/ppt-museum/startbootstrap-3-col-portfolio/README.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/public/ppt-museum/startbootstrap-3-col-portfolio/css/3-col-portfolio.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/public/ppt-museum/startbootstrap-3-col-portfolio/css/bootstrap.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/public/ppt-museum/startbootstrap-3-col-portfolio/css/bootstrap.min.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/public/ppt-museum/startbootstrap-3-col-portfolio/fonts/glyphicons-halflings-regular.eot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/public/ppt-museum/startbootstrap-3-col-portfolio/fonts/glyphicons-halflings-regular.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/public/ppt-museum/startbootstrap-3-col-portfolio/fonts/glyphicons-halflings-regular.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/public/ppt-museum/startbootstrap-3-col-portfolio/fonts/glyphicons-halflings-regular.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/public/ppt-museum/startbootstrap-3-col-portfolio/fonts/glyphicons-halflings-regular.woff2" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/public/ppt-museum/startbootstrap-3-col-portfolio/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/public/ppt-museum/startbootstrap-3-col-portfolio/js/bootstrap.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/public/ppt-museum/startbootstrap-3-col-portfolio/js/bootstrap.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/public/ppt-museum/startbootstrap-3-col-portfolio/js/jquery.js" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build.gradle" afterPath="$PROJECT_DIR$/build.gradle" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ppt-museum-webapp.iml" afterPath="$PROJECT_DIR$/ppt-museum-webapp.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/templates/ppt-museum.jade" afterPath="$PROJECT_DIR$/src/main/resources/templates/ppt-museum.jade" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/templates/slide.jade" afterPath="$PROJECT_DIR$/src/main/resources/templates/slide.jade" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/templates/upload.jade" afterPath="$PROJECT_DIR$/src/main/resources/templates/upload.jade" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/web/Gruntfile.js" afterPath="$PROJECT_DIR$/src/main/web/Gruntfile.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/web/bower.json" afterPath="$PROJECT_DIR$/src/main/web/bower.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/web/package.json" afterPath="$PROJECT_DIR$/src/main/web/package.json" />
     </list>
     <list id="65090484-70f2-4955-b4c8-34e164a5b772" name="New changelist" comment="" />
     <ignored path="ppt-museum-webapp.iws" />
@@ -62,24 +248,6 @@
                 <option name="myItemId" value="Tasks" />
                 <option name="myItemType" value="com.intellij.openapi.externalSystem.view.TasksNode" />
               </PATH_ELEMENT>
-              <PATH_ELEMENT>
-                <option name="myItemId" value="verification" />
-                <option name="myItemType" value="com.intellij.openapi.externalSystem.view.TasksNode$1" />
-              </PATH_ELEMENT>
-            </PATH>
-            <PATH>
-              <PATH_ELEMENT>
-                <option name="myItemId" value="" />
-                <option name="myItemType" value="com.intellij.openapi.externalSystem.view.ExternalProjectsStructure$RootNode" />
-              </PATH_ELEMENT>
-              <PATH_ELEMENT>
-                <option name="myItemId" value="ppt-museum-webapp" />
-                <option name="myItemType" value="com.intellij.openapi.externalSystem.view.ProjectNode" />
-              </PATH_ELEMENT>
-              <PATH_ELEMENT>
-                <option name="myItemId" value="Tasks" />
-                <option name="myItemType" value="com.intellij.openapi.externalSystem.view.TasksNode" />
-              </PATH_ELEMENT>
             </PATH>
             <PATH>
               <PATH_ELEMENT>
@@ -99,6 +267,42 @@
                 <option name="myItemType" value="com.intellij.openapi.externalSystem.view.TasksNode$1" />
               </PATH_ELEMENT>
             </PATH>
+            <PATH>
+              <PATH_ELEMENT>
+                <option name="myItemId" value="" />
+                <option name="myItemType" value="com.intellij.openapi.externalSystem.view.ExternalProjectsStructure$RootNode" />
+              </PATH_ELEMENT>
+              <PATH_ELEMENT>
+                <option name="myItemId" value="ppt-museum-webapp" />
+                <option name="myItemType" value="com.intellij.openapi.externalSystem.view.ProjectNode" />
+              </PATH_ELEMENT>
+              <PATH_ELEMENT>
+                <option name="myItemId" value="Tasks" />
+                <option name="myItemType" value="com.intellij.openapi.externalSystem.view.TasksNode" />
+              </PATH_ELEMENT>
+              <PATH_ELEMENT>
+                <option name="myItemId" value="docker" />
+                <option name="myItemType" value="com.intellij.openapi.externalSystem.view.TasksNode$1" />
+              </PATH_ELEMENT>
+            </PATH>
+            <PATH>
+              <PATH_ELEMENT>
+                <option name="myItemId" value="" />
+                <option name="myItemType" value="com.intellij.openapi.externalSystem.view.ExternalProjectsStructure$RootNode" />
+              </PATH_ELEMENT>
+              <PATH_ELEMENT>
+                <option name="myItemId" value="ppt-museum-webapp" />
+                <option name="myItemType" value="com.intellij.openapi.externalSystem.view.ProjectNode" />
+              </PATH_ELEMENT>
+              <PATH_ELEMENT>
+                <option name="myItemId" value="Tasks" />
+                <option name="myItemType" value="com.intellij.openapi.externalSystem.view.TasksNode" />
+              </PATH_ELEMENT>
+              <PATH_ELEMENT>
+                <option name="myItemId" value="build" />
+                <option name="myItemType" value="com.intellij.openapi.externalSystem.view.TasksNode$1" />
+              </PATH_ELEMENT>
+            </PATH>
           </tree_state>
         </projects_view>
       </state>
@@ -109,11 +313,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="build.gradle" pinned="false" current-in-tab="true">
+      <file leaf-file-name="build.gradle" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/build.gradle">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.32346243">
-              <caret line="62" column="19" selection-start-line="62" selection-start-column="19" selection-end-line="62" selection-end-column="19" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="57" column="0" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -122,32 +326,29 @@
       <file leaf-file-name="bower.json" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/web/bower.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state vertical-scroll-proportion="-24.185184">
+              <caret line="44" column="16" selection-start-line="44" selection-start-column="16" selection-end-line="44" selection-end-column="16" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Slide.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/kaakaa/pptmuseum/db/document/Slide.java">
+      <file leaf-file-name="slide.jade" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/build/resources/main/templates/slide.jade">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="19" column="39" selection-start-line="19" selection-start-column="39" selection-end-line="19" selection-end-column="39" />
+              <caret line="29" column="21" selection-start-line="29" selection-start-column="21" selection-end-line="29" selection-end-column="21" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ListHelper.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/kaakaa/pptmuseum/jade/ListHelper.java">
+      <file leaf-file-name="slide.jade" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/slide.jade">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="40" column="63" selection-start-line="40" selection-start-column="63" selection-end-line="40" selection-end-column="63" />
-              <folding>
-                <element signature="e#969#970#0" expanded="true" />
-                <element signature="e#1041#1042#0" expanded="true" />
-              </folding>
+              <caret line="45" column="12" selection-start-line="45" selection-start-column="12" selection-end-line="45" selection-end-column="12" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -156,27 +357,17 @@
         <entry file="file://$PROJECT_DIR$/src/main/resources/templates/ppt-museum.jade">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="55" column="28" selection-start-line="55" selection-start-column="28" selection-end-line="55" selection-end-column="28" />
+              <caret line="72" column="6" selection-start-line="72" selection-start-column="6" selection-end-line="72" selection-end-column="6" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="upload.jade" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/upload.jade">
+      <file leaf-file-name="Gruntfile.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/web/Gruntfile.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="36" column="17" selection-start-line="36" selection-start-column="17" selection-end-line="36" selection-end-column="17" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="package.json" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/web/package.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-8.0">
-              <caret line="12" column="21" selection-start-line="12" selection-start-column="21" selection-end-line="12" selection-end-column="21" />
+            <state vertical-scroll-proportion="0.38496584">
+              <caret line="44" column="49" selection-start-line="44" selection-start-column="49" selection-end-line="44" selection-end-column="49" />
               <folding />
             </state>
           </provider>
@@ -186,31 +377,28 @@
         <entry file="file://$PROJECT_DIR$/src/main/web/index.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <caret line="26" column="30" selection-start-line="26" selection-start-column="30" selection-end-line="26" selection-end-column="30" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Gruntfile.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/web/Gruntfile.js">
+      <file leaf-file-name="pdf.js-controller.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/web/dist_packages/public/ppt-museum/pdfjs-controller/js/pdf.js-controller.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+              <caret line="34" column="40" selection-start-line="34" selection-start-column="40" selection-end-line="34" selection-end-column="40" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Document.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/kaakaa/pptmuseum/db/document/Document.java">
+      <file leaf-file-name="pdf.js-controller.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/build/resources/main/public/ppt-museum/pdfjs-controller/js/pdf.js-controller.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
-              <folding>
-                <element signature="e#642#643#0" expanded="true" />
-                <element signature="e#684#685#0" expanded="true" />
-              </folding>
+              <caret line="52359" column="0" selection-start-line="52359" selection-start-column="0" selection-end-line="52359" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -274,13 +462,13 @@
                 <option name="name" value="buildDependents" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="buildDockerImage" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
                 <option name="description" value="Displays all buildscript dependencies declared in root project 'ppt-museum-webapp'." />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
                 <option name="name" value="buildEnvironment" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
-                <option name="name" value="buildImage" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
                 <option name="description" value="Assembles and tests this project and all projects it depends on." />
@@ -481,7 +669,7 @@
     </option>
     <option name="modificationStamps">
       <map>
-        <entry key="$PROJECT_DIR$" value="1457776629515" />
+        <entry key="$PROJECT_DIR$" value="1457790015287" />
       </map>
     </option>
     <option name="projectBuildClasspath">
@@ -496,8 +684,8 @@
                       <ExternalModuleBuildClasspathPojo>
                         <option name="entries">
                           <list>
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/commons-collections/commons-collections/3.2.1/fa095ef874374e5b2a11f8b06c26a5d68c7cb3a4/commons-collections-3.2.1-sources.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/commons-collections/commons-collections/3.2.1/761ea405b9b37ced573d2df0d1e3a4e0f9edc668/commons-collections-3.2.1.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.projectlombok/lombok/1.16.4/450329f3f47a26833270f49da5f9acc5d3d6bb37/lombok-1.16.4-sources.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.projectlombok/lombok/1.16.4/398110b5c579cc69d7be47600c2ff810c5c34487/lombok-1.16.4.jar" />
                             <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.sparkjava/spark-core/2.3/99b3f92f15b266c30c5d43defdd4ed92f8dfe25e/spark-core-2.3-sources.jar" />
                             <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.sparkjava/spark-core/2.3/b0326d867f1ecbc8d624f64175d2aa5809bb0599/spark-core-2.3.jar" />
                             <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.sparkjava/spark-template-jade/2.3/1917397c4b7ca3c2d66d3a872437107187b9fe19/spark-template-jade-2.3-sources.jar" />
@@ -513,8 +701,6 @@
                             <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.httpcomponents/httpmime/4.5.1/2aab83661676c842d50995fe934550e3e23b3c6/httpmime-4.5.1-sources.jar" />
                             <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.httpcomponents/httpmime/4.5.1/96823b9421ebb9f490dec837d9f96134e864e3a7/httpmime-4.5.1.jar" />
                             <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.pdfbox/pdfbox/2.0.0-SNAPSHOT/626efa27e7fee4340e4e7eea6e210f28c4626e10/pdfbox-2.0.0-SNAPSHOT.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.projectlombok/lombok/1.16.4/450329f3f47a26833270f49da5f9acc5d3d6bb37/lombok-1.16.4-sources.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.projectlombok/lombok/1.16.4/398110b5c579cc69d7be47600c2ff810c5c34487/lombok-1.16.4.jar" />
                             <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.slf4j/slf4j-api/1.7.12/58697792617f38bf86d8e26bc004aac505e516a9/slf4j-api-1.7.12-sources.jar" />
                             <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.slf4j/slf4j-api/1.7.12/8e20852d05222dc286bf1c71d78d0531e177c317/slf4j-api-1.7.12.jar" />
                             <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.slf4j/slf4j-simple/1.7.12/2820c828d59e66efe424f2ea529f5a8b86b7254d/slf4j-simple-1.7.12-sources.jar" />
@@ -560,6 +746,8 @@
                             <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.eclipse.jetty.websocket/websocket-api/9.3.2.v20150730/be1525f9e86d45ff163394c573ff46773fb40812/websocket-api-9.3.2.v20150730.jar" />
                             <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.commons/commons-jexl/2.1.1/6819924664fe02ff8da255f665be6e4dedf95e18/commons-jexl-2.1.1-sources.jar" />
                             <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.commons/commons-jexl/2.1.1/6ecc181debade00230aa1e17666c4ea0371beaaa/commons-jexl-2.1.1.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/commons-collections/commons-collections/3.2.1/fa095ef874374e5b2a11f8b06c26a5d68c7cb3a4/commons-collections-3.2.1-sources.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/commons-collections/commons-collections/3.2.1/761ea405b9b37ced573d2df0d1e3a4e0f9edc668/commons-collections-3.2.1.jar" />
                             <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.commons/commons-lang3/3.1/8d30b90ae8bda4fbac8363161c8a9b5a99e23baf/commons-lang3-3.1-sources.jar" />
                             <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.commons/commons-lang3/3.1/905075e6c80f206bbe6cf1e809d2caa69f420c76/commons-lang3-3.1.jar" />
                             <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.googlecode.concurrentlinkedhashmap/concurrentlinkedhashmap-lru/1.3.1/d6f47e53a017b9275801b7fa8cd497e51bc94bf5/concurrentlinkedhashmap-lru-1.3.1-sources.jar" />
@@ -771,12 +959,19 @@
         <option value="$PROJECT_DIR$/src/main/java/org/kaakaa/pptmuseum/db/MongoDBClient.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/kaakaa/pptmuseum/Main.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/kaakaa/pptmuseum/jade/ListHelper.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/templates/ppt-museum.jade" />
-        <option value="$PROJECT_DIR$/src/main/resources/templates/upload.jade" />
         <option value="$PROJECT_DIR$/package.json" />
-        <option value="$PROJECT_DIR$/src/main/web/Gruntfile.js" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/upload.jade" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/ppt-museum.jade" />
+        <option value="$PROJECT_DIR$/src/main/web/.bowerrc" />
         <option value="$PROJECT_DIR$/src/main/web/package.json" />
+        <option value="$PROJECT_DIR$/src/main/web/dist_packages/public/ppt-museum/pdf.js-controller/js/pdf.js-controller.js" />
         <option value="$PROJECT_DIR$/build.gradle" />
+        <option value="$PROJECT_DIR$/build/resources/main/templates/slide.jade" />
+        <option value="$PROJECT_DIR$/src/main/web/dist_packages/public/ppt-museum/pdfjs-controller/js/pdf.js-controller.js" />
+        <option value="$PROJECT_DIR$/src/main/web/index.js" />
+        <option value="$PROJECT_DIR$/src/main/web/bower.json" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/slide.jade" />
+        <option value="$PROJECT_DIR$/src/main/web/Gruntfile.js" />
       </list>
     </option>
   </component>
@@ -850,18 +1045,6 @@
               <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="test" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="groovy" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="http" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -903,6 +1086,150 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dist_packages" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ppt-museum" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ppt-museum" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ppt-museum-webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="components" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ppt-museum" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pdfjs-dist" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ppt-museum" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ppt-museum-webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="components" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ppt-museum" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pdfjs-dist" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="build" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ppt-museum" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ppt-museum-webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="components" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ppt-museum" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ppt-museum" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ppt-museum-webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="resources" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -929,7 +1256,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="ppt-museum" />
+              <option name="myItemId" value="templates" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -952,40 +1279,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ppt-museum" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ppt-museum" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ppt-museum-webapp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ppt-museum" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -1008,6 +1301,204 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ppt-museum" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ppt-museum-webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="build" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ppt-museum" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ppt-museum-webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="build" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ppt-museum" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ppt-museum-webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="build" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="templates" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ppt-museum" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ppt-museum-webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="build" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ppt-museum" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pdfjs-dist" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ppt-museum" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ppt-museum-webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="build" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ppt-museum" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pdfjs-controller" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ppt-museum" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ppt-museum-webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="build" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ppt-museum" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pdfjs-controller" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ppt-museum" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ppt-museum-webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="build" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ppt-museum" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1040,79 +1531,7 @@
       <recent name="$PROJECT_DIR$/src/test" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.ppt-museum-webapp [grunt_build]">
-    <configuration default="false" name="ppt-museum-webapp [jacocoTestReport]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value="jacocoTestReport" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <method />
-    </configuration>
-    <configuration default="false" name="ppt-museum-webapp [test]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value="test" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <method />
-    </configuration>
-    <configuration default="false" name="ppt-museum-webapp [jar]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value="jar" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <method />
-    </configuration>
-    <configuration default="false" name="ppt-museum-webapp [assembleDist]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value="assembleDist" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <method />
-    </configuration>
+  <component name="RunManager" selected="Gradle.ppt-museum-webapp [buildDockerImage]">
     <configuration default="false" name="ppt-museum-webapp [grunt_build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -1125,6 +1544,78 @@
         <option name="taskNames">
           <list>
             <option value="grunt_build" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <method />
+    </configuration>
+    <configuration default="false" name="ppt-museum-webapp [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="build" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <method />
+    </configuration>
+    <configuration default="false" name="ppt-museum-webapp [clean]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="clean" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <method />
+    </configuration>
+    <configuration default="false" name="ppt-museum-webapp [buildImage]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="buildImage" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <method />
+    </configuration>
+    <configuration default="false" name="ppt-museum-webapp [buildDockerImage]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="buildDockerImage" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -1455,24 +1946,24 @@
       <method />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Gradle.ppt-museum-webapp [jacocoTestReport]" />
-      <item index="1" class="java.lang.String" itemvalue="Gradle.ppt-museum-webapp [test]" />
-      <item index="2" class="java.lang.String" itemvalue="Gradle.ppt-museum-webapp [jar]" />
-      <item index="3" class="java.lang.String" itemvalue="Gradle.ppt-museum-webapp [assembleDist]" />
-      <item index="4" class="java.lang.String" itemvalue="Gradle.ppt-museum-webapp [grunt_build]" />
+      <item index="0" class="java.lang.String" itemvalue="Gradle.ppt-museum-webapp [grunt_build]" />
+      <item index="1" class="java.lang.String" itemvalue="Gradle.ppt-museum-webapp [build]" />
+      <item index="2" class="java.lang.String" itemvalue="Gradle.ppt-museum-webapp [clean]" />
+      <item index="3" class="java.lang.String" itemvalue="Gradle.ppt-museum-webapp [buildImage]" />
+      <item index="4" class="java.lang.String" itemvalue="Gradle.ppt-museum-webapp [buildDockerImage]" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Gradle.ppt-museum-webapp [grunt_build]" />
-        <item index="1" class="java.lang.String" itemvalue="Gradle.ppt-museum-webapp [assembleDist]" />
-        <item index="2" class="java.lang.String" itemvalue="Gradle.ppt-museum-webapp [jar]" />
-        <item index="3" class="java.lang.String" itemvalue="Gradle.ppt-museum-webapp [test]" />
-        <item index="4" class="java.lang.String" itemvalue="Gradle.ppt-museum-webapp [jacocoTestReport]" />
+        <item index="0" class="java.lang.String" itemvalue="Gradle.ppt-museum-webapp [buildDockerImage]" />
+        <item index="1" class="java.lang.String" itemvalue="Gradle.ppt-museum-webapp [grunt_build]" />
+        <item index="2" class="java.lang.String" itemvalue="Gradle.ppt-museum-webapp [clean]" />
+        <item index="3" class="java.lang.String" itemvalue="Gradle.ppt-museum-webapp [buildImage]" />
+        <item index="4" class="java.lang.String" itemvalue="Gradle.ppt-museum-webapp [build]" />
       </list>
     </recent_temporary>
   </component>
   <component name="SbtLocalSettings">
-    <option name="lastUpdateTimestamp" value="1457776779307" />
+    <option name="lastUpdateTimestamp" value="1457790032442" />
     <option name="externalProjectsViewState">
       <projects_view />
     </option>
@@ -1554,6 +2045,7 @@
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32938564" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32938564" sideWeight="0.50158733" order="10" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1561,7 +2053,7 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32938564" sideWeight="0.4984127" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14285715" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2329365" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32938564" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16388889" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -1571,7 +2063,6 @@
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39970392" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32938564" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -1613,66 +2104,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/kaakaa/pptmuseum/db/MongoDBClient.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="42" column="0" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
-          <folding>
-            <element signature="e#1214#1215#0" expanded="false" />
-            <element signature="e#1287#1288#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/kaakaa/pptmuseum/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="24" column="13" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/kaakaa/pptmuseum/http/RequestUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="107" column="0" selection-start-line="107" selection-start-column="0" selection-end-line="107" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;MultiMarkdownPreviewEditor]">
-        <state split_layout="FIRST">
-          <first_editor vertical-scroll-proportion="0.0">
-            <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-            <folding />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-      <provider editor-type-id="MultiMarkdownFxPreviewEditor">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Dockerfile">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="10" column="38" selection-start-line="10" selection-start-column="38" selection-end-line="10" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mongo.yaml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/kaakaa/pptmuseum/db/MongoDBClient.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1915,14 +2346,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/public/ppt-museum/css/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/groovy/org/kaakaa/pptmuseum/http/RequestUtilTest.groovy">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.31292516">
@@ -1931,44 +2354,6 @@
             <element signature="e#35#80#0" expanded="false" />
           </folding>
         </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/content.jade">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="5" column="40" selection-start-line="5" selection-start-column="40" selection-end-line="5" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/slide.jade">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/public/ppt-museum/css/pdf-slide.min.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/public/ppt-museum/startbootstrap-3-col-portfolio/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;MultiMarkdownPreviewEditor]">
-        <state split_layout="FIRST">
-          <first_editor vertical-scroll-proportion="0.0">
-            <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-            <folding />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-      <provider editor-type-id="MultiMarkdownFxPreviewEditor">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/kaakaa/pptmuseum/db/MongoDBClient.java">
@@ -1997,8 +2382,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="40" column="63" selection-start-line="40" selection-start-column="63" selection-end-line="40" selection-end-column="63" />
           <folding>
-            <element signature="e#969#970#0" expanded="true" />
-            <element signature="e#1041#1042#0" expanded="true" />
+            <element signature="e#969#970#0" expanded="false" />
+            <element signature="e#1041#1042#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -2006,26 +2391,17 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/org/kaakaa/pptmuseum/db/document/Document.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+          <caret line="31" column="4" selection-start-line="31" selection-start-column="4" selection-end-line="31" selection-end-column="4" />
           <folding>
-            <element signature="e#642#643#0" expanded="true" />
-            <element signature="e#684#685#0" expanded="true" />
+            <element signature="e#642#643#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/kaakaa/pptmuseum/db/document/Slide.java">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/content.jade">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="19" column="39" selection-start-line="19" selection-start-column="39" selection-end-line="19" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/ppt-museum.jade">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="55" column="28" selection-start-line="55" selection-start-column="28" selection-end-line="55" selection-end-column="28" />
+          <caret line="5" column="40" selection-start-line="5" selection-start-column="40" selection-end-line="5" selection-end-column="40" />
           <folding />
         </state>
       </provider>
@@ -2033,28 +2409,20 @@
     <entry file="file://$PROJECT_DIR$/src/main/resources/templates/upload.jade">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="36" column="17" selection-start-line="36" selection-start-column="17" selection-end-line="36" selection-end-column="17" />
+          <caret line="40" column="47" selection-start-line="40" selection-start-column="47" selection-end-line="40" selection-end-column="47" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/web/Gruntfile.js">
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/kaakaa/pptmuseum/db/document/Slide.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+          <caret line="67" column="101" selection-start-line="67" selection-start-column="101" selection-end-line="67" selection-end-column="101" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/web/bower.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/web/index.js">
+    <entry file="file://$PROJECT_DIR$/src/main/web/components/public/ppt-museum/bootstrap/dist/js/npm.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -2064,16 +2432,120 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/web/package.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.0">
-          <caret line="12" column="21" selection-start-line="12" selection-start-column="21" selection-end-line="12" selection-end-column="21" />
+        <state vertical-scroll-proportion="-4.6666665">
+          <caret line="7" column="44" selection-start-line="7" selection-start-column="44" selection-end-line="7" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/public/ppt-museum/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.32346243">
-          <caret line="62" column="19" selection-start-line="62" selection-start-column="19" selection-end-line="62" selection-end-column="19" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="57" column="0" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/web/components/public/ppt-museum/pdfjs-dist/build/pdf.combined.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1044.1481">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/web/components/public/ppt-museum/pdfjs-dist/build/pdf.worker.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-880.24146">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/web/components/public/ppt-museum/pdfjs-dist/build/pdf.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-216.92711">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/ppt-museum.jade">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="72" column="6" selection-start-line="72" selection-start-column="6" selection-end-line="72" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build/resources/main/public/ppt-museum/pdfjs-controller/js/pdf.js-controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="52359" column="0" selection-start-line="52359" selection-start-column="0" selection-end-line="52359" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/web/components/public/ppt-museum/pdfjs-dist/bower.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build/resources/main/templates/slide.jade">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="29" column="21" selection-start-line="29" selection-start-column="21" selection-end-line="29" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/web/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="26" column="30" selection-start-line="26" selection-start-column="30" selection-end-line="26" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/web/dist_packages/public/ppt-museum/pdfjs-controller/js/pdf.js-controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="34" column="40" selection-start-line="34" selection-start-column="40" selection-end-line="34" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/web/bower.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-24.185184">
+          <caret line="44" column="16" selection-start-line="44" selection-start-column="16" selection-end-line="44" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/slide.jade">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="45" column="12" selection-start-line="45" selection-start-column="12" selection-end-line="45" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/web/Gruntfile.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.38496584">
+          <caret line="44" column="49" selection-start-line="44" selection-start-column="49" selection-end-line="44" selection-end-column="49" />
           <folding />
         </state>
       </provider>
