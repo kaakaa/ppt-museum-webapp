@@ -1,7 +1,3 @@
 !.gitkeep
 .gradle/
 build/
-node_modules/
-node-v*/
-bower_components/
-dist_packages/public/ppt-museum/

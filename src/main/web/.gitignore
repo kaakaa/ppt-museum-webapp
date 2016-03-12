@@ -1,1 +1,4 @@
 components/
+node-v*/
+node_modules/
+dist_packages/public/ppt-museum/*
