@@ -32,10 +32,10 @@ html(lang="ja")
           h3.page-header Upload Slide
 
       .row
-        form(method="post", action="/ppt-museum/upload", enctype="multipart/form-data")
+        form(method="post", action="/ppt-museum/upload", enctype="multipart/form-data", data-toggle="validator", role="form")
           fieldset.form-group
             label(for="slideTitle") Slide Title (required)
-            input.form-control(type="text", name="title", placeholder="Enter Slide Title")
+            input.form-control(type="text", name="title", placeholder="Enter Slide Title", id="slide-title", required)
           fieldset.form-group
             label(for="Description") Description
             input.form-control(type="text", name="desc", placeholder="Enter The Description")
@@ -45,7 +45,7 @@ html(lang="ja")
             small.text-muted Input keyword separated comma.
           fieldset.form-group
             label(for="Description") File (required)
-            input.form-control(type="file", name="file")
+            input.form-control(type="file", name="file", required)
             small.text-muted File format you can upload are .ppt/.pptx/.pdf .
           button.btn.btn-primary(type="submit") Upload
 

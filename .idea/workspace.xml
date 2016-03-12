@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="edba5995-bfca-4709-b7bf-0bc42d7d9548" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/web/.bowerrc" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/templates/upload.jade" afterPath="$PROJECT_DIR$/src/main/resources/templates/upload.jade" />
     </list>
     <list id="65090484-70f2-4955-b4c8-34e164a5b772" name="New changelist" comment="" />
     <ignored path="ppt-museum-webapp.iws" />
@@ -162,11 +162,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Gruntfile.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Gruntfile.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/web/Gruntfile.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.38496584">
-              <caret line="44" column="49" selection-start-line="44" selection-start-column="49" selection-end-line="44" selection-end-column="49" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="43" column="49" selection-start-line="43" selection-start-column="49" selection-end-line="43" selection-end-column="49" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="upload.jade" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/upload.jade">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.712984">
+              <caret line="47" column="64" selection-start-line="47" selection-start-column="64" selection-end-line="47" selection-end-column="64" />
               <folding />
             </state>
           </provider>
@@ -749,7 +759,6 @@
         <option value="$PROJECT_DIR$/src/main/java/org/kaakaa/pptmuseum/Main.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/kaakaa/pptmuseum/jade/ListHelper.java" />
         <option value="$PROJECT_DIR$/package.json" />
-        <option value="$PROJECT_DIR$/src/main/resources/templates/upload.jade" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/ppt-museum.jade" />
         <option value="$PROJECT_DIR$/src/main/web/.bowerrc" />
         <option value="$PROJECT_DIR$/src/main/web/package.json" />
@@ -761,6 +770,7 @@
         <option value="$PROJECT_DIR$/src/main/web/bower.json" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/slide.jade" />
         <option value="$PROJECT_DIR$/src/main/web/Gruntfile.js" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/upload.jade" />
       </list>
     </option>
   </component>
@@ -1571,10 +1581,10 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32938564" sideWeight="0.50158733" order="10" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32938564" sideWeight="0.4984127" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32938564" sideWeight="0.4984127" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2329365" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2329365" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32938564" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16388889" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -1927,14 +1937,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/upload.jade">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="40" column="47" selection-start-line="40" selection-start-column="47" selection-end-line="40" selection-end-column="47" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/kaakaa/pptmuseum/db/document/Slide.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -2009,8 +2011,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/web/Gruntfile.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.38496584">
-          <caret line="44" column="49" selection-start-line="44" selection-start-column="49" selection-end-line="44" selection-end-column="49" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="43" column="49" selection-start-line="43" selection-start-column="49" selection-end-line="43" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/upload.jade">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.712984">
+          <caret line="47" column="64" selection-start-line="47" selection-start-column="64" selection-end-line="47" selection-end-column="64" />
           <folding />
         </state>
       </provider>
