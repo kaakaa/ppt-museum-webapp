@@ -60,11 +60,18 @@ test {
 
 // for installing node
 node {
-    version = '0.10.22'
+    version = '4.4.0'
+    // version = '0.10.22'
     download = true
+    workDir = file("${project.projectDir}/src/main/web")
+    nodeModulesDir = file("${project.projectDir}/src/main/web")
 }
 
-// grunt-browserify
+// grunt
+grunt {
+    workDir = file("${project.projectDir}/src/main/web")
+}
+
 grunt_build.dependsOn 'installGrunt'
 grunt_build.dependsOn 'npmInstall'
 processResources.dependsOn grunt_build

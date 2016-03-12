@@ -1,0 +1,25 @@
+{
+  "name": "ppt-museum",
+  "description": "ppt and pptx file uploader and slideshow",
+  "main": "index.js",
+  "authors": [
+    "kaakaa"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "ppt-museum"
+  ],
+  "homepage": "https://github.com/kaakaa/ppt-museum-webapp",
+  "moduleType": [],
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap-validator": "^0.10.1"
+  }
+}
