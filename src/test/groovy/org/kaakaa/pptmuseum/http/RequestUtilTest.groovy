@@ -1,14 +1,12 @@
 package org.kaakaa.pptmuseum.http
 
 import org.apache.commons.fileupload.FileItem
-import spock.lang.Ignore
 import spock.lang.Specification
 
 /**
  * Created by kaakaa on 16/03/05.
  */
 class RequestUtilTest extends Specification {
-    @Ignore
     def "MakeSlideModel"() {
         setup:
         def item = Mock(FileItem)
@@ -23,7 +21,7 @@ class RequestUtilTest extends Specification {
 
         where:
         isFormField | fieldName | value || expected
-        true | "title" | "test_title" || "Slide(title=test_title, description=nulla)"
+        true | "title" | "test_title" || "Slide(title=test_title, description=null)"
         true | "title" | new String("日本語のTITLE".getBytes(), "ISO8859_1") || "Slide(title=日本語のTITLE, description=null)"
         false | "title"| "test_title" || "Slide(title=null, description=null)"
         true | "desc" | "test_description" || "Slide(title=null, description=test_description)"
