@@ -25,15 +25,26 @@ html(lang="ja")
         .collapse.navbar-collapse#bs-example-navbar-collapse-1
           ul.nav.navbar-nav
             li
-              a(href="/ppt-museum/upload") upload
+              a(href="#", data-toggle="modal", data-target="#upload-modal")
+                span.glyphicon.glyphicon-upload Upload
+    // upload button
+    #upload-menu-button.full-circle
+      button#upload-menu.btn.btn-primary(type="button", data-toggle="modal", data-target="#upload-modal")
+        span.glyphicon.glyphicon-upload
 
     .container
       block content
 
+    .container
       footer
-        .row
-          .col-lg-12
-            p Copyright &copy; kaakaa 2016
+        block footer
+
+    // upload form contents
+    .modal.fade#upload-modal(tabindex="-1", role="dialog", aria-labelledby="slideUploadModal")
+      .modal-dialog(role="document")
+        .modal-content
+          include upload_form
+
 
     // bower:js
     script(src='/ppt-museum/jquery/dist/jquery.min.js')
@@ -43,26 +54,47 @@ html(lang="ja")
     :js
       (function ($) {
         $(document).ready(function() {
+          // navbar settings
           $(".navbar").hide();
+          $("#upload-menu-button").show();
 
           $(function() {
             $(window).scroll(function() {
               if ($(this).scrollTop() > 300) {
                 $('.navbar').fadeIn();
+                $('#upload-menu-button').fadeOut();
               } else {
                 $('.navbar').fadeOut();
+                $('#upload-menu-button').fadeIn();
               }
             });
           });
         });
       }(jQuery));
+
+      $('#upload-modal')
+        .on('shown.bs.modal', function(e){
+          $('.upload-form').validator();
+          $('#upload-progress').hide();
+        })
+        .on('hidden.bs.modal', function(e) {
+          $('.upload-form').validator('destroy');
+        });
+
+      // Validate Upload Form
+      $("button[id='upload-button']").on('click', function() {
+        $(".upload-form").validator('validate').on('submit', function(e) {
+          $('#upload-progress').show();
+        });
+      });
+
+      // Delete Slide
       $("button[id^='remove-slide-']").on('click', function() {
         var id = $(this).data('id');
         $.ajax({
           type: 'DELETE',
           url: '/ppt-museum/slide/delete/' + id,
           success: function(data) {
-            console.log(data);
             location.reload();
           },
           error: function(err) {

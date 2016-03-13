@@ -8,17 +8,14 @@ import org.kaakaa.pptmuseum.db.document.Document;
 import org.kaakaa.pptmuseum.db.document.Slide;
 import org.kaakaa.pptmuseum.http.RequestUtil;
 import org.kaakaa.pptmuseum.jade.ListHelper;
-import spark.*;
+import spark.ModelAndView;
 import spark.template.jade.JadeTemplateEngine;
 
 import java.net.UnknownHostException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.concurrent.CompletionStage;
 import java.util.concurrent.TimeoutException;
-import java.util.function.BiFunction;
-import java.util.function.IntFunction;
 
 import static spark.Spark.*;
 
