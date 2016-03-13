@@ -22,7 +22,7 @@ import java.util.stream.Stream;
  * Created by kaakaa on 16/02/13.
  */
 @EqualsAndHashCode
-@ToString(exclude = {"id", "thumbnail"})
+@ToString(exclude = {"id", "tags", "thumbnail"})
 @Entity
 public class Slide {
     @Id
@@ -84,6 +84,4 @@ public class Slide {
         LocalDateTime date = LocalDateTime.ofInstant(instant, ZoneId.of(ZoneId.SHORT_IDS.get("JST")));
         return date.format(DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss"));
     }
-
-
 }

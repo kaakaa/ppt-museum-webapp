@@ -4,9 +4,7 @@
     <list default="true" id="edba5995-bfca-4709-b7bf-0bc42d7d9548" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/kaakaa/pptmuseum/db/document/Slide.java" afterPath="$PROJECT_DIR$/src/main/java/org/kaakaa/pptmuseum/db/document/Slide.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/templates/content.jade" afterPath="$PROJECT_DIR$/src/main/resources/templates/content.jade" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/templates/layout.jade" afterPath="$PROJECT_DIR$/src/main/resources/templates/layout.jade" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/web/bower.json" afterPath="$PROJECT_DIR$/src/main/web/bower.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/groovy/org/kaakaa/pptmuseum/http/RequestUtilTest.groovy" afterPath="$PROJECT_DIR$/src/test/groovy/org/kaakaa/pptmuseum/http/RequestUtilTest.groovy" />
     </list>
     <list id="65090484-70f2-4955-b4c8-34e164a5b772" name="New changelist" comment="" />
     <ignored path="ppt-museum-webapp.iws" />
@@ -146,11 +144,43 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="layout.jade" pinned="false" current-in-tab="true">
+      <file leaf-file-name="RequestUtilTest.groovy" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/test/groovy/org/kaakaa/pptmuseum/http/RequestUtilTest.groovy">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.55353075">
+              <caret line="27" column="35" selection-start-line="27" selection-start-column="35" selection-end-line="27" selection-end-column="35" />
+              <folding>
+                <element signature="e#35#80#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Slide.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/kaakaa/pptmuseum/db/document/Slide.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="72" column="0" selection-start-line="72" selection-start-column="0" selection-end-line="72" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="layout.jade" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/templates/layout.jade">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.77904326">
+            <state vertical-scroll-proportion="0.0">
               <caret line="95" column="13" selection-start-line="95" selection-start-column="13" selection-end-line="95" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RequestUtil.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/kaakaa/pptmuseum/http/RequestUtil.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="40" column="24" selection-start-line="40" selection-start-column="24" selection-end-line="40" selection-end-column="24" />
               <folding />
             </state>
           </provider>
@@ -722,7 +752,6 @@
         <option value="$PROJECT_DIR$/src/test/resources/Dockerfile" />
         <option value="$PROJECT_DIR$/src/main/java/org/kaakaa/pptmuseum/http/RequestUtilTest.groovy" />
         <option value="$PROJECT_DIR$/src/test/main/groovy/org/kaakaa/pptmuseum/http/RequestUtilTest.groovy" />
-        <option value="$PROJECT_DIR$/src/test/groovy/org/kaakaa/pptmuseum/http/RequestUtilTest.groovy" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/.travis.yml" />
         <option value="$PROJECT_DIR$/Dockerfile" />
@@ -748,10 +777,11 @@
         <option value="$PROJECT_DIR$/src/main/java/org/kaakaa/pptmuseum/Main.java" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/search_result.jade" />
         <option value="$PROJECT_DIR$/src/main/resources/public/ppt-museum/css/style.css" />
-        <option value="$PROJECT_DIR$/src/main/java/org/kaakaa/pptmuseum/db/document/Slide.java" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/content.jade" />
         <option value="$PROJECT_DIR$/src/main/web/bower.json" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/layout.jade" />
+        <option value="$PROJECT_DIR$/src/main/java/org/kaakaa/pptmuseum/db/document/Slide.java" />
+        <option value="$PROJECT_DIR$/src/test/groovy/org/kaakaa/pptmuseum/http/RequestUtilTest.groovy" />
       </list>
     </option>
   </component>
@@ -823,6 +853,18 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="groovy" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="http" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1138,7 +1180,7 @@
       <recent name="$PROJECT_DIR$/src/test" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.ppt-museum-webapp [grunt_build]">
+  <component name="RunManager" selected="JUnit.RequestUtilTest">
     <configuration default="false" name="ppt-museum-webapp [grunt_build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -1151,24 +1193,6 @@
         <option name="taskNames">
           <list>
             <option value="grunt_build" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <method />
-    </configuration>
-    <configuration default="false" name="ppt-museum-webapp [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value="build" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -1227,6 +1251,32 @@
         </option>
         <option name="vmOptions" />
       </ExternalSystemSettings>
+      <method />
+    </configuration>
+    <configuration default="false" name="RequestUtilTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="org.kaakaa.pptmuseum.http.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="ppt-museum-webapp" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="org.kaakaa.pptmuseum.http" />
+      <option name="MAIN_CLASS_NAME" value="org.kaakaa.pptmuseum.http.RequestUtilTest" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
       <method />
     </configuration>
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
@@ -1554,18 +1604,18 @@
     </configuration>
     <list size="5">
       <item index="0" class="java.lang.String" itemvalue="Gradle.ppt-museum-webapp [grunt_build]" />
-      <item index="1" class="java.lang.String" itemvalue="Gradle.ppt-museum-webapp [build]" />
-      <item index="2" class="java.lang.String" itemvalue="Gradle.ppt-museum-webapp [clean]" />
-      <item index="3" class="java.lang.String" itemvalue="Gradle.ppt-museum-webapp [buildImage]" />
-      <item index="4" class="java.lang.String" itemvalue="Gradle.ppt-museum-webapp [buildDockerImage]" />
+      <item index="1" class="java.lang.String" itemvalue="Gradle.ppt-museum-webapp [clean]" />
+      <item index="2" class="java.lang.String" itemvalue="Gradle.ppt-museum-webapp [buildImage]" />
+      <item index="3" class="java.lang.String" itemvalue="Gradle.ppt-museum-webapp [buildDockerImage]" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.RequestUtilTest" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Gradle.ppt-museum-webapp [grunt_build]" />
-        <item index="1" class="java.lang.String" itemvalue="Gradle.ppt-museum-webapp [buildDockerImage]" />
-        <item index="2" class="java.lang.String" itemvalue="Gradle.ppt-museum-webapp [clean]" />
-        <item index="3" class="java.lang.String" itemvalue="Gradle.ppt-museum-webapp [buildImage]" />
-        <item index="4" class="java.lang.String" itemvalue="Gradle.ppt-museum-webapp [build]" />
+        <item index="0" class="java.lang.String" itemvalue="JUnit.RequestUtilTest" />
+        <item index="1" class="java.lang.String" itemvalue="Gradle.ppt-museum-webapp [grunt_build]" />
+        <item index="2" class="java.lang.String" itemvalue="Gradle.ppt-museum-webapp [buildDockerImage]" />
+        <item index="3" class="java.lang.String" itemvalue="Gradle.ppt-museum-webapp [clean]" />
+        <item index="4" class="java.lang.String" itemvalue="Gradle.ppt-museum-webapp [buildImage]" />
       </list>
     </recent_temporary>
   </component>
@@ -1615,20 +1665,20 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="RequestUtilTest_MakeSlideModel - 2016.03.05 at 23h 22m 06s.xml">
-      <configuration name="RequestUtilTest.MakeSlideModel" configurationId="JUnit" />
+    <history-entry file="RequestUtilTest - 2016.03.13 at 20h 21m 19s.xml">
+      <configuration name="RequestUtilTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="RequestUtilTest_MakeSlideModel - 2016.03.05 at 23h 22m 42s.xml">
-      <configuration name="RequestUtilTest.MakeSlideModel" configurationId="JUnit" />
+    <history-entry file="RequestUtilTest - 2016.03.13 at 20h 23m 28s.xml">
+      <configuration name="RequestUtilTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="RequestUtilTest_MakeSlideModel - 2016.03.05 at 23h 28m 43s.xml">
-      <configuration name="RequestUtilTest.MakeSlideModel" configurationId="JUnit" />
+    <history-entry file="RequestUtilTest - 2016.03.13 at 20h 24m 02s.xml">
+      <configuration name="RequestUtilTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="RequestUtilTest_MakeSlideModel - 2016.03.05 at 23h 29m 04s.xml">
-      <configuration name="RequestUtilTest.MakeSlideModel" configurationId="JUnit" />
+    <history-entry file="RequestUtilTest - 2016.03.13 at 20h 24m 50s.xml">
+      <configuration name="RequestUtilTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="RequestUtilTest_MakeSlideModel - 2016.03.05 at 23h 30m 11s.xml">
-      <configuration name="RequestUtilTest.MakeSlideModel" configurationId="JUnit" />
+    <history-entry file="RequestUtilTest - 2016.03.13 at 20h 26m 16s.xml">
+      <configuration name="RequestUtilTest" configurationId="JUnit" />
     </history-entry>
     <history-entry file="RequestUtilTest_MakeSlideModel - 2016.03.05 at 23h 31m 04s.xml">
       <configuration name="RequestUtilTest.MakeSlideModel" configurationId="JUnit" />
@@ -1657,7 +1707,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32938564" sideWeight="0.50158733" order="10" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32938564" sideWeight="0.4984127" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32938564" sideWeight="0.4984127" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2329365" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -1698,7 +1748,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/groovy/org/kaakaa/pptmuseum/http/RequestUtilTest.groovy</url>
-          <line>16</line>
+          <line>18</line>
           <properties />
         </line-breakpoint>
       </breakpoints>
@@ -1751,7 +1801,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="23" column="67" selection-start-line="23" selection-start-column="67" selection-end-line="23" selection-end-column="67" />
           <folding>
-            <element signature="e#35#80#0" expanded="false" />
+            <element signature="e#35#80#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1824,7 +1874,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="19" column="30" selection-start-line="19" selection-start-column="30" selection-end-line="19" selection-end-column="30" />
           <folding>
-            <element signature="e#35#80#0" expanded="false" />
+            <element signature="e#35#80#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1934,16 +1984,6 @@
         <state vertical-scroll-proportion="-15.333333">
           <caret line="23" column="13" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/groovy/org/kaakaa/pptmuseum/http/RequestUtilTest.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.31292516">
-          <caret line="23" column="67" selection-start-line="23" selection-start-column="67" selection-end-line="23" selection-end-column="67" />
-          <folding>
-            <element signature="e#35#80#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2074,29 +2114,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/kaakaa/pptmuseum/http/RequestUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="54" column="67" selection-start-line="54" selection-start-column="67" selection-end-line="54" selection-end-column="67" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/kaakaa/pptmuseum/db/document/Slide.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="68" column="0" selection-start-line="68" selection-start-column="0" selection-end-line="68" selection-end-column="0" />
-          <folding>
-            <element signature="e#1323#1324#0" expanded="true" />
-            <element signature="e#1357#1358#0" expanded="true" />
-            <element signature="e#1476#1477#0" expanded="true" />
-            <element signature="e#1522#1523#0" expanded="true" />
-            <element signature="e#1771#1772#0" expanded="true" />
-            <element signature="e#1803#1804#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/templates/upload_form.jade">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -2139,9 +2156,35 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/templates/layout.jade">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.77904326">
+        <state vertical-scroll-proportion="0.0">
           <caret line="95" column="13" selection-start-line="95" selection-start-column="13" selection-end-line="95" selection-end-column="13" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/kaakaa/pptmuseum/http/RequestUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="40" column="24" selection-start-line="40" selection-start-column="24" selection-end-line="40" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/kaakaa/pptmuseum/db/document/Slide.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="72" column="0" selection-start-line="72" selection-start-column="0" selection-end-line="72" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/groovy/org/kaakaa/pptmuseum/http/RequestUtilTest.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.55353075">
+          <caret line="27" column="35" selection-start-line="27" selection-start-column="35" selection-end-line="27" selection-end-column="35" />
+          <folding>
+            <element signature="e#35#80#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
