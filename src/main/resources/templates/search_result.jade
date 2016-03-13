@@ -1,0 +1,15 @@
+extends ./layout
+
+block content
+  .row.text-center
+    .alert.alert-warning(role="alert")
+      h4 searching tags for
+        mark #{keyword}
+  each tmp in helper.eachSlice(slides, 3)
+    .row.row-relative
+      each slide in tmp
+        include content
+
+block footer
+  .row.text-center
+    .col-lg-12

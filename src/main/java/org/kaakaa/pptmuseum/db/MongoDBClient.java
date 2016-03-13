@@ -6,8 +6,10 @@ import org.kaakaa.pptmuseum.db.document.Slide;
 import org.kaakaa.pptmuseum.db.mongo.MongoConnectionHelper;
 import org.mongodb.morphia.Datastore;
 import org.mongodb.morphia.Key;
+import org.mongodb.morphia.query.CriteriaContainerImpl;
 import org.mongodb.morphia.query.Query;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -41,6 +43,11 @@ public class MongoDBClient {
         return datastore.createQuery(Slide.class).order("-_id").offset((offset - 1) * limit).limit(limit).asList();
     }
 
+    /**
+     * <p>Get the number of uploaded slides.</p>
+     *
+     * @return all slides size
+     */
     public int allSlideSize() {
         return datastore.createQuery(Slide.class).asList().size();
     }
@@ -69,5 +76,11 @@ public class MongoDBClient {
     public byte[] getThumbnail(String id) {
         Slide slide = datastore.get(Slide.class, new ObjectId(id));
         return slide.getThumbnail();
+    }
+
+    public List<Slide> searchFilteredKeyword(String keyword) {
+        List<String> keywordList = new ArrayList<>();
+        keywordList.add(keyword);
+        return datastore.createQuery(Slide.class).field("tags").hasAnyOf(keywordList).asList();
     }
 }

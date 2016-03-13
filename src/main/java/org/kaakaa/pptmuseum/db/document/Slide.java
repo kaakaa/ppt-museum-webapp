@@ -3,6 +3,7 @@ package org.kaakaa.pptmuseum.db.document;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
 import org.bson.types.ObjectId;
+import org.mongodb.morphia.annotations.Embedded;
 import org.mongodb.morphia.annotations.Entity;
 import org.mongodb.morphia.annotations.Id;
 import org.mongodb.morphia.annotations.Property;
@@ -11,7 +12,9 @@ import java.time.Instant;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
-import java.util.Base64;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 /**
  * Created by kaakaa on 16/02/13.
@@ -29,6 +32,12 @@ public class Slide {
     @Property("thumbnail")
     private byte[] thumbnail;
 
+    @Embedded("tags")
+    private List<String> tags = new ArrayList<>();
+
+    /**
+     * default contructor
+     */
     public Slide() {
     }
 
@@ -44,23 +53,28 @@ public class Slide {
         return this.id;
     }
 
-    public String getTitle() {
-        return this.title;
+    public void setTitle(String title) {
+        this.title = title;
     }
 
-    public String getDescription() {
-        return this.description;
+    public String getTitle() {
+        return this.title;
     }
 
     public void setDescription(String description) {
         this.description = description;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
+    public String getDescription() {
+        return this.description;
     }
 
-    public void setTags(String tags) {
+    public void setTags(List<String> tags) {
+        this.tags = tags;
+    }
+
+    public List<String> getTags() {
+        return this.tags;
     }
 
     public String getTime() {

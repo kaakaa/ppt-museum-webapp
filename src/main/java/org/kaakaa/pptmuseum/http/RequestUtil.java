@@ -24,6 +24,7 @@ import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.UnsupportedEncodingException;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 
@@ -51,7 +52,7 @@ public class RequestUtil {
                             slide.setDescription(encodingMultiformString(i));
                             break;
                         case "tags":
-                            slide.setTags(encodingMultiformString(i));
+                            slide.setTags(Arrays.asList(encodingMultiformString(i).split(",")));
                             break;
                     }
                 });

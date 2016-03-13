@@ -26,13 +26,13 @@ html(lang="ja")
           ul.nav.navbar-nav
             li
               a(href="#", data-toggle="modal", data-target="#upload-modal")
-                span.glyphicon.glyphicon-upload Upload
+                span.glyphicon.glyphicon-upload  UploadSlide
         .github-ribbon
           include github_ribbon
     // upload button
     #upload-menu-button.full-circle
       button#upload-menu.btn.btn-primary(type="button", data-toggle="modal", data-target="#upload-modal")
-        span.glyphicon.glyphicon-upload
+        span.glyphicon.glyphicon-upload  Upload
 
     .container
       block content
@@ -57,17 +57,17 @@ html(lang="ja")
       (function ($) {
         $(document).ready(function() {
           // navbar settings
-          $(".navbar").hide();
-          $("#upload-menu-button").show();
+          $(".navbar").show();
+          $("#upload-menu-button").hide();
 
           $(function() {
             $(window).scroll(function() {
               if ($(this).scrollTop() > 300) {
-                $('.navbar').fadeIn();
-                $('#upload-menu-button').fadeOut();
-              } else {
                 $('.navbar').fadeOut();
                 $('#upload-menu-button').fadeIn();
+              } else {
+                $('.navbar').fadeIn();
+                $('#upload-menu-button').fadeOut();
               }
             });
           });

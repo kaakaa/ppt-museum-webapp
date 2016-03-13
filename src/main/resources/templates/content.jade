@@ -15,6 +15,11 @@
         dt Description:
         dd.slide-caption-description
           small #{slide.description}
+        dt Keywords:
+        dd.slide-caption-keywords
+          each key in slide.tags
+            a(href="/ppt-museum/keywords/#{key}") #{key}
+            ,
         dt Uploaded_at:
         dd.slide-caption-uploded
           small #{slide.getTime()}
