@@ -15,6 +15,8 @@ import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 /**
  * Created by kaakaa on 16/02/13.
@@ -70,7 +72,7 @@ public class Slide {
     }
 
     public void setTags(List<String> tags) {
-        this.tags = tags;
+        this.tags = tags.stream().map(s -> s.trim()).collect(Collectors.toList());
     }
 
     public List<String> getTags() {

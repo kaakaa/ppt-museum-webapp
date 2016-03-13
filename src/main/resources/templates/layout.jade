@@ -50,8 +50,9 @@ html(lang="ja")
 
     // bower:js
     script(src='/ppt-museum/jquery/dist/jquery.min.js')
-    script(src='/ppt-museum/bootswatch-dist/js/bootstrap.min.js')
     script(src='/ppt-museum/bootstrap-validator/dist/validator.min.js')
+    script(src='/ppt-museum/bootstrap/dist/js/bootstrap.js')
+    script(src='/ppt-museum/bootstrap-confirmation2/bootstrap-confirmation.js')
     // endbower
     :js
       (function ($) {
@@ -92,6 +93,10 @@ html(lang="ja")
 
       // Delete Slide
       $("button[id^='remove-slide-']").on('click', function() {
+        $(this).confirmation('show');
+      });
+
+      $("button[id^='remove-slide-']").on('confirmed.bs.confirmation', function() {
         var id = $(this).data('id');
         $.ajax({
           type: 'DELETE',

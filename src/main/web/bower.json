@@ -23,19 +23,24 @@
   "dependencies": {
     "bootswatch-dist": "superhero",
     "bootstrap-validator": "^0.10.1",
-    "pdfjs-dist": "^1.4.135"
+    "pdfjs-dist": "^1.4.135",
+    "bootstrap-confirmation2": "^2.2.0"
   },
   "overrides": {
     "bootswatch-dist": {
       "main": [
         "css/bootstrap.min.css",
-        "fonts/*",
-        "js/bootstrap.min.js"
+        "fonts/*"
       ]
     },
     "bootstrap-validator": {
       "main": [
         "dist/validator.min.js"
+      ]
+    },
+    "bootstrap-comfirmation2": {
+      "main": [
+        "bootstrap-comfirmation.min.js"
       ]
     },
     "jquery": {

@@ -8,7 +8,7 @@
       p
         a.btn.btn-primary.btn-xs(href="/ppt-museum/slide/#{slide.id}", role="button")
           span.glyphicon.glyphicon-play Play
-        button.btn.btn-danger.btn-xs(id="remove-slide-#{slide.id}", type="button", data-id="#{slide.id}")
+        button.btn.btn-danger.btn-xs(id="remove-slide-#{slide.id}", type="button", data-id="#{slide.id}", data-toggle="confirmation")
           span.glyphicon.glyphicon-remove Delete
       hr
       dl(style="width: 100%")
