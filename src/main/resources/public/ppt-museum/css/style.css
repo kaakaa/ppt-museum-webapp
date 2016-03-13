@@ -7,6 +7,11 @@ body {
     font-size: 1.2em;
 }
 
+dd[class^="slide-caption-"] {
+    margin-left: 1em;
+    margin-bottom: 10px;
+}
+
 #upload-menu-button {
     position: fixed;
     right: 10px;

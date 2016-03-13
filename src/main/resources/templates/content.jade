@@ -1,9 +1,20 @@
-.col-md-4.portfolio-item.col-border-padding
-  a(href="/ppt-museum/slide/#{slide.id}")
-    img.img-responsive(src="/ppt-museum/thumbnail/#{slide.id}")
-  h3
-    a(href="/ppt-museum/slide/#{slide.id}") #{slide.title}
-    small.text-muted - #{slide.getTime()}
-    button.btn.btn-danger(id="remove-slide-#{slide.id}", type="button", data-id="#{slide.id}")
-      span.glyphicon.glyphicon-remove
-  p #{slide.description}
+.col-md-4.col-border-padding
+  .thumbnail
+    a(href="/ppt-museum/slide/#{slide.id}")
+      img.img-responsive(src="/ppt-museum/thumbnail/#{slide.id}")
+    .caption
+      h3
+        a(href="/ppt-museum/slide/#{slide.id}") #{slide.title}
+      p
+        a.btn.btn-primary.btn-xs(href="/ppt-museum/slide/#{slide.id}", role="button")
+          span.glyphicon.glyphicon-play Play
+        button.btn.btn-danger.btn-xs(id="remove-slide-#{slide.id}", type="button", data-id="#{slide.id}")
+          span.glyphicon.glyphicon-remove Delete
+      hr
+      dl(style="width: 100%")
+        dt Description:
+        dd.slide-caption-description
+          small #{slide.description}
+        dt Uploaded_at:
+        dd.slide-caption-uploded
+          small #{slide.getTime()}
