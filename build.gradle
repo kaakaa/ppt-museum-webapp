@@ -4,13 +4,14 @@ plugins {
     id 'jacoco'
     id 'war'
     id 'application'
+    id 'maven'
     id 'com.moowork.grunt' version '0.11'
     id 'com.moowork.node' version '0.11'
     id 'com.bmuschko.docker-remote-api' version '2.6.6'
     id 'com.github.kt3k.coveralls' version '2.5.0'
 }
 
-group 'org.kaakaa'
+group 'org.kaakaa.ppt-museum'
 version '0.0.4-SNAPSHOT'
 
 mainClassName = 'org.kaakaa.pptmuseum.Main'
@@ -51,8 +52,30 @@ sourceSets {
 
 jar {
     manifest {
-        attributes 'Implementation-Title': 'ppt-museum', 'Implementation-Versio': version
+        attributes 'Implementation-Title': 'ppt-museum', 'Implementation-Version': version
         attributes 'Main-Class': mainClassName
+    }
+}
+
+uploadArchives {
+    repositories {
+        mavenDeployer {
+            repository(url: "file://${projectDir}/mavenRepo")
+        }
+    }
+}
+
+[install.repositories.mavenInstaller, uploadArchives.repositories.mavenDeployer]*.pom*.whenConfigured { pom ->
+    pom.project {
+        inceptionYear '2016'
+        packaging 'jar'
+        licenses {
+            license {
+                name 'MIT License'
+                url 'https://opensource.org/licenses/mit-license.php'
+                distribution 'repo'
+            }
+        }
     }
 }
 
