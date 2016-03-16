@@ -2,26 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="edba5995-bfca-4709-b7bf-0bc42d7d9548" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/mavenRepo/org/kaakaa/ppt-museum/ppt-museum-webapp/0.0.4-SNAPSHOT/maven-metadata.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/mavenRepo/org/kaakaa/ppt-museum/ppt-museum-webapp/0.0.4-SNAPSHOT/maven-metadata.xml.md5" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/mavenRepo/org/kaakaa/ppt-museum/ppt-museum-webapp/0.0.4-SNAPSHOT/maven-metadata.xml.sha1" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/mavenRepo/org/kaakaa/ppt-museum/ppt-museum-webapp/0.0.4-SNAPSHOT/ppt-museum-webapp-0.0.4-20160315.105424-1.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/mavenRepo/org/kaakaa/ppt-museum/ppt-museum-webapp/0.0.4-SNAPSHOT/ppt-museum-webapp-0.0.4-20160315.105424-1.jar.md5" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/mavenRepo/org/kaakaa/ppt-museum/ppt-museum-webapp/0.0.4-SNAPSHOT/ppt-museum-webapp-0.0.4-20160315.105424-1.jar.sha1" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/mavenRepo/org/kaakaa/ppt-museum/ppt-museum-webapp/0.0.4-SNAPSHOT/ppt-museum-webapp-0.0.4-20160315.105424-1.pom" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/mavenRepo/org/kaakaa/ppt-museum/ppt-museum-webapp/0.0.4-SNAPSHOT/ppt-museum-webapp-0.0.4-20160315.105424-1.pom.md5" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/mavenRepo/org/kaakaa/ppt-museum/ppt-museum-webapp/0.0.4-SNAPSHOT/ppt-museum-webapp-0.0.4-20160315.105424-1.pom.sha1" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/mavenRepo/org/kaakaa/ppt-museum/ppt-museum-webapp/0.0.4-SNAPSHOT/ppt-museum-webapp-0.0.4-20160315.105424-1.tar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/mavenRepo/org/kaakaa/ppt-museum/ppt-museum-webapp/0.0.4-SNAPSHOT/ppt-museum-webapp-0.0.4-20160315.105424-1.tar.md5" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/mavenRepo/org/kaakaa/ppt-museum/ppt-museum-webapp/0.0.4-SNAPSHOT/ppt-museum-webapp-0.0.4-20160315.105424-1.tar.sha1" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/mavenRepo/org/kaakaa/ppt-museum/ppt-museum-webapp/0.0.4-SNAPSHOT/ppt-museum-webapp-0.0.4-20160315.105424-1.zip" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/mavenRepo/org/kaakaa/ppt-museum/ppt-museum-webapp/0.0.4-SNAPSHOT/ppt-museum-webapp-0.0.4-20160315.105424-1.zip.md5" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/mavenRepo/org/kaakaa/ppt-museum/ppt-museum-webapp/0.0.4-SNAPSHOT/ppt-museum-webapp-0.0.4-20160315.105424-1.zip.sha1" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mavenRepo/org/kaakaa/ppt-museum/ppt-museum-webapp/0.0.4/ppt-museum-webapp-0.0.4.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mavenRepo/org/kaakaa/ppt-museum/ppt-museum-webapp/0.0.4/ppt-museum-webapp-0.0.4.jar.md5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mavenRepo/org/kaakaa/ppt-museum/ppt-museum-webapp/0.0.4/ppt-museum-webapp-0.0.4.jar.sha1" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mavenRepo/org/kaakaa/ppt-museum/ppt-museum-webapp/0.0.4/ppt-museum-webapp-0.0.4.pom" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mavenRepo/org/kaakaa/ppt-museum/ppt-museum-webapp/0.0.4/ppt-museum-webapp-0.0.4.pom.md5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mavenRepo/org/kaakaa/ppt-museum/ppt-museum-webapp/0.0.4/ppt-museum-webapp-0.0.4.pom.sha1" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mavenRepo/org/kaakaa/ppt-museum/ppt-museum-webapp/0.0.4/ppt-museum-webapp-0.0.4.tar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mavenRepo/org/kaakaa/ppt-museum/ppt-museum-webapp/0.0.4/ppt-museum-webapp-0.0.4.tar.md5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mavenRepo/org/kaakaa/ppt-museum/ppt-museum-webapp/0.0.4/ppt-museum-webapp-0.0.4.tar.sha1" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mavenRepo/org/kaakaa/ppt-museum/ppt-museum-webapp/0.0.4/ppt-museum-webapp-0.0.4.zip" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mavenRepo/org/kaakaa/ppt-museum/ppt-museum-webapp/0.0.4/ppt-museum-webapp-0.0.4.zip.md5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mavenRepo/org/kaakaa/ppt-museum/ppt-museum-webapp/0.0.4/ppt-museum-webapp-0.0.4.zip.sha1" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mavenRepo/org/kaakaa/ppt-museum/ppt-museum-webapp/maven-metadata.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mavenRepo/org/kaakaa/ppt-museum/ppt-museum-webapp/maven-metadata.xml.md5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mavenRepo/org/kaakaa/ppt-museum/ppt-museum-webapp/maven-metadata.xml.sha1" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build.gradle" afterPath="$PROJECT_DIR$/build.gradle" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mavenRepo/org/kaakaa/ppt-museum/ppt-museum-webapp/maven-metadata.xml" afterPath="$PROJECT_DIR$/mavenRepo/org/kaakaa/ppt-museum/ppt-museum-webapp/maven-metadata.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mavenRepo/org/kaakaa/ppt-museum/ppt-museum-webapp/maven-metadata.xml.md5" afterPath="$PROJECT_DIR$/mavenRepo/org/kaakaa/ppt-museum/ppt-museum-webapp/maven-metadata.xml.md5" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mavenRepo/org/kaakaa/ppt-museum/ppt-museum-webapp/maven-metadata.xml.sha1" afterPath="$PROJECT_DIR$/mavenRepo/org/kaakaa/ppt-museum/ppt-museum-webapp/maven-metadata.xml.sha1" />
     </list>
     <list id="65090484-70f2-4955-b4c8-34e164a5b772" name="New changelist" comment="" />
     <ignored path="ppt-museum-webapp.iws" />
@@ -95,6 +92,24 @@
                 <option name="myItemType" value="com.intellij.openapi.externalSystem.view.TasksNode$1" />
               </PATH_ELEMENT>
             </PATH>
+            <PATH>
+              <PATH_ELEMENT>
+                <option name="myItemId" value="" />
+                <option name="myItemType" value="com.intellij.openapi.externalSystem.view.ExternalProjectsStructure$RootNode" />
+              </PATH_ELEMENT>
+              <PATH_ELEMENT>
+                <option name="myItemId" value="ppt-museum-webapp" />
+                <option name="myItemType" value="com.intellij.openapi.externalSystem.view.ProjectNode" />
+              </PATH_ELEMENT>
+              <PATH_ELEMENT>
+                <option name="myItemId" value="Tasks" />
+                <option name="myItemType" value="com.intellij.openapi.externalSystem.view.TasksNode" />
+              </PATH_ELEMENT>
+              <PATH_ELEMENT>
+                <option name="myItemId" value="build" />
+                <option name="myItemType" value="com.intellij.openapi.externalSystem.view.TasksNode$1" />
+              </PATH_ELEMENT>
+            </PATH>
           </tree_state>
         </projects_view>
       </state>
@@ -108,8 +123,8 @@
       <file leaf-file-name="build.gradle" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/build.gradle">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6970387">
-              <caret line="34" column="16" selection-start-line="34" selection-start-column="16" selection-end-line="34" selection-end-column="16" />
+            <state vertical-scroll-proportion="0.43052393">
+              <caret line="60" column="40" selection-start-line="60" selection-start-column="40" selection-end-line="60" selection-end-column="40" />
               <folding />
             </state>
           </provider>
@@ -130,16 +145,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
               <caret line="11" column="47" selection-start-line="11" selection-start-column="47" selection-end-line="11" selection-end-column="47" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="RequestUtilTest.groovy" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/groovy/org/kaakaa/pptmuseum/http/RequestUtilTest.groovy">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -179,7 +184,7 @@
         <entry file="file://$PROJECT_DIR$/Dockerfile">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="4" column="25" selection-start-line="4" selection-start-column="25" selection-end-line="4" selection-end-column="25" />
+              <caret line="3" column="25" selection-start-line="3" selection-start-column="25" selection-end-line="3" selection-end-column="25" />
               <folding />
             </state>
           </provider>
@@ -1014,32 +1019,6 @@
       </ExternalSystemSettings>
       <method />
     </configuration>
-    <configuration default="false" name="RequestUtilTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="org.kaakaa.pptmuseum.http.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="ppt-museum-webapp" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="org.kaakaa.pptmuseum.http" />
-      <option name="MAIN_CLASS_NAME" value="org.kaakaa.pptmuseum.http.RequestUtilTest" />
-      <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="class" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-      <method />
-    </configuration>
     <configuration default="false" name="ppt-museum-webapp [test]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -1096,6 +1075,24 @@
         <option name="taskNames">
           <list>
             <option value="uploadArchives" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <method />
+    </configuration>
+    <configuration default="false" name="ppt-museum-webapp [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="build" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -1427,18 +1424,18 @@
     </configuration>
     <list size="5">
       <item index="0" class="java.lang.String" itemvalue="Gradle.ppt-museum-webapp [clean]" />
-      <item index="1" class="java.lang.String" itemvalue="JUnit.RequestUtilTest" />
-      <item index="2" class="java.lang.String" itemvalue="Gradle.ppt-museum-webapp [test]" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.RequestUtilTest.MakeSlideModel" />
-      <item index="4" class="java.lang.String" itemvalue="Gradle.ppt-museum-webapp [uploadArchives]" />
+      <item index="1" class="java.lang.String" itemvalue="Gradle.ppt-museum-webapp [test]" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.RequestUtilTest.MakeSlideModel" />
+      <item index="3" class="java.lang.String" itemvalue="Gradle.ppt-museum-webapp [uploadArchives]" />
+      <item index="4" class="java.lang.String" itemvalue="Gradle.ppt-museum-webapp [build]" />
     </list>
     <recent_temporary>
       <list size="5">
         <item index="0" class="java.lang.String" itemvalue="Gradle.ppt-museum-webapp [uploadArchives]" />
         <item index="1" class="java.lang.String" itemvalue="Gradle.ppt-museum-webapp [clean]" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.RequestUtilTest.MakeSlideModel" />
-        <item index="3" class="java.lang.String" itemvalue="Gradle.ppt-museum-webapp [test]" />
-        <item index="4" class="java.lang.String" itemvalue="JUnit.RequestUtilTest" />
+        <item index="2" class="java.lang.String" itemvalue="Gradle.ppt-museum-webapp [build]" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.RequestUtilTest.MakeSlideModel" />
+        <item index="4" class="java.lang.String" itemvalue="Gradle.ppt-museum-webapp [test]" />
       </list>
     </recent_temporary>
   </component>
@@ -1984,7 +1981,7 @@
     <entry file="file://$PROJECT_DIR$/Dockerfile">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="4" column="25" selection-start-line="4" selection-start-column="25" selection-end-line="4" selection-end-column="25" />
+          <caret line="3" column="25" selection-start-line="3" selection-start-column="25" selection-end-line="3" selection-end-column="25" />
           <folding />
         </state>
       </provider>
@@ -1997,18 +1994,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mavenRepo/org/kaakaa/ppt-museum/ppt-museum-webapp/maven-metadata.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6970387">
-          <caret line="34" column="16" selection-start-line="34" selection-start-column="16" selection-end-line="34" selection-end-column="16" />
+        <state vertical-scroll-proportion="0.43052393">
+          <caret line="60" column="40" selection-start-line="60" selection-start-column="40" selection-end-line="60" selection-end-column="40" />
           <folding />
         </state>
       </provider>

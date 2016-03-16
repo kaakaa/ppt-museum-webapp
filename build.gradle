@@ -57,6 +57,14 @@ jar {
     }
 }
 
+// remove war file from archives and add jar file to archives
+configurations.archives.artifacts.removeAll {
+    it.archiveTask.is war
+}
+artifacts {
+    archives jar
+}
+
 uploadArchives {
     repositories {
         mavenDeployer {
