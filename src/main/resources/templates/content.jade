@@ -6,8 +6,16 @@
       h3
         a(href="/ppt-museum/slide/#{slide.id}") #{slide.title}
       p
+        // Play button
         a.btn.btn-primary.btn-xs(href="/ppt-museum/slide/#{slide.id}", role="button")
           span.glyphicon.glyphicon-play Play
+        // Edit button
+        button#edit-menu.btn.btn-success.btn-xs(type="button", data-toggle="modal", data-target="#edit-modal", data-id="#{slide.id}", data-title="#{slide.title}", data-description="#{slide.description}", data-tags="#{slide.getTagsToString()}")
+          span.glyphicon.glyphicon-edit Edit
+        // Delete button
+        button.btn.btn-danger.btn-xs(id="remove-slide-#{slide.id}", type="button", data-id="#{slide.id}", data-toggle="confirmation")
+          span.glyphicon.glyphicon-remove Delete
+        // Download button
         .btn-group
           button.btn.btn-info.btn-xs.dropdown-toggle(type="button", data-toggle="dropdown", aria-haspopup="true", aria-expanded="false")
             span.glyphicon.glyphicon-download-alt Download
@@ -18,8 +26,6 @@
             if slide.powerpointDocument
               li
                 a(href="/ppt-museum/document/powerpoint/#{slide.id}", download="#{slide.title}.pptx") PowerPoint
-        button.btn.btn-danger.btn-xs(id="remove-slide-#{slide.id}", type="button", data-id="#{slide.id}", data-toggle="confirmation")
-          span.glyphicon.glyphicon-remove Delete
       hr
       dl(style="width: 100%")
         dt Description:

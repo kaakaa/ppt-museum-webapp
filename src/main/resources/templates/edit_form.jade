@@ -1,0 +1,19 @@
+.modal-header
+  button.close(type="button", data-dismiss="modal", aria-label="Close")
+    span(aria-hidden="true") &times;
+  h4.modal-title#modalLabel Edit Slide Information
+.modal-body
+  form.edit-form(method="post", action="/ppt-museum/slide/dummy", novalidate="false", role="form")
+    .form-group
+      label(for="slideTitle") Slide Title (required)
+      input.form-control(type="text", name="title", id="edit-title", data-error="This field is required", required)
+    .form-group
+      label(for="Description") Description
+      input.form-control(type="text", name="desc", id="edit-desc", placeholder="Enter The Description")
+    .form-group
+      label(for="Description") Tags
+      input.form-control(type="text", name="tags", id="edit-tags", placeholder="example - java, morphia, docker")
+      small.text-muted Input keyword separated comma.
+    .form-group
+      button.btn.btn-default(type="button", data-dismiss="modal") Close
+      button.btn.btn-primary#edit-button(type="submit") Edit

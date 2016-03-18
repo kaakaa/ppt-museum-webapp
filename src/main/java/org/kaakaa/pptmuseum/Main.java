@@ -70,6 +70,13 @@ public class Main {
             return 0;
         });
 
+        post("/ppt-museum/slide/:id", (rq,rs) -> {
+            mongoDBClient.updateSLideInfo(rq.params(":id"), rq.queryParams("title"), rq.queryParams("desc"), rq.queryParams("tags"));
+            rs.status(302);
+            rs.header("Location", "/");
+            return "redirect to /";
+        });
+
         // slide view page
         get("/ppt-museum/slide/:id", (rq, rs) -> {
             HashMap<String, String> map = new HashMap<>();

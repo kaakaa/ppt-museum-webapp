@@ -83,6 +83,10 @@ public class Slide {
         return this.tags;
     }
 
+    public String getTagsToString() {
+        return String.join(",", this.tags);
+    }
+
     public String getTime() {
         Instant instant = Instant.ofEpochSecond(this.id.getTimestamp());
         LocalDateTime date = LocalDateTime.ofInstant(instant, ZoneId.of(ZoneId.SHORT_IDS.get("JST")));

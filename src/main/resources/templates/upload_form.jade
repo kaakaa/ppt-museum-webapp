@@ -1,21 +1,21 @@
 .modal-header
   button.close(type="button", data-dismiss="modal", aria-label="Close")
     span(aria-hidden="true") &times;
-  h4.modall-title#modalLabel Upload Slide
+  h4.modal-title#modalLabel Upload Slide
 .modal-body
   form.upload-form(method="post", action="/ppt-museum/upload", enctype="multipart/form-data", novalidate="false", role="form")
     .form-group
-      label(for="slideTitle") Slide Title (required)
+      label(for="SlideTitle") Slide Title (required)
       input.form-control(type="text", name="title", placeholder="Enter Slide Title", id="slide-title", data-error="This field is required", required)
     .form-group
       label(for="Description") Description
       input.form-control(type="text", name="desc", placeholder="Enter The Description")
     .form-group
-      label(for="Description") Tags
-      input.form-control(type="text", name="tags", placeholder="exmple - java, morphia, docker")
+      label(for="Tags") Tags
+      input.form-control(type="text", name="tags", placeholder="example - java, morphia, docker")
       small.text-muted Input keyword separated comma.
     .form-group
-      label(for="Description") File (required)
+      label(for="UploadFile") File (required)
       input.form-control(type="file", name="file", required)
       small.text-muted File format you can upload are .ppt/.pptx/.pdf .
     .form-group

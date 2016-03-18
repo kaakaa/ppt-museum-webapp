@@ -5,9 +5,15 @@ import org.kaakaa.pptmuseum.db.document.Document;
 import org.kaakaa.pptmuseum.db.document.Slide;
 import org.kaakaa.pptmuseum.db.mongo.MongoConnectionHelper;
 import org.mongodb.morphia.Datastore;
+import org.mongodb.morphia.query.Query;
+import org.mongodb.morphia.query.UpdateOperations;
+import spark.QueryParamsMap;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collector;
+import java.util.stream.Collectors;
 
 /**
  * Created by kaakaa on 16/02/14.
@@ -21,7 +27,7 @@ public class MongoDBClient {
     /**
      * <p>Upload slide to db</p>
      *
-     * @param slide    Slide model
+     * @param slide Slide model
      * @return return key
      */
     public Object upload(Slide slide) {
@@ -74,10 +80,27 @@ public class MongoDBClient {
         return slide.getThumbnail();
     }
 
+
     public List<Slide> searchFilteredKeyword(String keyword) {
         List<String> keywordList = new ArrayList<>();
         keywordList.add(keyword);
         return datastore.createQuery(Slide.class).field("tags").hasAnyOf(keywordList).asList();
     }
 
+    /**
+     * <p>Update Slide Information</p>
+     *
+     * @param id    slide id
+     * @param title slide title - editing
+     * @param desc  slide description - editing
+     * @param tags  slide tags - editing
+     */
+    public void updateSLideInfo(String id, String title, String desc, String tags) {
+        Query<Slide> updateQuery = datastore.createQuery(Slide.class).field("_id").equal(new ObjectId(id));
+
+        List<String> tagList = Arrays.asList(tags.split(",")).stream().map(t -> t.trim()).filter(t -> t.length() > 0).collect(Collectors.toList());
+        UpdateOperations<Slide> ops = datastore.createUpdateOperations(Slide.class).set("title", title).set("description", desc).set("tags", tagList);
+
+        datastore.update(updateQuery, ops);
+    }
 }

@@ -46,6 +46,11 @@ html(lang="ja")
       .modal-dialog(role="document")
         .modal-content
           include upload_form
+    // edit form contents
+    .modal.fade#edit-modal(tabindex="-1", role="dialog", aria-labelledby="slideEditModal")
+      .modal-dialog(role="document")
+        .modal-content
+          include edit_form
 
 
     // bower:js
@@ -89,6 +94,27 @@ html(lang="ja")
         $(".upload-form").validator('validate').on('submit', function(e) {
           $('#upload-progress').show();
         });
+      });
+
+      // Show Edit Form
+      $('#edit-modal').on('show.bs.modal', function(e) {
+        var button = $(e.relatedTarget);
+
+        var id = button.data('id');
+        var title = button.data('title');
+        var description = button.data('description');
+        var tags = button.data('tags');
+
+        var modal = $(this);
+        modal.find('.modal-body form').attr('action', '/ppt-museum/slide/' + id);
+        modal.find('.modal-body input#edit-title').val(title);
+        modal.find('.modal-body input#edit-desc').val(description);
+        modal.find('.modal-body input#edit-tags').val(tags);
+      });
+
+      // Validate Edit Form
+      $("button[id='edit-button']").on('click', function() {
+        $(".edit-form").validator('validate');
       });
 
       // Delete Slide
