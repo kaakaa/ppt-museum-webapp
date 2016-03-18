@@ -11,24 +11,22 @@ import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.util.EntityUtils;
 import org.apache.pdfbox.pdmodel.PDDocument;
-import org.apache.pdfbox.pdmodel.PDPage;
 import org.apache.pdfbox.rendering.PDFRenderer;
 import org.kaakaa.pptmuseum.db.document.Document;
 import org.kaakaa.pptmuseum.db.document.Slide;
 
 import javax.imageio.ImageIO;
-import javax.imageio.stream.ImageInputStream;
 import java.awt.image.BufferedImage;
-import java.awt.image.RenderedImage;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.UnsupportedEncodingException;
 import java.util.Arrays;
 import java.util.List;
-import java.util.Optional;
 
 /**
+ * Upload info handler class.
+ *
  * Created by kaakaa on 16/02/18.
  */
 public class RequestUtil {
@@ -59,6 +57,12 @@ public class RequestUtil {
         return slide;
     }
 
+    /**
+     * <p>Encoding form string to utf-8.</p>
+     *
+     * @param item form item
+     * @return encoded string
+     */
     private static String encodingMultiformString(FileItem item) {
         String s = null;
         try {
@@ -72,24 +76,32 @@ public class RequestUtil {
     /**
      * <p>make Document class instance of request item</p>
      *
-     * @param item FileItem in multipart request
-     * @param slide
-     * @return Document model
+     * @param item  FileItem in multipart request
+     * @param slide Slide Model
      */
-    public static Optional<Document> makeDocumentModel(FileItem item, Slide slide) {
+    public static void makeDocumentModel(FileItem item, Slide slide) {
         Document doc = new Document();
-        doc.setContentType(item.getContentType());
-
-        switch (doc.getContentType()) {
+        switch (item.getContentType()) {
             case "application/pdf":
+                doc = new Document();
+                doc.setContentType(item.getContentType());
                 doc.setFile(item.get());
+                slide.setPdfDocument(doc);
                 break;
             case "application/vnd.ms-powerpoint":
             case "application/vnd.openxmlformats-officedocument.presentationml.presentation":
+                doc = new Document();
+                doc.setContentType(item.getContentType());
+                doc.setFile(item.get());
+                slide.setPowerpointDocument(doc);
+
+                doc = new Document();
+                doc.setContentType("application/pdf");
                 doc.setFile(convertByJodConverter(item.get(), doc.getContentType()));
+                slide.setPdfDocument(doc);
                 break;
             default:
-                return Optional.ofNullable(null);
+                return;
         }
 
         // make pdf thumbnail
@@ -104,10 +116,7 @@ public class RequestUtil {
             slide.setThumbnail(baos.toByteArray());
         } catch (IOException e) {
             e.printStackTrace();
-            return Optional.ofNullable(null);
         }
-
-        return Optional.of(doc);
     }
 
     /**

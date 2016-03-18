@@ -5,9 +5,6 @@ import org.kaakaa.pptmuseum.db.document.Document;
 import org.kaakaa.pptmuseum.db.document.Slide;
 import org.kaakaa.pptmuseum.db.mongo.MongoConnectionHelper;
 import org.mongodb.morphia.Datastore;
-import org.mongodb.morphia.Key;
-import org.mongodb.morphia.query.CriteriaContainerImpl;
-import org.mongodb.morphia.query.Query;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,13 +22,10 @@ public class MongoDBClient {
      * <p>Upload slide to db</p>
      *
      * @param slide    Slide model
-     * @param document Document model
      * @return return key
      */
-    public Object upload(Slide slide, Document document) {
-        Key<Slide> result = datastore.save(slide);
-        document.setId(result.getId().toString());
-        return datastore.save(document);
+    public Object upload(Slide slide) {
+        return datastore.save(slide);
     }
 
     /**
@@ -59,7 +53,11 @@ public class MongoDBClient {
      * @return Document Model
      */
     public Document getPDF(String id) {
-        return datastore.get(Document.class, new ObjectId(id));
+        return datastore.get(Slide.class, new ObjectId(id)).getPDFDocument();
+    }
+
+    public Document getPowerpoint(String id) {
+        return datastore.get(Slide.class, new ObjectId(id)).getPowerpointDocument();
     }
 
     /**
@@ -69,8 +67,6 @@ public class MongoDBClient {
      */
     public void delete(String id) {
         datastore.delete(Slide.class, new ObjectId(id));
-        Query<Document> documentQuery = datastore.createQuery(Document.class).filter("id =", new ObjectId(id));
-        datastore.delete(documentQuery);
     }
 
     public byte[] getThumbnail(String id) {
@@ -83,4 +79,5 @@ public class MongoDBClient {
         keywordList.add(keyword);
         return datastore.createQuery(Slide.class).field("tags").hasAnyOf(keywordList).asList();
     }
+
 }

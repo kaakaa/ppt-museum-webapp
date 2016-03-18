@@ -55,9 +55,9 @@ public class Main {
                     .filter(i -> !i.isFormField())
                     .findFirst()
                     .ifPresent(i -> {
-                        RequestUtil.makeDocumentModel(i, slide)
-                                // upload document
-                                .ifPresent(d -> mongoDBClient.upload(slide, d));
+                        RequestUtil.makeDocumentModel(i, slide);
+                        // upload document
+                        mongoDBClient.upload(slide);
                     });
             rs.status(302);
             rs.header("Location", "/");
@@ -76,8 +76,15 @@ public class Main {
             map.put("id", rq.params("id"));
             return new ModelAndView(map, "slide");
         }, new JadeTemplateEngine());
+
+        // get resource file
         get("/ppt-museum/document/pdf/:id", (rq, rs) -> {
             Document document = mongoDBClient.getPDF(rq.params(":id"));
+            rs.type(document.getContentType());
+            return document.getFile();
+        });
+        get("/ppt-museum/document/powerpoint/:id", (rq, rs) -> {
+            Document document = mongoDBClient.getPowerpoint(rq.params(":id"));
             rs.type(document.getContentType());
             return document.getFile();
         });

@@ -8,6 +8,16 @@
       p
         a.btn.btn-primary.btn-xs(href="/ppt-museum/slide/#{slide.id}", role="button")
           span.glyphicon.glyphicon-play Play
+        .btn-group
+          button.btn.btn-info.btn-xs.dropdown-toggle(type="button", data-toggle="dropdown", aria-haspopup="true", aria-expanded="false")
+            span.glyphicon.glyphicon-download-alt Download
+            span.caret
+          ul.dropdown-menu
+            li
+              a(href="/ppt-museum/document/pdf/#{slide.id}", download="#{slide.title}.pdf") PDF
+            if slide.powerpointDocument
+              li
+                a(href="/ppt-museum/document/powerpoint/#{slide.id}", download="#{slide.title}.pptx") PowerPoint
         button.btn.btn-danger.btn-xs(id="remove-slide-#{slide.id}", type="button", data-id="#{slide.id}", data-toggle="confirmation")
           span.glyphicon.glyphicon-remove Delete
       hr

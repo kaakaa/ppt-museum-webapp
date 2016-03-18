@@ -13,10 +13,9 @@ import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 /**
  * Created by kaakaa on 16/02/13.
@@ -36,6 +35,11 @@ public class Slide {
 
     @Embedded("tags")
     private List<String> tags = new ArrayList<>();
+
+    @Embedded("pdf")
+    private Document pdfDocument;
+    @Embedded("powerpoint")
+    private Document powerpointDocument;
 
     /**
      * default contructor
@@ -72,7 +76,7 @@ public class Slide {
     }
 
     public void setTags(List<String> tags) {
-        this.tags = tags.stream().map(s -> s.trim()).collect(Collectors.toList());
+        this.tags = tags.stream().map(t -> t.trim()).filter(t -> t.length() != 0).collect(Collectors.toList());
     }
 
     public List<String> getTags() {
@@ -83,5 +87,21 @@ public class Slide {
         Instant instant = Instant.ofEpochSecond(this.id.getTimestamp());
         LocalDateTime date = LocalDateTime.ofInstant(instant, ZoneId.of(ZoneId.SHORT_IDS.get("JST")));
         return date.format(DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss"));
+    }
+
+    public void setPowerpointDocument(Document doc) {
+        this.powerpointDocument = doc;
+    }
+
+    public Document getPowerpointDocument() {
+        return this.powerpointDocument;
+    }
+
+    public void setPdfDocument(Document doc) {
+        this.pdfDocument = doc;
+    }
+
+    public Document getPDFDocument() {
+        return this.pdfDocument;
     }
 }
