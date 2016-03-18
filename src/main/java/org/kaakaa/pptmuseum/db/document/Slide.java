@@ -1,7 +1,7 @@
 package org.kaakaa.pptmuseum.db.document;
 
-import lombok.EqualsAndHashCode;
-import lombok.ToString;
+import org.apache.commons.lang3.builder.ReflectionToStringBuilder;
+import org.apache.commons.lang3.builder.ToStringStyle;
 import org.bson.types.ObjectId;
 import org.mongodb.morphia.annotations.Embedded;
 import org.mongodb.morphia.annotations.Entity;
@@ -14,14 +14,11 @@ import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 import java.util.stream.Collectors;
 
 /**
  * Created by kaakaa on 16/02/13.
  */
-@EqualsAndHashCode
-@ToString(exclude = {"id", "tags", "thumbnail"})
 @Entity
 public class Slide {
     @Id
@@ -107,5 +104,11 @@ public class Slide {
 
     public Document getPDFDocument() {
         return this.pdfDocument;
+    }
+
+    @Override
+    public String toString() {
+        ReflectionToStringBuilder.setDefaultStyle(ToStringStyle.SHORT_PREFIX_STYLE);
+        return ReflectionToStringBuilder.toStringExclude(this, "id", "thumbnail", "pdfDocument", "powerpointDocument").toString();
     }
 }

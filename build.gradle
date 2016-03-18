@@ -2,7 +2,6 @@ plugins {
     id 'java'
     id 'groovy'
     id 'jacoco'
-    id 'war'
     id 'application'
     id 'maven'
     id 'com.moowork.grunt' version '0.11'
@@ -12,7 +11,7 @@ plugins {
 }
 
 group 'org.kaakaa.ppt-museum'
-version '0.0.4'
+version '0.0.5'
 
 mainClassName = 'org.kaakaa.pptmuseum.Main'
 
@@ -36,7 +35,7 @@ dependencies {
     compile 'org.apache.httpcomponents:httpclient:4.5.1'
     compile 'org.apache.httpcomponents:httpmime:4.5.1'
     compile 'org.apache.pdfbox:pdfbox:2.0.0-SNAPSHOT'
-    providedCompile 'org.projectlombok:lombok:1.16.4'
+    compile 'org.apache.commons:commons-lang3:3.4'
 
     testCompile 'org.spockframework:spock-core:1.0-groovy-2.4'
 }
@@ -57,10 +56,6 @@ jar {
     }
 }
 
-// remove war file from archives and add jar file to archives
-configurations.archives.artifacts.removeAll {
-    it.archiveTask.is war
-}
 artifacts {
     archives jar
 }

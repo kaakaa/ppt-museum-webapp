@@ -21,15 +21,11 @@ class RequestUtilTest extends Specification {
 
         where:
         isFormField | fieldName | value || expected
-        true | "title" | "test_title" || "Slide(title=test_title, description=null)"
-        true | "title" | new String("日本語のTITLE".getBytes(), "ISO8859_1") || "Slide(title=日本語のTITLE, description=null)"
-        false | "title"| "test_title" || "Slide(title=null, description=null)"
-        true | "desc" | "test_description" || "Slide(title=null, description=test_description)"
-        true | "desc" | new String("日本語のDESCRIPTION".getBytes(), "ISO8859_1") || "Slide(title=null, description=日本語のDESCRIPTION)"
-        false | "desc"| "test_title" || "Slide(title=null, description=null)"
-    }
-
-    def "MakeDocumentModel"() {
-
+        true | "title" | "test_title" || "Slide[title=test_title,description=<null>,tags=[]]"
+        true | "title" | new String("日本語のTITLE".getBytes(), "ISO8859_1") || "Slide[title=日本語のTITLE,description=<null>,tags=[]]"
+        false | "title"| "test_title" || "Slide[title=<null>,description=<null>,tags=[]]"
+        true | "desc" | "test_description" || "Slide[title=<null>,description=test_description,tags=[]]"
+        true | "desc" | new String("日本語のDESCRIPTION".getBytes(), "ISO8859_1") || "Slide[title=<null>,description=日本語のDESCRIPTION,tags=[]]"
+        false | "desc"| "test_title" || "Slide[title=<null>,description=<null>,tags=[]]"
     }
 }
