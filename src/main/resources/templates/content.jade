@@ -21,7 +21,7 @@
           if slide.powerpointDocument
             li
               a(href="/ppt-museum/document/powerpoint/#{slide.id}", download="#{slide.title}.pptx")
-                span.slyphicon.glyphicon-list-alt  PowerPoint
+                span.glyphicon.glyphicon-list-alt  PowerPoint
       // Delete button
       button.btn.btn-danger.btn-xs(id="remove-slide-#{slide.id}", type="button", data-id="#{slide.id}", data-toggle="confirmation")
         span.glyphicon.glyphicon-remove Delete
