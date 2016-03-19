@@ -1,4 +1,4 @@
-extends ./layout
+extends ../layout
 
 block content
   .row.text-center
@@ -8,7 +8,7 @@ block content
   each tmp in helper.eachSlice(slides, 3)
     .row.row-relative
       each slide in tmp
-        include content
+        include ../common/slide_info
 
 block footer
   .row.text-center

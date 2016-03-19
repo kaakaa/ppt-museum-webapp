@@ -7,8 +7,10 @@ import org.kaakaa.pptmuseum.db.MongoDBClient;
 import org.kaakaa.pptmuseum.db.document.Document;
 import org.kaakaa.pptmuseum.db.document.Slide;
 import org.kaakaa.pptmuseum.http.RequestUtil;
+import org.kaakaa.pptmuseum.jade.JadePages;
 import org.kaakaa.pptmuseum.jade.ListHelper;
 import spark.ModelAndView;
+import spark.Response;
 import spark.template.jade.JadeTemplateEngine;
 
 import java.net.UnknownHostException;
@@ -39,9 +41,7 @@ public class Main {
         get("/ppt-museum/slides/:index", (rq, rs) -> getTopPageView(rq.params("index")), new JadeTemplateEngine());
         get("/ppt-museum/keywords/:key", (rq, rs) -> getFilteredPageView(rq.params("key")), new JadeTemplateEngine());
 
-
         // upload page
-        get("/ppt-museum/upload", (rq, rs) -> new ModelAndView(new HashMap(), "upload"), new JadeTemplateEngine());
         post("/ppt-museum/upload", (rq, rs) -> {
             // parse request
             ServletFileUpload servletFileUpload = new ServletFileUpload(new DiskFileItemFactory());
@@ -59,9 +59,7 @@ public class Main {
                         // upload document
                         mongoDBClient.upload(slide);
                     });
-            rs.status(302);
-            rs.header("Location", "/");
-            return "redirect to /";
+            return redirectToTop(rs);
         });
 
         // delete slide
@@ -72,16 +70,14 @@ public class Main {
 
         post("/ppt-museum/slide/:id", (rq,rs) -> {
             mongoDBClient.updateSLideInfo(rq.params(":id"), rq.queryParams("title"), rq.queryParams("desc"), rq.queryParams("tags"));
-            rs.status(302);
-            rs.header("Location", "/");
-            return "redirect to /";
+            return redirectToTop(rs);
         });
 
         // slide view page
         get("/ppt-museum/slide/:id", (rq, rs) -> {
             HashMap<String, String> map = new HashMap<>();
             map.put("id", rq.params("id"));
-            return new ModelAndView(map, "slide");
+            return new ModelAndView(map, JadePages.PRESENTATION.getTemplatePath());
         }, new JadeTemplateEngine());
 
         // get resource file
@@ -113,7 +109,7 @@ public class Main {
         map.put("helper", new ListHelper(result.size(), 99));
         map.put("index", 1);
         map.put("keyword", keyword);
-        return new ModelAndView(map, "search_result");
+        return new ModelAndView(map, JadePages.TAG_SEARCH.getTemplatePath());
     }
 
     private static ModelAndView getTopPageView(String index) {
@@ -127,6 +123,12 @@ public class Main {
         map.put("slides", mongoDBClient.searchAll(i, 15));
         map.put("helper", new ListHelper(mongoDBClient.allSlideSize(), 15));
         map.put("index", index);
-        return new ModelAndView(map, "ppt-museum");
+        return new ModelAndView(map, JadePages.TOP.getTemplatePath());
+    }
+
+    private static String redirectToTop(Response rs) {
+        rs.status(302);
+        rs.header("Location", "/");
+        return "redirect to /";
     }
 }

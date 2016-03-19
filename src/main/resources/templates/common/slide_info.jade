@@ -4,14 +4,14 @@
       img.img-responsive(src="/ppt-museum/thumbnail/#{slide.id}")
     div
       // Play button
-      a.btn.btn-primary.btn-xs(href="/ppt-museum/slide/#{slide.id}", role="button")
+      a.btn.btn-primary.btn-xs.btn-slide-controller(href="/ppt-museum/slide/#{slide.id}", role="button")
         span.glyphicon.glyphicon-play Play
       // Edit button
-      button#edit-menu.btn.btn-success.btn-xs(type="button", data-toggle="modal", data-target="#edit-modal", data-id="#{slide.id}", data-title="#{slide.title}", data-description="#{slide.description}", data-tags="#{slide.getTagsToString()}")
+      button#edit-menu.btn.btn-success.btn-xs.btn-slide-controller(type="button", data-toggle="modal", data-target="#edit-modal", data-id="#{slide.id}", data-title="#{slide.title}", data-description="#{slide.description}", data-tags="#{slide.getTagsToString()}")
         span.glyphicon.glyphicon-edit Edit
       // Download button
       span.btn-group
-        button.btn.btn-info.btn-xs.dropdown-toggle(type="button", data-toggle="dropdown", aria-haspopup="true", aria-expanded="false")
+        button.btn.btn-info.btn-xs.dropdown-toggle.btn-slide-controller(type="button", data-toggle="dropdown", aria-haspopup="true", aria-expanded="false")
           span.glyphicon.glyphicon-download-alt Download
           span.caret
         ul.dropdown-menu
@@ -23,7 +23,7 @@
               a(href="/ppt-museum/document/powerpoint/#{slide.id}", download="#{slide.title}.pptx")
                 span.glyphicon.glyphicon-list-alt  PowerPoint
       // Delete button
-      button.btn.btn-danger.btn-xs(id="remove-slide-#{slide.id}", type="button", data-id="#{slide.id}", data-toggle="confirmation")
+      button.btn.btn-danger.btn-xs.btn-slide-controller(id="remove-slide-#{slide.id}", type="button", data-id="#{slide.id}", data-toggle="confirmation")
         span.glyphicon.glyphicon-remove Delete
     .caption
       h3
