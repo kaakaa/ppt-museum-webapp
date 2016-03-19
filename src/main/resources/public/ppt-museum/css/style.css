@@ -4,7 +4,7 @@ body {
 }
 
 .glyphicon {
-    font-size: 1.1em;
+    .font-size: 1.4em;
 }
 
 dd[class^="slide-caption-"] {

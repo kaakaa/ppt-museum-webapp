@@ -2,31 +2,33 @@
   .thumbnail
     a(href="/ppt-museum/slide/#{slide.id}")
       img.img-responsive(src="/ppt-museum/thumbnail/#{slide.id}")
+    div
+      // Play button
+      a.btn.btn-primary.btn-xs(href="/ppt-museum/slide/#{slide.id}", role="button")
+        span.glyphicon.glyphicon-play Play
+      // Edit button
+      button#edit-menu.btn.btn-success.btn-xs(type="button", data-toggle="modal", data-target="#edit-modal", data-id="#{slide.id}", data-title="#{slide.title}", data-description="#{slide.description}", data-tags="#{slide.getTagsToString()}")
+        span.glyphicon.glyphicon-edit Edit
+      // Download button
+      span.btn-group
+        button.btn.btn-info.btn-xs.dropdown-toggle(type="button", data-toggle="dropdown", aria-haspopup="true", aria-expanded="false")
+          span.glyphicon.glyphicon-download-alt Download
+          span.caret
+        ul.dropdown-menu
+          li(style="backgrount-color: rgba(128,128,128,0.7);")
+            a(href="/ppt-museum/document/pdf/#{slide.id}", download="#{slide.title}.pdf")
+              span.glyphicon.glyphicon-file  PDF
+          if slide.powerpointDocument
+            li
+              a(href="/ppt-museum/document/powerpoint/#{slide.id}", download="#{slide.title}.pptx")
+                span.slyphicon.glyphicon-list-alt  PowerPoint
+      // Delete button
+      button.btn.btn-danger.btn-xs(id="remove-slide-#{slide.id}", type="button", data-id="#{slide.id}", data-toggle="confirmation")
+        span.glyphicon.glyphicon-remove Delete
     .caption
       h3
         a(href="/ppt-museum/slide/#{slide.id}") #{slide.title}
-      p
-        // Play button
-        a.btn.btn-primary.btn-xs(href="/ppt-museum/slide/#{slide.id}", role="button")
-          span.glyphicon.glyphicon-play Play
-        // Edit button
-        button#edit-menu.btn.btn-success.btn-xs(type="button", data-toggle="modal", data-target="#edit-modal", data-id="#{slide.id}", data-title="#{slide.title}", data-description="#{slide.description}", data-tags="#{slide.getTagsToString()}")
-          span.glyphicon.glyphicon-edit Edit
-        // Delete button
-        button.btn.btn-danger.btn-xs(id="remove-slide-#{slide.id}", type="button", data-id="#{slide.id}", data-toggle="confirmation")
-          span.glyphicon.glyphicon-remove Delete
-        // Download button
-        .btn-group
-          button.btn.btn-info.btn-xs.dropdown-toggle(type="button", data-toggle="dropdown", aria-haspopup="true", aria-expanded="false")
-            span.glyphicon.glyphicon-download-alt Download
-            span.caret
-          ul.dropdown-menu
-            li
-              a(href="/ppt-museum/document/pdf/#{slide.id}", download="#{slide.title}.pdf") PDF
-            if slide.powerpointDocument
-              li
-                a(href="/ppt-museum/document/powerpoint/#{slide.id}", download="#{slide.title}.pptx") PowerPoint
-      hr
+    div
       dl(style="width: 100%")
         dt Description:
         dd.slide-caption-description
