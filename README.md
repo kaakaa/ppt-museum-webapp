@@ -21,7 +21,7 @@ This is webapp for [kaakaa/ppt-museum: ppt/pptx file uploader](https://github.co
 ## Build Docker image
 
 Additionally, We have task `buildDockerImage` for creating docker image.  
-`buildDockerImage` task depends on `installDist` task and creating docker image include archives of `installDist` task.
+`buildDockerImage` task depends on `installDist` task and created docker image including outputs of `installDist` task.
 
 
 ```
