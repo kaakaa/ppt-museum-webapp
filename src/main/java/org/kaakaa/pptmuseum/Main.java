@@ -65,7 +65,7 @@ public class Main {
         });
 
         // delete slide
-        delete("/ppt-museum/slide/delete/:id", (rq, rs) -> {
+        delete("/ppt-museum/slide/:id", (rq, rs) -> {
             mongoDBClient.delete(rq.params("id"));
             return 0;
         });

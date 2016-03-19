@@ -126,7 +126,7 @@ html(lang="ja")
         var id = $(this).data('id');
         $.ajax({
           type: 'DELETE',
-          url: '/ppt-museum/slide/delete/' + id,
+          url: '/ppt-museum/slide/' + id,
           success: function(data) {
             location.reload();
           },
