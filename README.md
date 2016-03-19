@@ -8,7 +8,9 @@ This is webapp for [kaakaa/ppt-museum: ppt/pptx file uploader](https://github.co
 
 ## Task Dependencies
 
-[https://raw.githubusercontent.com/kaakaa/ppt-museum-webapp/master/gradle_task_dependencies.svg](https://raw.githubusercontent.com/kaakaa/ppt-museum-webapp/master/gradle_task_dependencies.svg)
+[https://raw.githubusercontent.com/kaakaa/ppt-museum-webapp/master/gradle_task_dependencies.png](https://raw.githubusercontent.com/kaakaa/ppt-museum-webapp/master/gradle_task_dependencies.png)
+
+> created by [mmalohlava/gradle-visteg: Exports task execution graph as .dot file](https://github.com/mmalohlava/gradle-visteg)
 
 ## Build Application
 
