@@ -8,6 +8,7 @@ plugins {
     id 'com.moowork.node' version '0.11'
     id 'com.bmuschko.docker-remote-api' version '2.6.6'
     id 'com.github.kt3k.coveralls' version '2.5.0'
+    id 'cz.malohlava' version '1.0.1'
 }
 
 group 'org.kaakaa.ppt-museum'
@@ -124,4 +125,17 @@ task buildDockerImage(type: DockerBuildImage) {
     dependsOn clean, installDist
     inputDir = rootDir
     tag = 'kaakaa/ppt-museum-web'
+}
+
+// for graph generator
+visteg {
+    enabled		    = true
+    colouredNodes	= true
+    colouredEdges	= true
+    destination		= "${buildDir}/reports/visteg.dot"
+    exporter		= 'dot'
+    colorscheme		= 'spectral11'
+    nodeShape		= 'box'
+    startNodeShape	= 'hexagon'
+    endNodeShape	= 'doubleoctagon'
 }
