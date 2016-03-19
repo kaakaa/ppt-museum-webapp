@@ -1,12 +1,12 @@
 package org.kaakaa.pptmuseum;
 
-import org.apache.commons.fileupload.FileItem;
-import org.apache.commons.fileupload.disk.DiskFileItemFactory;
-import org.apache.commons.fileupload.servlet.ServletFileUpload;
 import org.kaakaa.pptmuseum.db.MongoDBClient;
-import org.kaakaa.pptmuseum.db.document.Document;
+import org.kaakaa.pptmuseum.db.document.Resource;
 import org.kaakaa.pptmuseum.db.document.Slide;
-import org.kaakaa.pptmuseum.http.RequestUtil;
+import org.kaakaa.pptmuseum.event.Event;
+import org.kaakaa.pptmuseum.event.UploadDocument;
+import org.kaakaa.pptmuseum.event.DeleteDocument;
+import org.kaakaa.pptmuseum.event.execute.EventExecuter;
 import org.kaakaa.pptmuseum.jade.JadePages;
 import org.kaakaa.pptmuseum.jade.ListHelper;
 import spark.ModelAndView;
@@ -43,31 +43,19 @@ public class Main {
 
         // upload page
         post("/ppt-museum/upload", (rq, rs) -> {
-            // parse request
-            ServletFileUpload servletFileUpload = new ServletFileUpload(new DiskFileItemFactory());
-            List<FileItem> fileItems = servletFileUpload.parseRequest(rq.raw());
-
-            // make Slide model
-            Slide slide = RequestUtil.makeSlideModel(fileItems);
-
-            // make Document model
-            fileItems.stream()
-                    .filter(i -> !i.isFormField())
-                    .findFirst()
-                    .ifPresent(i -> {
-                        RequestUtil.makeDocumentModel(i, slide);
-                        // upload document
-                        mongoDBClient.upload(slide);
-                    });
+            Event uploadEvent = new UploadDocument(rq);
+            EventExecuter.execute(uploadEvent);
             return redirectToTop(rs);
         });
 
         // delete slide
         delete("/ppt-museum/slide/:id", (rq, rs) -> {
-            mongoDBClient.delete(rq.params("id"));
+            Event deleteEvent = new DeleteDocument(rq);
+            EventExecuter.execute(deleteEvent);
             return 0;
         });
 
+        // update slide info
         post("/ppt-museum/slide/:id", (rq,rs) -> {
             mongoDBClient.updateSLideInfo(rq.params(":id"), rq.queryParams("title"), rq.queryParams("desc"), rq.queryParams("tags"));
             return redirectToTop(rs);
@@ -81,24 +69,20 @@ public class Main {
         }, new JadeTemplateEngine());
 
         // get resource file
-        get("/ppt-museum/document/pdf/:id", (rq, rs) -> {
-            Document document = mongoDBClient.getPDF(rq.params(":id"));
-            rs.type(document.getContentType());
-            return document.getFile();
+        get("/ppt-museum/resource/pdf/:id", (rq, rs) -> {
+            Resource resource = mongoDBClient.getPDF(rq.params(":id"));
+            rs.type(resource.getContentType());
+            return resource.getFile();
         });
-        get("/ppt-museum/document/powerpoint/:id", (rq, rs) -> {
-            Document document = mongoDBClient.getPowerpoint(rq.params(":id"));
-            rs.type(document.getContentType());
-            return document.getFile();
+        get("/ppt-museum/resource/powerpoint/:id", (rq, rs) -> {
+            Resource resource = mongoDBClient.getPowerpoint(rq.params(":id"));
+            rs.type(resource.getContentType());
+            return resource.getFile();
         });
-        get("/ppt-museum/thumbnail/:id", (rq, rs) -> {
-            byte[] file = mongoDBClient.getThumbnail(rq.params("id"));
-            rs.type("image/png");
-            rs.header("Content-length", String.valueOf(file.length));
-            rs.raw().getOutputStream().write(file);
-            rs.raw().getOutputStream().flush();
-            rs.raw().getOutputStream().close();
-            return rs.raw();
+        get("/ppt-museum/resource/thumbnail/:id", (rq, rs) -> {
+            Resource resource = mongoDBClient.getThumbnail(rq.params("id"));
+            rs.type(resource.getContentType());
+            return resource.getFile();
         });
     }
 

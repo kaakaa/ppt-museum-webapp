@@ -1,7 +1,7 @@
 package org.kaakaa.pptmuseum.db;
 
 import org.bson.types.ObjectId;
-import org.kaakaa.pptmuseum.db.document.Document;
+import org.kaakaa.pptmuseum.db.document.Resource;
 import org.kaakaa.pptmuseum.db.document.Slide;
 import org.kaakaa.pptmuseum.db.mongo.MongoConnectionHelper;
 import org.mongodb.morphia.Datastore;
@@ -54,19 +54,19 @@ public class MongoDBClient {
      * <p>Get pdf document</p>
      *
      * @param id id
-     * @return Document Model
+     * @return Resource Model
      */
-    public Document getPDF(String id) {
-        return datastore.get(Slide.class, new ObjectId(id)).getPDFDocument();
+    public Resource getPDF(String id) {
+        return datastore.get(Slide.class, new ObjectId(id)).getPDFResource();
     }
 
     /**
      * <p>Get powerpoint dcoument</p>
      * @param id id
-     * @return Document Model
+     * @return Resource Model
      */
-    public Document getPowerpoint(String id) {
-        return datastore.get(Slide.class, new ObjectId(id)).getPowerpointDocument();
+    public Resource getPowerpoint(String id) {
+        return datastore.get(Slide.class, new ObjectId(id)).getPowerpointResource();
     }
 
     /**
@@ -78,7 +78,7 @@ public class MongoDBClient {
         datastore.delete(Slide.class, new ObjectId(id));
     }
 
-    public byte[] getThumbnail(String id) {
+    public Resource getThumbnail(String id) {
         Slide slide = datastore.get(Slide.class, new ObjectId(id));
         return slide.getThumbnail();
     }

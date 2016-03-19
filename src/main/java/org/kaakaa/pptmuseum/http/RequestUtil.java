@@ -12,7 +12,8 @@ import org.apache.http.impl.client.HttpClients;
 import org.apache.http.util.EntityUtils;
 import org.apache.pdfbox.pdmodel.PDDocument;
 import org.apache.pdfbox.rendering.PDFRenderer;
-import org.kaakaa.pptmuseum.db.document.Document;
+import org.kaakaa.pptmuseum.db.SlideResource;
+import org.kaakaa.pptmuseum.db.document.Resource;
 import org.kaakaa.pptmuseum.db.document.Slide;
 
 import javax.imageio.ImageIO;
@@ -26,7 +27,7 @@ import java.util.List;
 
 /**
  * Upload info handler class.
- *
+ * <p>
  * Created by kaakaa on 16/02/18.
  */
 public class RequestUtil {
@@ -74,38 +75,28 @@ public class RequestUtil {
     }
 
     /**
-     * <p>make Document class instance of request item</p>
+     * <p>make Resource class instance of request item</p>
      *
      * @param item  FileItem in multipart request
      * @param slide Slide Model
      */
     public static void makeDocumentModel(FileItem item, Slide slide) {
-        Document doc = new Document();
-        switch (item.getContentType()) {
-            case "application/pdf":
-                doc = new Document();
-                doc.setContentType(item.getContentType());
-                doc.setFile(item.get());
-                slide.setPdfDocument(doc);
+        SlideResource resourceType = SlideResource.toSlideResource(item.getContentType());
+        switch (resourceType) {
+            case PDF:
+                slide.setPdfResource(new Resource(resourceType, item.get()));
                 break;
-            case "application/vnd.ms-powerpoint":
-            case "application/vnd.openxmlformats-officedocument.presentationml.presentation":
-                doc = new Document();
-                doc.setContentType(item.getContentType());
-                doc.setFile(item.get());
-                slide.setPowerpointDocument(doc);
-
-                doc = new Document();
-                doc.setContentType("application/pdf");
-                doc.setFile(convertByJodConverter(item.get(), doc.getContentType()));
-                slide.setPdfDocument(doc);
+            case PPT:
+            case PPTX:
+                slide.setPowerpointResource(new Resource(resourceType, item.get()));
+                slide.setPdfResource(new Resource(SlideResource.PDF, convertByJodConverter(item.get(), resourceType)));
                 break;
             default:
                 return;
         }
 
         // make pdf thumbnail
-        InputStream input = new ByteArrayInputStream(doc.getFile());
+        InputStream input = new ByteArrayInputStream(slide.getPDFResource().getFile());
         try {
             PDDocument pdDoc = PDDocument.load(input);
             PDFRenderer render = new PDFRenderer(pdDoc);
@@ -113,7 +104,7 @@ public class RequestUtil {
 
             ByteArrayOutputStream baos = new ByteArrayOutputStream();
             ImageIO.write(bufferedImage, "png", baos);
-            slide.setThumbnail(baos.toByteArray());
+            slide.setThumbnail(new Resource(SlideResource.THUMBNAIL, baos.toByteArray()));
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -122,11 +113,11 @@ public class RequestUtil {
     /**
      * <p>convert ppt/pptx file to pdf format by JODConverter. </p>
      *
-     * @param bytes       ppt/pptx file contents
-     * @param contentType Content-type getting request header
+     * @param bytes        ppt/pptx file contents
+     * @param resourceType Content-type getting request header
      * @return pdf file contents
      */
-    private static byte[] convertByJodConverter(byte[] bytes, String contentType) {
+    private static byte[] convertByJodConverter(byte[] bytes, SlideResource resourceType) {
         byte[] results = new byte[1024];
 
         try (CloseableHttpClient httpClient = HttpClients.createDefault()) {
@@ -134,7 +125,7 @@ public class RequestUtil {
 
             HttpEntity entity = MultipartEntityBuilder.create()
                     .addTextBody("outputFormat", "pdf")
-                    .addBinaryBody("inputDocument", bytes, ContentType.create(contentType), "filename.ppt")
+                    .addBinaryBody("inputDocument", bytes, ContentType.create(resourceType.getContentType()), "filename.ppt")
                     .build();
             post.setEntity(entity);
 

@@ -1,7 +1,7 @@
 .col-md-4.col-border-padding
   .thumbnail
     a(href="/ppt-museum/slide/#{slide.id}")
-      img.img-responsive(src="/ppt-museum/thumbnail/#{slide.id}")
+      img.img-responsive(src="/ppt-museum/resource/thumbnail/#{slide.id}")
     div
       // Play button
       a.btn.btn-primary.btn-xs.btn-slide-controller(href="/ppt-museum/slide/#{slide.id}", role="button")
@@ -16,11 +16,11 @@
           span.caret
         ul.dropdown-menu
           li(style="backgrount-color: rgba(128,128,128,0.7);")
-            a(href="/ppt-museum/document/pdf/#{slide.id}", download="#{slide.title}.pdf")
+            a(href="/ppt-museum/resource/pdf/#{slide.id}", download="#{slide.title}.pdf")
               span.glyphicon.glyphicon-file  PDF
           if slide.powerpointDocument
             li
-              a(href="/ppt-museum/document/powerpoint/#{slide.id}", download="#{slide.title}.pptx")
+              a(href="/ppt-museum/resource/powerpoint/#{slide.id}", download="#{slide.title}.pptx")
                 span.glyphicon.glyphicon-list-alt  PowerPoint
       // Delete button
       button.btn.btn-danger.btn-xs.btn-slide-controller(id="remove-slide-#{slide.id}", type="button", data-id="#{slide.id}", data-toggle="confirmation")

@@ -27,16 +27,15 @@ public class Slide {
     private String title;
     @Property("description")
     private String description;
-    @Property("thumbnail")
-    private byte[] thumbnail;
-
     @Embedded("tags")
     private List<String> tags = new ArrayList<>();
 
+    @Embedded("thumbnail")
+    private Resource thumbnail;
     @Embedded("pdf")
-    private Document pdfDocument;
+    private Resource pdfResource;
     @Embedded("powerpoint")
-    private Document powerpointDocument;
+    private Resource powerpointResource;
 
     /**
      * default constructor
@@ -44,11 +43,11 @@ public class Slide {
     public Slide() {
     }
 
-    public void setThumbnail(byte[] file) {
+    public void setThumbnail(Resource file) {
         this.thumbnail = file;
     }
 
-    public byte[] getThumbnail() {
+    public Resource getThumbnail() {
         return this.thumbnail;
     }
 
@@ -90,25 +89,25 @@ public class Slide {
         return date.format(DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss"));
     }
 
-    public void setPowerpointDocument(Document doc) {
-        this.powerpointDocument = doc;
+    public void setPowerpointResource(Resource doc) {
+        this.powerpointResource = doc;
     }
 
-    public Document getPowerpointDocument() {
-        return this.powerpointDocument;
+    public Resource getPowerpointResource() {
+        return this.powerpointResource;
     }
 
-    public void setPdfDocument(Document doc) {
-        this.pdfDocument = doc;
+    public void setPdfResource(Resource doc) {
+        this.pdfResource = doc;
     }
 
-    public Document getPDFDocument() {
-        return this.pdfDocument;
+    public Resource getPDFResource() {
+        return this.pdfResource;
     }
 
     @Override
     public String toString() {
         ReflectionToStringBuilder.setDefaultStyle(ToStringStyle.SHORT_PREFIX_STYLE);
-        return ReflectionToStringBuilder.toStringExclude(this, "id", "thumbnail", "pdfDocument", "powerpointDocument").toString();
+        return ReflectionToStringBuilder.toStringExclude(this, "id", "thumbnail", "pdfResource", "powerpointResource").toString();
     }
 }
