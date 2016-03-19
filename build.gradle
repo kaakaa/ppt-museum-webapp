@@ -129,7 +129,7 @@ task buildDockerImage(type: DockerBuildImage) {
 
 // for graph generator
 visteg {
-    enabled		    = true
+    enabled		= true
     colouredNodes	= true
     colouredEdges	= true
     destination		= "${buildDir}/reports/visteg.dot"
