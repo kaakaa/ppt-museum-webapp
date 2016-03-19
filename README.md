@@ -6,7 +6,11 @@ This is webapp for [kaakaa/ppt-museum: ppt/pptx file uploader](https://github.co
 
 # Build
 
-## Build Application.
+## Task Dependencies
+
+[https://raw.githubusercontent.com/kaakaa/ppt-museum-webapp/master/gradle_task_dependencies.svg](https://raw.githubusercontent.com/kaakaa/ppt-museum-webapp/master/gradle_task_dependencies.svg)
+
+## Build Application
 
 ```
 ./gradlew build
@@ -14,6 +18,11 @@ This is webapp for [kaakaa/ppt-museum: ppt/pptx file uploader](https://github.co
 
 ## Build Docker image
 
+Additionally, We have task `buildDockerImage` for creating docker image.  
+`buildDockerImage` task depends on `installDist` task and creating docker image include archives of `installDist` task.
+
+
 ```
-./gradlew buildDockerIMage 
+./gradlew buildDockerImage 
 ```
+
