@@ -7,12 +7,10 @@ import org.kaakaa.pptmuseum.db.mongo.MongoConnectionHelper;
 import org.mongodb.morphia.Datastore;
 import org.mongodb.morphia.query.Query;
 import org.mongodb.morphia.query.UpdateOperations;
-import spark.QueryParamsMap;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.stream.Collector;
 import java.util.stream.Collectors;
 
 /**
@@ -53,7 +51,7 @@ public class MongoDBClient {
     }
 
     /**
-     * <p>Get pdf contents</p>
+     * <p>Get pdf document</p>
      *
      * @param id id
      * @return Document Model
@@ -62,6 +60,11 @@ public class MongoDBClient {
         return datastore.get(Slide.class, new ObjectId(id)).getPDFDocument();
     }
 
+    /**
+     * <p>Get powerpoint dcoument</p>
+     * @param id id
+     * @return Document Model
+     */
     public Document getPowerpoint(String id) {
         return datastore.get(Slide.class, new ObjectId(id)).getPowerpointDocument();
     }
@@ -80,7 +83,11 @@ public class MongoDBClient {
         return slide.getThumbnail();
     }
 
-
+    /**
+     * <p>SEARCH slides by tags </p>
+     * @param keyword search keyword
+     * @return searched slide list
+     */
     public List<Slide> searchFilteredKeyword(String keyword) {
         List<String> keywordList = new ArrayList<>();
         keywordList.add(keyword);

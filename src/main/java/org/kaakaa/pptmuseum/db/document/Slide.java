@@ -39,7 +39,7 @@ public class Slide {
     private Document powerpointDocument;
 
     /**
-     * default contructor
+     * default constructor
      */
     public Slide() {
     }
