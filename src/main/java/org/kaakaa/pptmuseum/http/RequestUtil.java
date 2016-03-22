@@ -6,6 +6,7 @@ import org.apache.http.HttpEntity;
 import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.entity.ContentType;
+import org.apache.http.entity.mime.Header;
 import org.apache.http.entity.mime.MultipartEntityBuilder;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
@@ -88,6 +89,7 @@ public class RequestUtil {
                 break;
             case PPT:
             case PPTX:
+            case PPTM:
                 slide.setPowerpointResource(new Resource(resourceType, item.get()));
                 slide.setPdfResource(new Resource(SlideResource.PDF, convertByJodConverter(item.get(), resourceType)));
                 break;

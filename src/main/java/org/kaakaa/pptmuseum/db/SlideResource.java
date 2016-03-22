@@ -9,6 +9,7 @@ public enum SlideResource {
     PDF("application/pdf"),
     PPT("application/vnd.ms-powerpoint"),
     PPTX("application/vnd.openxmlformats-officedocument.presentationml.presentation"),
+    PPTM("application/vnd.ms-powerpoint.presentation.macroEnabled.12"),
     THUMBNAIL("image/png"),
     UNKNOWN("application/octet-stream");
 
