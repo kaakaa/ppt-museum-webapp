@@ -12,7 +12,7 @@ plugins {
 }
 
 group 'org.kaakaa.ppt-museum'
-version '0.0.6'
+version '0.0.7'
 
 mainClassName = 'org.kaakaa.pptmuseum.Main'
 
