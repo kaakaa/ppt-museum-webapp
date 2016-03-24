@@ -15,10 +15,10 @@
           span.glyphicon.glyphicon-download-alt Download
           span.caret
         ul.dropdown-menu
-          li(style="backgrount-color: rgba(128,128,128,0.7);")
+          li(style="background-color: rgba(128,128,128,0.7);")
             a(href="/ppt-museum/resource/pdf/#{slide.id}", download="#{slide.title}.pdf")
               span.glyphicon.glyphicon-file  PDF
-          if slide.powerpointDocument
+          if slide.powerpointResource
             li
               a(href="/ppt-museum/resource/powerpoint/#{slide.id}", download="#{slide.title}.pptx")
                 span.glyphicon.glyphicon-list-alt  PowerPoint
