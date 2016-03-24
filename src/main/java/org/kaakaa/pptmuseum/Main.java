@@ -1,24 +1,23 @@
 package org.kaakaa.pptmuseum;
 
-import org.kaakaa.pptmuseum.db.MongoDBClient;
 import org.kaakaa.pptmuseum.db.SlideResource;
 import org.kaakaa.pptmuseum.db.document.Resource;
-import org.kaakaa.pptmuseum.db.document.Slide;
 import org.kaakaa.pptmuseum.event.Event;
+import org.kaakaa.pptmuseum.event.EventException;
+import org.kaakaa.pptmuseum.event.db.document.DeleteDocument;
 import org.kaakaa.pptmuseum.event.db.document.UpdateDocument;
 import org.kaakaa.pptmuseum.event.db.document.UploadDocument;
-import org.kaakaa.pptmuseum.event.db.document.DeleteDocument;
-import org.kaakaa.pptmuseum.event.execute.EventExecuter;
 import org.kaakaa.pptmuseum.event.db.resource.GetResource;
+import org.kaakaa.pptmuseum.event.db.search.AllSlideSearch;
+import org.kaakaa.pptmuseum.event.db.search.TagSearch;
+import org.kaakaa.pptmuseum.event.execute.EventExecuter;
 import org.kaakaa.pptmuseum.jade.JadePages;
-import org.kaakaa.pptmuseum.jade.ListHelper;
 import spark.ModelAndView;
 import spark.Response;
 import spark.template.jade.JadeTemplateEngine;
 
 import java.net.UnknownHostException;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeoutException;
 
@@ -28,11 +27,6 @@ import static spark.Spark.*;
  * Created by kaakaa on 16/02/09.
  */
 public class Main {
-    /**
-     * MongoDB client
-     */
-    private static final MongoDBClient mongoDBClient = new MongoDBClient();
-
     public static void main(String[] args) throws TimeoutException, UnknownHostException {
         port(80);
         staticFileLocation("/public");
@@ -96,27 +90,15 @@ public class Main {
         });
     }
 
-    private static ModelAndView getFilteredPageView(String keyword) {
-        Map<String, Object> map = new HashMap<>();
-        List<Slide> result = mongoDBClient.searchFilteredKeyword(keyword);
-        map.put("slides", result);
-        map.put("helper", new ListHelper(result.size(), 99));
-        map.put("index", 1);
-        map.put("keyword", keyword);
+    private static ModelAndView getFilteredPageView(String keyword) throws EventException {
+        Event<Map<String, Object>> searchEvent = new TagSearch(keyword);
+        Map<String, Object> map = EventExecuter.execute(searchEvent);
         return new ModelAndView(map, JadePages.TAG_SEARCH.getTemplatePath());
     }
 
-    private static ModelAndView getTopPageView(String index) {
-        int i = 0;
-        try {
-            i = Integer.parseInt(index);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        Map<String, Object> map = new HashMap<>();
-        map.put("slides", mongoDBClient.searchAll(i, 15));
-        map.put("helper", new ListHelper(mongoDBClient.allSlideSize(), 15));
-        map.put("index", index);
+    private static ModelAndView getTopPageView(String index) throws EventException {
+        Event<Map<String, Object>> searchAll = new AllSlideSearch(index);
+        Map<String, Object> map = EventExecuter.execute(searchAll);
         return new ModelAndView(map, JadePages.TOP.getTemplatePath());
     }
 
