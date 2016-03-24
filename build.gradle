@@ -108,6 +108,7 @@ grunt {
 
 grunt_build.dependsOn 'installGrunt'
 grunt_build.dependsOn 'npmInstall'
+installGrunt.mustRunAfter npmInstall
 processResources.dependsOn grunt_build
 
 // build Dockerfile
