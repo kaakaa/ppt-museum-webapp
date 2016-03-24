@@ -1,6 +1,6 @@
 package org.kaakaa.pptmuseum.event.db.resource;
 
-import org.kaakaa.pptmuseum.db.SlideResource;
+import org.kaakaa.pptmuseum.db.ResourceType;
 import org.kaakaa.pptmuseum.db.document.Resource;
 import org.kaakaa.pptmuseum.event.Event;
 import org.kaakaa.pptmuseum.event.EventException;
@@ -11,9 +11,9 @@ import spark.Request;
  */
 public class GetResource implements Event<Resource> {
     private final Request request;
-    private final SlideResource type;
+    private final ResourceType type;
 
-    public GetResource(Request rq, SlideResource type) {
+    public GetResource(Request rq, ResourceType type) {
         this.request = rq;
         this.type = type;
     }

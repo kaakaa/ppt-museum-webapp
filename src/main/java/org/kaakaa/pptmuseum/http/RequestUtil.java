@@ -1,20 +1,12 @@
 package org.kaakaa.pptmuseum.http;
 
 import org.apache.commons.fileupload.FileItem;
-import org.apache.commons.io.output.ByteArrayOutputStream;
-import org.apache.pdfbox.pdmodel.PDDocument;
-import org.apache.pdfbox.rendering.PDFRenderer;
-import org.kaakaa.pptmuseum.db.SlideResource;
+import org.kaakaa.pptmuseum.db.ResourceType;
 import org.kaakaa.pptmuseum.db.document.Resource;
 import org.kaakaa.pptmuseum.db.document.Slide;
 import org.kaakaa.pptmuseum.generater.JodConverter;
 import org.kaakaa.pptmuseum.generater.ThumbnailGenerater;
 
-import javax.imageio.ImageIO;
-import java.awt.image.BufferedImage;
-import java.io.ByteArrayInputStream;
-import java.io.IOException;
-import java.io.InputStream;
 import java.io.UnsupportedEncodingException;
 import java.util.Arrays;
 import java.util.List;
@@ -75,7 +67,7 @@ public class RequestUtil {
      * @param slide Slide Model
      */
     public static void makeDocumentModel(FileItem item, Slide slide) {
-        SlideResource resourceType = SlideResource.toSlideResource(item.getContentType());
+        ResourceType resourceType = ResourceType.toSlideResource(item.getContentType());
         switch (resourceType) {
             case PDF:
                 slide.setPdfResource(new Resource(resourceType, item.get()));
@@ -84,7 +76,7 @@ public class RequestUtil {
             case PPTX:
             case PPTM:
                 slide.setPowerpointResource(new Resource(resourceType, item.get()));
-                slide.setPdfResource(new Resource(SlideResource.PDF, JodConverter.convertByJodConverter(item.get(), resourceType)));
+                slide.setPdfResource(new Resource(ResourceType.PDF, JodConverter.convertByJodConverter(item.get(), resourceType)));
                 break;
             default:
                 return;
@@ -92,7 +84,7 @@ public class RequestUtil {
 
         // make pdf thumbnail
         byte[] bytes = ThumbnailGenerater.generate(slide.getPDFResource().getFile());
-        slide.setThumbnail(new Resource(SlideResource.THUMBNAIL, bytes));
+        slide.setThumbnail(new Resource(ResourceType.THUMBNAIL, bytes));
     }
 
 }

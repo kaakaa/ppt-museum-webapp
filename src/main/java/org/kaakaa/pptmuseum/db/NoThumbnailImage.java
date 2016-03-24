@@ -30,7 +30,7 @@ public class NoThumbnailImage {
      */
     private static void initialize() {
         byte[] bytes = readDefaultImage();
-        noThumbnailResource = new Resource(SlideResource.THUMBNAIL, bytes);
+        noThumbnailResource = new Resource(ResourceType.THUMBNAIL, bytes);
     }
 
     /**

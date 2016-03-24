@@ -1,6 +1,6 @@
 package org.kaakaa.pptmuseum;
 
-import org.kaakaa.pptmuseum.db.SlideResource;
+import org.kaakaa.pptmuseum.db.ResourceType;
 import org.kaakaa.pptmuseum.db.document.Resource;
 import org.kaakaa.pptmuseum.event.Event;
 import org.kaakaa.pptmuseum.event.EventException;
@@ -68,21 +68,21 @@ public class Main {
 
         // get resource file
         get("/ppt-museum/resource/pdf/:id", (rq, rs) -> {
-            Event<Resource> getResource = new GetResource(rq, SlideResource.PDF);
+            Event<Resource> getResource = new GetResource(rq, ResourceType.PDF);
             Resource resource = EventExecuter.execute(getResource);
 
             rs.type(resource.getContentType());
             return resource.getFile();
         });
         get("/ppt-museum/resource/powerpoint/:id", (rq, rs) -> {
-            Event<Resource> getResource = new GetResource(rq, SlideResource.PPT);
+            Event<Resource> getResource = new GetResource(rq, ResourceType.PPT);
             Resource resource = EventExecuter.execute(getResource);
 
             rs.type(resource.getContentType());
             return resource.getFile();
         });
         get("/ppt-museum/resource/thumbnail/:id", (rq, rs) -> {
-            Event<Resource> getResource = new GetResource(rq, SlideResource.THUMBNAIL);
+            Event<Resource> getResource = new GetResource(rq, ResourceType.THUMBNAIL);
             Resource resource = EventExecuter.execute(getResource);
 
             rs.type(resource.getContentType());

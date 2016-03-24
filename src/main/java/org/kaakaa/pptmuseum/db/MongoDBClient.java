@@ -61,7 +61,14 @@ public class MongoDBClient {
         return datastore.delete(Slide.class, new ObjectId(id));
     }
 
-    public Resource getResource(String id, SlideResource type) {
+    /**
+     * <p>Get resource model specified argument <code>type</code>.</p>
+     *
+     * @param id   id
+     * @param type resource type
+     * @return resource model
+     */
+    public Resource getResource(String id, ResourceType type) {
         Slide slide = datastore.get(Slide.class, new ObjectId(id));
         switch (type) {
             case PDF:

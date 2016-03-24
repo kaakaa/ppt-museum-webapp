@@ -1,6 +1,6 @@
 package org.kaakaa.pptmuseum.db.document;
 
-import org.kaakaa.pptmuseum.db.SlideResource;
+import org.kaakaa.pptmuseum.db.ResourceType;
 import org.mongodb.morphia.annotations.Embedded;
 import org.mongodb.morphia.annotations.Property;
 
@@ -15,7 +15,7 @@ public class Resource {
     private byte[] file;
 
     public Resource() {}
-    public Resource(SlideResource resource, byte[] file){
+    public Resource(ResourceType resource, byte[] file){
         this.contentType = resource.getContentType();
         this.file = file;
     }

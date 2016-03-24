@@ -8,7 +8,7 @@ import org.apache.http.entity.mime.MultipartEntityBuilder;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.util.EntityUtils;
-import org.kaakaa.pptmuseum.db.SlideResource;
+import org.kaakaa.pptmuseum.db.ResourceType;
 
 import java.io.IOException;
 
@@ -26,7 +26,7 @@ public class JodConverter {
      * @param resourceType Content-type getting request header
      * @return pdf file contents
      */
-    public static byte[] convertByJodConverter(byte[] bytes, SlideResource resourceType) {
+    public static byte[] convertByJodConverter(byte[] bytes, ResourceType resourceType) {
         byte[] results = new byte[1024];
 
         try (CloseableHttpClient httpClient = HttpClients.createDefault()) {
