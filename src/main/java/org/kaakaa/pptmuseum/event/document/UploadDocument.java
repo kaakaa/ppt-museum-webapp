@@ -1,10 +1,12 @@
-package org.kaakaa.pptmuseum.event;
+package org.kaakaa.pptmuseum.event.document;
 
 import org.apache.commons.fileupload.FileItem;
 import org.apache.commons.fileupload.FileUploadException;
 import org.apache.commons.fileupload.disk.DiskFileItemFactory;
 import org.apache.commons.fileupload.servlet.ServletFileUpload;
 import org.kaakaa.pptmuseum.db.document.Slide;
+import org.kaakaa.pptmuseum.event.Event;
+import org.kaakaa.pptmuseum.event.EventException;
 import spark.Request;
 
 import java.util.List;

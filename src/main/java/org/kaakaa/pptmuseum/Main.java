@@ -4,8 +4,9 @@ import org.kaakaa.pptmuseum.db.MongoDBClient;
 import org.kaakaa.pptmuseum.db.document.Resource;
 import org.kaakaa.pptmuseum.db.document.Slide;
 import org.kaakaa.pptmuseum.event.Event;
-import org.kaakaa.pptmuseum.event.UploadDocument;
-import org.kaakaa.pptmuseum.event.DeleteDocument;
+import org.kaakaa.pptmuseum.event.document.UpdateDocument;
+import org.kaakaa.pptmuseum.event.document.UploadDocument;
+import org.kaakaa.pptmuseum.event.document.DeleteDocument;
 import org.kaakaa.pptmuseum.event.execute.EventExecuter;
 import org.kaakaa.pptmuseum.jade.JadePages;
 import org.kaakaa.pptmuseum.jade.ListHelper;
@@ -57,7 +58,8 @@ public class Main {
 
         // update slide info
         post("/ppt-museum/slide/:id", (rq,rs) -> {
-            mongoDBClient.updateSLideInfo(rq.params(":id"), rq.queryParams("title"), rq.queryParams("desc"), rq.queryParams("tags"));
+            Event updateDocument = new UpdateDocument(rq);
+            EventExecuter.execute(updateDocument);
             return redirectToTop(rs);
         });
 

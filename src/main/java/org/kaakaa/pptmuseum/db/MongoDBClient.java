@@ -95,6 +95,23 @@ public class MongoDBClient {
         return NoThumbnailImage.get();
     }
 
+    public Resource getResource(String id, SlideResource type){
+        Slide slide = datastore.get(Slide.class, new ObjectId(id));
+        switch(type) {
+            case PDF:
+                return slide.getPDFResource();
+            case PPT:
+                return slide.getPowerpointResource();
+            case THUMBNAIL:
+                Resource thumbnail = slide.getThumbnail();
+                if(thumbnail != null) {
+                    return thumbnail;
+                }
+                return NoThumbnailImage.get();
+        }
+        return null;
+    }
+
     /**
      * <p>SEARCH slides by tags </p>
      * @param keyword search keyword
@@ -114,7 +131,7 @@ public class MongoDBClient {
      * @param desc  slide description - editing
      * @param tags  slide tags - editing
      */
-    public void updateSLideInfo(String id, String title, String desc, String tags) {
+    public void updateSlideInfo(String id, String title, String desc, String tags) {
         Query<Slide> updateQuery = datastore.createQuery(Slide.class).field("_id").equal(new ObjectId(id));
 
         List<String> tagList = Arrays.asList(tags.split(",")).stream().map(t -> t.trim()).filter(t -> t.length() > 0).collect(Collectors.toList());

@@ -1,6 +1,10 @@
-package org.kaakaa.pptmuseum.event;
+package org.kaakaa.pptmuseum.event.document;
 
+import org.kaakaa.pptmuseum.event.Event;
+import org.kaakaa.pptmuseum.event.EventException;
 import spark.Request;
+
+import java.util.function.Consumer;
 
 /**
  * Created by kaakaa on 16/03/19.
