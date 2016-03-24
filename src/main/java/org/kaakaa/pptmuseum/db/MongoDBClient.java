@@ -78,9 +78,21 @@ public class MongoDBClient {
         datastore.delete(Slide.class, new ObjectId(id));
     }
 
+    /**
+     * <p>Get thumbnail document</p>
+     * <p>If there is no thumbnail image, return no_image.png</p>
+     *
+     * @param id id
+     * @return Resource Model
+     */
     public Resource getThumbnail(String id) {
         Slide slide = datastore.get(Slide.class, new ObjectId(id));
-        return slide.getThumbnail();
+        Resource thumbnail = slide.getThumbnail();
+
+        if(thumbnail != null) {
+            return thumbnail;
+        }
+        return NoThumbnailImage.get();
     }
 
     /**

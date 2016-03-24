@@ -1,5 +1,7 @@
 package org.kaakaa.pptmuseum.db;
 
+import org.kaakaa.pptmuseum.db.document.Resource;
+
 import java.util.Arrays;
 
 /**
