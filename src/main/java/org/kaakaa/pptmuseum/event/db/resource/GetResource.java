@@ -1,4 +1,4 @@
-package org.kaakaa.pptmuseum.event.resource;
+package org.kaakaa.pptmuseum.event.db.resource;
 
 import org.kaakaa.pptmuseum.db.SlideResource;
 import org.kaakaa.pptmuseum.db.document.Resource;

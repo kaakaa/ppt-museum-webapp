@@ -1,4 +1,4 @@
-package org.kaakaa.pptmuseum.event.document;
+package org.kaakaa.pptmuseum.event.db.document;
 
 import org.apache.commons.fileupload.FileItem;
 import org.apache.commons.fileupload.FileUploadException;
