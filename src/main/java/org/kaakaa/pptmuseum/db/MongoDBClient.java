@@ -1,5 +1,6 @@
 package org.kaakaa.pptmuseum.db;
 
+import com.mongodb.WriteResult;
 import org.bson.types.ObjectId;
 import org.kaakaa.pptmuseum.db.document.Resource;
 import org.kaakaa.pptmuseum.db.document.Slide;
@@ -7,6 +8,7 @@ import org.kaakaa.pptmuseum.db.mongo.MongoConnectionHelper;
 import org.mongodb.morphia.Datastore;
 import org.mongodb.morphia.query.Query;
 import org.mongodb.morphia.query.UpdateOperations;
+import org.mongodb.morphia.query.UpdateResults;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -51,60 +53,24 @@ public class MongoDBClient {
     }
 
     /**
-     * <p>Get pdf document</p>
-     *
-     * @param id id
-     * @return Resource Model
-     */
-    public Resource getPDF(String id) {
-        return datastore.get(Slide.class, new ObjectId(id)).getPDFResource();
-    }
-
-    /**
-     * <p>Get powerpoint dcoument</p>
-     * @param id id
-     * @return Resource Model
-     */
-    public Resource getPowerpoint(String id) {
-        return datastore.get(Slide.class, new ObjectId(id)).getPowerpointResource();
-    }
-
-    /**
      * <p>DELETE uploaded slides</p>
      *
      * @param id id
      */
-    public void delete(String id) {
-        datastore.delete(Slide.class, new ObjectId(id));
+    public WriteResult delete(String id) {
+        return datastore.delete(Slide.class, new ObjectId(id));
     }
 
-    /**
-     * <p>Get thumbnail document</p>
-     * <p>If there is no thumbnail image, return no_image.png</p>
-     *
-     * @param id id
-     * @return Resource Model
-     */
-    public Resource getThumbnail(String id) {
+    public Resource getResource(String id, SlideResource type) {
         Slide slide = datastore.get(Slide.class, new ObjectId(id));
-        Resource thumbnail = slide.getThumbnail();
-
-        if(thumbnail != null) {
-            return thumbnail;
-        }
-        return NoThumbnailImage.get();
-    }
-
-    public Resource getResource(String id, SlideResource type){
-        Slide slide = datastore.get(Slide.class, new ObjectId(id));
-        switch(type) {
+        switch (type) {
             case PDF:
                 return slide.getPDFResource();
             case PPT:
                 return slide.getPowerpointResource();
             case THUMBNAIL:
                 Resource thumbnail = slide.getThumbnail();
-                if(thumbnail != null) {
+                if (thumbnail != null) {
                     return thumbnail;
                 }
                 return NoThumbnailImage.get();
@@ -114,6 +80,7 @@ public class MongoDBClient {
 
     /**
      * <p>SEARCH slides by tags </p>
+     *
      * @param keyword search keyword
      * @return searched slide list
      */
@@ -131,12 +98,12 @@ public class MongoDBClient {
      * @param desc  slide description - editing
      * @param tags  slide tags - editing
      */
-    public void updateSlideInfo(String id, String title, String desc, String tags) {
+    public UpdateResults updateSlideInfo(String id, String title, String desc, String tags) {
         Query<Slide> updateQuery = datastore.createQuery(Slide.class).field("_id").equal(new ObjectId(id));
 
         List<String> tagList = Arrays.asList(tags.split(",")).stream().map(t -> t.trim()).filter(t -> t.length() > 0).collect(Collectors.toList());
         UpdateOperations<Slide> ops = datastore.createUpdateOperations(Slide.class).set("title", title).set("description", desc).set("tags", tagList);
 
-        datastore.update(updateQuery, ops);
+        return datastore.update(updateQuery, ops);
     }
 }

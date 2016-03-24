@@ -15,7 +15,7 @@ public class UpdateDocument implements Event {
     }
 
     @Override
-    public void execute() throws EventException {
-        mongoDBClient.updateSlideInfo(request.params(":id"), request.queryParams("title"), request.queryParams("desc"), request.queryParams("tags"));
+    public Object execute() throws EventException {
+        return mongoDBClient.updateSlideInfo(request.params(":id"), request.queryParams("title"), request.queryParams("desc"), request.queryParams("tags"));
     }
 }

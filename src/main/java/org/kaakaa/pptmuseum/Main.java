@@ -1,6 +1,7 @@
 package org.kaakaa.pptmuseum;
 
 import org.kaakaa.pptmuseum.db.MongoDBClient;
+import org.kaakaa.pptmuseum.db.SlideResource;
 import org.kaakaa.pptmuseum.db.document.Resource;
 import org.kaakaa.pptmuseum.db.document.Slide;
 import org.kaakaa.pptmuseum.event.Event;
@@ -8,6 +9,7 @@ import org.kaakaa.pptmuseum.event.document.UpdateDocument;
 import org.kaakaa.pptmuseum.event.document.UploadDocument;
 import org.kaakaa.pptmuseum.event.document.DeleteDocument;
 import org.kaakaa.pptmuseum.event.execute.EventExecuter;
+import org.kaakaa.pptmuseum.event.resource.GetResource;
 import org.kaakaa.pptmuseum.jade.JadePages;
 import org.kaakaa.pptmuseum.jade.ListHelper;
 import spark.ModelAndView;
@@ -72,17 +74,23 @@ public class Main {
 
         // get resource file
         get("/ppt-museum/resource/pdf/:id", (rq, rs) -> {
-            Resource resource = mongoDBClient.getPDF(rq.params(":id"));
+            Event<Resource> getResource = new GetResource(rq, SlideResource.PDF);
+            Resource resource = EventExecuter.execute(getResource);
+
             rs.type(resource.getContentType());
             return resource.getFile();
         });
         get("/ppt-museum/resource/powerpoint/:id", (rq, rs) -> {
-            Resource resource = mongoDBClient.getPowerpoint(rq.params(":id"));
+            Event<Resource> getResource = new GetResource(rq, SlideResource.PPT);
+            Resource resource = EventExecuter.execute(getResource);
+
             rs.type(resource.getContentType());
             return resource.getFile();
         });
         get("/ppt-museum/resource/thumbnail/:id", (rq, rs) -> {
-            Resource resource = mongoDBClient.getThumbnail(rq.params("id"));
+            Event<Resource> getResource = new GetResource(rq, SlideResource.THUMBNAIL);
+            Resource resource = EventExecuter.execute(getResource);
+
             rs.type(resource.getContentType());
             return resource.getFile();
         });

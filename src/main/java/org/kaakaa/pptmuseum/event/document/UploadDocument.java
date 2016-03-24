@@ -26,7 +26,7 @@ public class UploadDocument implements Event {
     }
 
     @Override
-    public void execute() throws EventException {
+    public Object execute() throws EventException {
         // parse request
         ServletFileUpload servletFileUpload = new ServletFileUpload(new DiskFileItemFactory());
         List<FileItem> fileItems = null;
@@ -46,8 +46,7 @@ public class UploadDocument implements Event {
                 .ifPresent(i -> {
                     makeDocumentModel(i, slide);
                     // upload document
-                    mongoDBClient.upload(slide);
                 });
-
+        return mongoDBClient.upload(slide);
     }
 }
