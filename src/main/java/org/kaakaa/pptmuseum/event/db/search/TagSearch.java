@@ -3,7 +3,7 @@ package org.kaakaa.pptmuseum.event.db.search;
 import org.kaakaa.pptmuseum.db.document.Slide;
 import org.kaakaa.pptmuseum.event.Event;
 import org.kaakaa.pptmuseum.event.EventException;
-import org.kaakaa.pptmuseum.jade.ListHelper;
+import org.kaakaa.pptmuseum.jade.helper.ListHelper;
 
 import java.util.HashMap;
 import java.util.List;

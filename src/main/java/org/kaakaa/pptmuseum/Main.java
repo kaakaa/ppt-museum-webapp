@@ -10,7 +10,7 @@ import org.kaakaa.pptmuseum.event.db.document.UploadDocument;
 import org.kaakaa.pptmuseum.event.db.resource.GetResource;
 import org.kaakaa.pptmuseum.event.db.search.AllSlideSearch;
 import org.kaakaa.pptmuseum.event.db.search.TagSearch;
-import org.kaakaa.pptmuseum.event.execute.EventExecuter;
+import org.kaakaa.pptmuseum.event.EventExecuter;
 import org.kaakaa.pptmuseum.jade.JadePages;
 import spark.ModelAndView;
 import spark.Response;
