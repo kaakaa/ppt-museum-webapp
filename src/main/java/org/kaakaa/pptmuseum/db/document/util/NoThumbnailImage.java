@@ -1,4 +1,4 @@
-package org.kaakaa.pptmuseum.db.document.util.generater;
+package org.kaakaa.pptmuseum.db.document.util;
 
 import org.kaakaa.pptmuseum.db.ResourceType;
 import org.kaakaa.pptmuseum.db.document.Resource;

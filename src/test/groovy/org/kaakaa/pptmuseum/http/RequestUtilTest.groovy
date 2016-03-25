@@ -1,6 +1,7 @@
 package org.kaakaa.pptmuseum.http
 
 import org.apache.commons.fileupload.FileItem
+import org.kaakaa.pptmuseum.db.document.util.RequestUtil
 import spock.lang.Specification
 
 /**

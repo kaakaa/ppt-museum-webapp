@@ -1,11 +1,11 @@
-package org.kaakaa.pptmuseum.http;
+package org.kaakaa.pptmuseum.db.document.util;
 
 import org.apache.commons.fileupload.FileItem;
 import org.kaakaa.pptmuseum.db.ResourceType;
 import org.kaakaa.pptmuseum.db.document.Resource;
 import org.kaakaa.pptmuseum.db.document.Slide;
-import org.kaakaa.pptmuseum.db.document.util.generater.JodConverter;
-import org.kaakaa.pptmuseum.db.document.util.generater.ThumbnailGenerater;
+import org.kaakaa.pptmuseum.db.document.util.JodConverter;
+import org.kaakaa.pptmuseum.db.document.util.ThumbnailGenerater;
 
 import java.io.UnsupportedEncodingException;
 import java.util.Arrays;

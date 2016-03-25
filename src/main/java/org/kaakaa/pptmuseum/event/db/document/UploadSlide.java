@@ -11,8 +11,8 @@ import spark.Request;
 
 import java.util.List;
 
-import static org.kaakaa.pptmuseum.http.RequestUtil.makeDocumentModel;
-import static org.kaakaa.pptmuseum.http.RequestUtil.makeSlideModel;
+import static org.kaakaa.pptmuseum.db.document.util.RequestUtil.makeDocumentModel;
+import static org.kaakaa.pptmuseum.db.document.util.RequestUtil.makeSlideModel;
 
 /**
  * Created by kaakaa on 16/03/19.
