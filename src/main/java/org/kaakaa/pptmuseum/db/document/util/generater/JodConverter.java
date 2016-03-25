@@ -1,4 +1,4 @@
-package org.kaakaa.pptmuseum.generater;
+package org.kaakaa.pptmuseum.db.document.util.generater;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.client.methods.CloseableHttpResponse;

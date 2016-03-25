@@ -1,4 +1,4 @@
-package org.kaakaa.pptmuseum.generater;
+package org.kaakaa.pptmuseum.db.document.util.generater;
 
 import org.apache.pdfbox.pdmodel.PDDocument;
 import org.apache.pdfbox.rendering.PDFRenderer;
