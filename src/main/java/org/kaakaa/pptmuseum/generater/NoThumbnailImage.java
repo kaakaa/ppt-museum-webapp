@@ -1,5 +1,6 @@
-package org.kaakaa.pptmuseum.db;
+package org.kaakaa.pptmuseum.generater;
 
+import org.kaakaa.pptmuseum.db.ResourceType;
 import org.kaakaa.pptmuseum.db.document.Resource;
 
 import javax.imageio.ImageIO;
