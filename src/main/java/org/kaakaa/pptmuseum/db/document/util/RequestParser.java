@@ -4,44 +4,53 @@ import org.apache.commons.fileupload.FileItem;
 import org.kaakaa.pptmuseum.db.ResourceType;
 import org.kaakaa.pptmuseum.db.document.Resource;
 import org.kaakaa.pptmuseum.db.document.Slide;
-import org.kaakaa.pptmuseum.db.document.util.JodConverter;
-import org.kaakaa.pptmuseum.db.document.util.ThumbnailGenerater;
 
 import java.io.UnsupportedEncodingException;
 import java.util.Arrays;
 import java.util.List;
+import java.util.function.BiConsumer;
 
 /**
- * Upload info handler class.
+ * Request information handler class.
  * <p>
  * Created by kaakaa on 16/02/18.
  */
-public class RequestUtil {
-    /**
-     * <p>make Slide class instance of request item</p>
-     *
-     * @param fileItems FileItem in multipart request
-     * @return Slide model
-     */
-    public static Slide makeSlideModel(List<FileItem> fileItems) {
+public class RequestParser {
+
+    public static Slide parse(List<FileItem> fileItems) {
+        final BiConsumer<FileItem, Slide> parseItem = (i, s) -> {
+            if (i.isFormField()) {
+                parseFormField(i, s);
+            } else {
+                parseMultipartItem(i, s);
+            }
+        };
+
         Slide slide = new Slide();
-        // form data
         fileItems.stream()
-                .filter(i -> i.isFormField())
-                .forEach(i -> {
-                    switch (i.getFieldName()) {
-                        case "title":
-                            slide.setTitle(encodingMultiformString(i));
-                            break;
-                        case "desc":
-                            slide.setDescription(encodingMultiformString(i));
-                            break;
-                        case "tags":
-                            slide.setTags(Arrays.asList(encodingMultiformString(i).split(",")));
-                            break;
-                    }
-                });
+                .forEach(item -> parseItem.accept(item, slide));
+
         return slide;
+    }
+
+    /**
+     * <p>Parse form field item.</p>
+     *
+     * @param item form field item
+     * @param slide slide model
+     */
+    private static void parseFormField(FileItem item, Slide slide) {
+        switch (item.getFieldName()) {
+            case "title":
+                slide.setTitle(encodingMultiformString(item));
+                break;
+            case "desc":
+                slide.setDescription(encodingMultiformString(item));
+                break;
+            case "tags":
+                slide.setTags(Arrays.asList(encodingMultiformString(item).split(",")));
+                break;
+        }
     }
 
     /**
@@ -66,7 +75,7 @@ public class RequestUtil {
      * @param item  FileItem in multipart request
      * @param slide Slide Model
      */
-    public static void makeDocumentModel(FileItem item, Slide slide) {
+    public static void parseMultipartItem(FileItem item, Slide slide) {
         ResourceType resourceType = ResourceType.toSlideResource(item.getContentType());
         switch (resourceType) {
             case PDF:
@@ -76,6 +85,7 @@ public class RequestUtil {
             case PPTX:
             case PPTM:
                 slide.setPowerpointResource(new Resource(resourceType, item.get()));
+                // convert powerpoint to pdf by JODConverter
                 slide.setPdfResource(new Resource(ResourceType.PDF, JodConverter.convertByJodConverter(item.get(), resourceType)));
                 break;
             default:
@@ -86,5 +96,6 @@ public class RequestUtil {
         byte[] bytes = ThumbnailGenerater.generate(slide.getPDFResource().getFile());
         slide.setThumbnail(new Resource(ResourceType.THUMBNAIL, bytes));
     }
+
 
 }

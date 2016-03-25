@@ -5,14 +5,12 @@ import org.apache.commons.fileupload.FileUploadException;
 import org.apache.commons.fileupload.disk.DiskFileItemFactory;
 import org.apache.commons.fileupload.servlet.ServletFileUpload;
 import org.kaakaa.pptmuseum.db.document.Slide;
+import org.kaakaa.pptmuseum.db.document.util.RequestParser;
 import org.kaakaa.pptmuseum.event.Event;
 import org.kaakaa.pptmuseum.event.EventException;
 import spark.Request;
 
 import java.util.List;
-
-import static org.kaakaa.pptmuseum.db.document.util.RequestUtil.makeDocumentModel;
-import static org.kaakaa.pptmuseum.db.document.util.RequestUtil.makeSlideModel;
 
 /**
  * Created by kaakaa on 16/03/19.
@@ -36,17 +34,7 @@ public class UploadSlide implements Event {
             throw new EventException("Upload File Error", e);
         }
 
-        // make Slide model
-        Slide slide = makeSlideModel(fileItems);
-
-        // make Resource model
-        fileItems.stream()
-                .filter(i -> !i.isFormField())
-                .findFirst()
-                .ifPresent(i -> {
-                    makeDocumentModel(i, slide);
-                    // upload document
-                });
+        Slide slide = RequestParser.parse(fileItems);
         return mongoDBClient.upload(slide);
     }
 }
