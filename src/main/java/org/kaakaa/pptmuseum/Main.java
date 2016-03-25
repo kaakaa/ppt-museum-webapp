@@ -4,9 +4,9 @@ import org.kaakaa.pptmuseum.db.ResourceType;
 import org.kaakaa.pptmuseum.db.document.Resource;
 import org.kaakaa.pptmuseum.event.Event;
 import org.kaakaa.pptmuseum.event.EventException;
-import org.kaakaa.pptmuseum.event.db.document.DeleteDocument;
-import org.kaakaa.pptmuseum.event.db.document.UpdateDocument;
-import org.kaakaa.pptmuseum.event.db.document.UploadDocument;
+import org.kaakaa.pptmuseum.event.db.document.DeleteSlide;
+import org.kaakaa.pptmuseum.event.db.document.UpdateSlide;
+import org.kaakaa.pptmuseum.event.db.document.UploadSlide;
 import org.kaakaa.pptmuseum.event.db.resource.GetResource;
 import org.kaakaa.pptmuseum.event.db.search.AllSlideSearch;
 import org.kaakaa.pptmuseum.event.db.search.TagSearch;
@@ -40,21 +40,21 @@ public class Main {
 
         // upload page
         post("/ppt-museum/upload", (rq, rs) -> {
-            Event uploadEvent = new UploadDocument(rq);
+            Event uploadEvent = new UploadSlide(rq);
             EventExecuter.execute(uploadEvent);
             return redirectToTop(rs);
         });
 
         // delete slide
         delete("/ppt-museum/slide/:id", (rq, rs) -> {
-            Event deleteEvent = new DeleteDocument(rq);
+            Event deleteEvent = new DeleteSlide(rq);
             EventExecuter.execute(deleteEvent);
             return 0;
         });
 
         // update slide info
         post("/ppt-museum/slide/:id", (rq,rs) -> {
-            Event updateDocument = new UpdateDocument(rq);
+            Event updateDocument = new UpdateSlide(rq);
             EventExecuter.execute(updateDocument);
             return redirectToTop(rs);
         });

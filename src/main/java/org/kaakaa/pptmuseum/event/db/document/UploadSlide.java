@@ -17,11 +17,11 @@ import static org.kaakaa.pptmuseum.http.RequestUtil.makeSlideModel;
 /**
  * Created by kaakaa on 16/03/19.
  */
-public class UploadDocument implements Event {
+public class UploadSlide implements Event {
 
     private final Request request;
 
-    public UploadDocument(Request rq) {
+    public UploadSlide(Request rq) {
         this.request = rq;
     }
 
