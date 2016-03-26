@@ -1,4 +1,4 @@
-package org.kaakaa.pptmuseum.event.db.document;
+package org.kaakaa.pptmuseum.event.db.slide;
 
 import org.kaakaa.pptmuseum.event.Event;
 import org.kaakaa.pptmuseum.event.EventException;
