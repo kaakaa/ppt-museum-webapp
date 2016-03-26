@@ -2,11 +2,8 @@ package org.kaakaa.pptmuseum.db.document.util;
 
 import org.apache.commons.fileupload.FileItem;
 import org.kaakaa.pptmuseum.db.ResourceType;
-import org.kaakaa.pptmuseum.db.document.Resource;
 import org.kaakaa.pptmuseum.db.document.Slide;
 
-import java.io.UnsupportedEncodingException;
-import java.util.Arrays;
 import java.util.List;
 import java.util.function.BiConsumer;
 
@@ -18,83 +15,62 @@ import java.util.function.BiConsumer;
 public class RequestParser {
 
     public static Slide parse(List<FileItem> fileItems) {
-        final BiConsumer<FileItem, Slide> parseItem = (i, s) -> {
+        // define parse function
+        final BiConsumer<FileItem, SlideBuilder> parseItem = (i, sb) -> {
             if (i.isFormField()) {
-                parseFormField(i, s);
+                parseFormField(i, sb);
             } else {
-                parseMultipartItem(i, s);
+                parseMultipartItem(i, sb);
             }
         };
 
-        Slide slide = new Slide();
+        // make Slide model
+        SlideBuilder builder = new SlideBuilder();
         fileItems.stream()
-                .forEach(item -> parseItem.accept(item, slide));
-
-        return slide;
+                .forEach(item -> parseItem.accept(item, builder));
+        return builder.build();
     }
 
     /**
      * <p>Parse form field item.</p>
      *
      * @param item form field item
-     * @param slide slide model
+     * @param builder slide model builder
      */
-    private static void parseFormField(FileItem item, Slide slide) {
+    private static void parseFormField(FileItem item, SlideBuilder builder) {
         switch (item.getFieldName()) {
             case "title":
-                slide.setTitle(encodingMultiformString(item));
+                builder.buildTitle(item);
                 break;
             case "desc":
-                slide.setDescription(encodingMultiformString(item));
+                builder.buildDescription(item);
                 break;
             case "tags":
-                slide.setTags(Arrays.asList(encodingMultiformString(item).split(",")));
+                builder.buildTags(item);
                 break;
         }
-    }
-
-    /**
-     * <p>Encoding form string to utf-8.</p>
-     *
-     * @param item form item
-     * @return encoded string
-     */
-    private static String encodingMultiformString(FileItem item) {
-        String s = null;
-        try {
-            s = new String(item.getString().getBytes("iso-8859-1"), "UTF-8");
-        } catch (UnsupportedEncodingException e) {
-            e.printStackTrace();
-        }
-        return s;
     }
 
     /**
      * <p>make Resource class instance of request item</p>
      *
      * @param item  FileItem in multipart request
-     * @param slide Slide Model
+     * @param builder Slide Model Builder
      */
-    public static void parseMultipartItem(FileItem item, Slide slide) {
+    public static void parseMultipartItem(FileItem item, SlideBuilder builder) {
         ResourceType resourceType = ResourceType.toSlideResource(item.getContentType());
         switch (resourceType) {
             case PDF:
-                slide.setPdfResource(new Resource(resourceType, item.get()));
+                builder.buildPdfResource(item);
                 break;
             case PPT:
             case PPTX:
             case PPTM:
-                slide.setPowerpointResource(new Resource(resourceType, item.get()));
-                // convert powerpoint to pdf by JODConverter
-                slide.setPdfResource(new Resource(ResourceType.PDF, JodConverter.convertByJodConverter(item.get(), resourceType)));
+                builder.buildPowerpointResource(resourceType, item);
                 break;
             default:
                 return;
         }
-
-        // make pdf thumbnail
-        byte[] bytes = ThumbnailGenerater.generate(slide.getPDFResource().getFile());
-        slide.setThumbnail(new Resource(ResourceType.THUMBNAIL, bytes));
     }
 
 
