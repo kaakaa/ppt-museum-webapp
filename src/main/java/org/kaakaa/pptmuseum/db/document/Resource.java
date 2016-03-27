@@ -13,10 +13,15 @@ public class Resource {
     private String contentType;
     @Property("file")
     private byte[] file;
+    @Property("ext")
+    private String ext;
 
-    public Resource() {}
-    public Resource(ResourceType resource, byte[] file){
+    public Resource() {
+    }
+
+    public Resource(ResourceType resource, byte[] file) {
         this.contentType = resource.getContentType();
+        this.ext = resource.getExt();
         this.file = file;
     }
 
@@ -28,11 +33,11 @@ public class Resource {
         return file;
     }
 
-    public void setContentType(String type) {
-        this.contentType = type;
-    }
-
     public String getContentType() {
         return this.contentType;
+    }
+
+    public String getExt() {
+        return this.ext;
     }
 }

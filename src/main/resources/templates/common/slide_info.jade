@@ -14,13 +14,13 @@
         button.btn.btn-info.btn-xs.dropdown-toggle.btn-slide-controller(type="button", data-toggle="dropdown", aria-haspopup="true", aria-expanded="false")
           span.glyphicon.glyphicon-download-alt Download
           span.caret
-        ul.dropdown-menu
-          li(style="background-color: rgba(128,128,128,0.7);")
+        ul.dropdown-menu(style="background-color: rgba(128,128,128,0.7);")
+          li
             a(href="/ppt-museum/resource/pdf/#{slide.id}", download="#{slide.title}.pdf")
               span.glyphicon.glyphicon-file  PDF
           if slide.powerpointResource
             li
-              a(href="/ppt-museum/resource/powerpoint/#{slide.id}", download="#{slide.title}.pptx")
+              a(href="/ppt-museum/resource/powerpoint/#{slide.id}", download="#{slide.title}.#{slide.powerpointResource.ext}")
                 span.glyphicon.glyphicon-list-alt  PowerPoint
       // Delete button
       button.btn.btn-danger.btn-xs.btn-slide-controller(id="remove-slide-#{slide.id}", type="button", data-id="#{slide.id}", data-toggle="confirmation")
