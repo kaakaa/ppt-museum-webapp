@@ -26,7 +26,7 @@ public class JodConverter {
      * @param resourceType Content-type getting request header
      * @return pdf file contents
      */
-    public static byte[] convertByJodConverter(ResourceType resourceType, byte[] bytes) {
+    public static byte[] convert(ResourceType resourceType, byte[] bytes) {
         byte[] results = new byte[1024];
 
         try (CloseableHttpClient httpClient = HttpClients.createDefault()) {

@@ -77,7 +77,7 @@ class SlideBuilder {
      */
     public void buildPowerpointResource(ResourceType type, FileItem item) {
         slide.setPowerpointResource(new Resource(type, item.get()));
-        buildPdfResource(JodConverter.convertByJodConverter(type, item.get()));
+        buildPdfResource(JodConverter.convert(type, item.get()));
     }
 
     /**
