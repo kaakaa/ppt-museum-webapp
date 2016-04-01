@@ -21,7 +21,7 @@ public class ListHelper {
         List<T> l = new ArrayList<>();
         for(T t: list) {
             l.add(t);
-            if(l.size() == 3) {
+            if(l.size() == n) {
                 result.add(l);
                 l = new ArrayList<>();
             }
