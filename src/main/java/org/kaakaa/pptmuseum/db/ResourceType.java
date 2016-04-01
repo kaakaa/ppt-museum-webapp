@@ -6,11 +6,11 @@ import java.util.Arrays;
  * Created by kaakaa on 16/03/20.
  */
 public enum ResourceType {
-    PDF("application/pdf", ".pdf"),
-    PPT("application/vnd.ms-powerpoint", ".ppt"),
-    PPTX("application/vnd.openxmlformats-officedocument.presentationml.presentation", ".pptx"),
-    PPTM("application/vnd.ms-powerpoint.presentation.macroEnabled.12", ".pptm"),
-    THUMBNAIL("image/png", ".png"),
+    PDF("application/pdf", "pdf"),
+    PPT("application/vnd.ms-powerpoint", "ppt"),
+    PPTX("application/vnd.openxmlformats-officedocument.presentationml.presentation", "pptx"),
+    PPTM("application/vnd.ms-powerpoint.presentation.macroEnabled.12", "pptm"),
+    THUMBNAIL("image/png", "png"),
     UNKNOWN("application/octet-stream", "txt");
 
     private final String contentType;
