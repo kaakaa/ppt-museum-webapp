@@ -24,6 +24,10 @@ public class GetResource implements Event<Resource> {
 
     @Override
     public Resource execute() throws EventException {
-        return mongoDBClient.getResource(this.request.params(":id"), type);
+        beforeLogging(logger);
+        Resource result = mongoDBClient.getResource(this.request.params(":id"), type);
+        afterLogging(logger);
+
+        return result;
     }
 }

@@ -10,11 +10,13 @@ import org.slf4j.LoggerFactory;
 public interface Event<T> {
     MongoDBClient mongoDBClient = new MongoDBClient();
 
-    Logger logger = LoggerFactory.getLogger(Event.class);
-
     T execute() throws EventException;
 
-    default void beforeLogging(){
-        logger.info("Start Event");
+    default void beforeLogging(Logger logger){
+        logger.info("The event started");
+    }
+
+    default void afterLogging(Logger logger) {
+        logger.info("The event finised");
     }
 }
