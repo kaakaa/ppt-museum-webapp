@@ -36,7 +36,7 @@ public class Main {
         get("/ppt-museum", (rq, rs) -> getTopPageView("1"), new JadeTemplateEngine());
         get("/ppt-museum/slides", (rq, rs) -> getTopPageView("1"), new JadeTemplateEngine());
         get("/ppt-museum/slides/:index", (rq, rs) -> getTopPageView(rq.params("index")), new JadeTemplateEngine());
-        get("/ppt-museum/keywords/:key", (rq, rs) -> getFilteredPageView(rq.params("key")), new JadeTemplateEngine());
+        get("/ppt-museum/keywords/:key", (rq, rs) -> getTagSearchResultView(rq.params("key")), new JadeTemplateEngine());
 
         // upload page
         post("/ppt-museum/upload", (rq, rs) -> {
@@ -90,18 +90,37 @@ public class Main {
         });
     }
 
-    private static ModelAndView getFilteredPageView(String keyword) throws EventException {
-        Event<Map<String, Object>> searchEvent = new TagSearch(keyword);
+    /**
+     * <p>Get view page filtered tag</p>
+     *
+     * @param tag tag word
+     * @return tag serach view
+     * @throws EventException search exception
+     */
+    private static ModelAndView getTagSearchResultView(String tag) throws EventException {
+        Event<Map<String, Object>> searchEvent = new TagSearch(tag);
         Map<String, Object> map = EventExecuter.execute(searchEvent);
         return new ModelAndView(map, JadePages.TAG_SEARCH.getTemplatePath());
     }
 
+    /**
+     * <p>Get top page view</p>
+     *
+     * @param index pagenation index
+     * @return indexed page view
+     * @throws EventException get exception
+     */
     private static ModelAndView getTopPageView(String index) throws EventException {
         Event<Map<String, Object>> searchAll = new AllSlideSearch(index);
         Map<String, Object> map = EventExecuter.execute(searchAll);
         return new ModelAndView(map, JadePages.TOP.getTemplatePath());
     }
 
+    /**
+     * <p>Set redirecting to top page to response object</p>
+     * @param rs response
+     * @return dummy string
+     */
     private static String redirectToTop(Response rs) {
         rs.status(302);
         rs.header("Location", "/");
