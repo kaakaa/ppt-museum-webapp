@@ -4,6 +4,8 @@ import org.kaakaa.pptmuseum.db.ResourceType;
 import org.kaakaa.pptmuseum.db.document.Resource;
 import org.kaakaa.pptmuseum.event.Event;
 import org.kaakaa.pptmuseum.event.EventException;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import spark.Request;
 
 /**
@@ -12,6 +14,8 @@ import spark.Request;
 public class GetResource implements Event<Resource> {
     private final Request request;
     private final ResourceType type;
+
+    Logger logger = LoggerFactory.getLogger(getClass());
 
     public GetResource(Request rq, ResourceType type) {
         this.request = rq;

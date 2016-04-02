@@ -21,9 +21,7 @@ public class ThumbnailGenerater {
      * @return thumbnail image bytes
      */
     public static byte[] generate(byte[] bytes) {
-        InputStream input = new ByteArrayInputStream(bytes);
-        try {
-            PDDocument pdDoc = PDDocument.load(input);
+        try(PDDocument pdDoc = PDDocument.load(new ByteArrayInputStream(bytes))) {
             PDFRenderer render = new PDFRenderer(pdDoc);
             BufferedImage bufferedImage = render.renderImage(0);
 

@@ -3,8 +3,12 @@ package org.kaakaa.pptmuseum.db.document.util;
 import org.apache.commons.fileupload.FileItem;
 import org.kaakaa.pptmuseum.db.ResourceType;
 import org.kaakaa.pptmuseum.db.document.Slide;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
+import java.util.Arrays;
 import java.util.List;
+import java.util.Optional;
 import java.util.function.BiConsumer;
 
 /**
@@ -13,6 +17,8 @@ import java.util.function.BiConsumer;
  * Created by kaakaa on 16/02/18.
  */
 public class RequestParser {
+
+    private static final Logger logger = LoggerFactory.getLogger(RequestParser.class);
 
     public static Slide parse(List<FileItem> fileItems) {
         // define parse function
@@ -58,7 +64,9 @@ public class RequestParser {
      * @param builder Slide Model Builder
      */
     public static void parseMultipartItem(FileItem item, SlideBuilder builder) {
-        ResourceType resourceType = ResourceType.toSlideResource(item.getContentType());
+        logger.info("Parse multipart request item. Content-type: {}", item.getContentType());
+
+        ResourceType resourceType = ResourceType.toSlideResource(item);
         switch (resourceType) {
             case PDF:
                 builder.buildPdfResource(item);
