@@ -1,5 +1,7 @@
 package org.kaakaa.pptmuseum.event.db.search;
 
+import org.kaakaa.pptmuseum.Main;
+import org.kaakaa.pptmuseum.db.document.util.backup.Backups;
 import org.kaakaa.pptmuseum.event.Event;
 import org.kaakaa.pptmuseum.event.EventException;
 import org.kaakaa.pptmuseum.jade.helper.ListHelper;
@@ -21,6 +23,7 @@ public class AllSlideSearch implements Event<Map<String,Object>> {
     public Map<String, Object> execute() throws EventException {
         Map<String, Object> map = new HashMap<>();
         map.put("slides", mongoDBClient.searchAll(Integer.parseInt(index), 15));
+        map.put("backups", new Backups().getBackups());
         map.put("helper", new ListHelper(mongoDBClient.allSlideSize(), 15));
         map.put("index", index);
         return map;

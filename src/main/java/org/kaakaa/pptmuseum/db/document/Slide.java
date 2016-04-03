@@ -3,6 +3,7 @@ package org.kaakaa.pptmuseum.db.document;
 import org.apache.commons.lang3.builder.ReflectionToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
 import org.bson.types.ObjectId;
+import org.json.simple.JSONObject;
 import org.mongodb.morphia.annotations.Embedded;
 import org.mongodb.morphia.annotations.Entity;
 import org.mongodb.morphia.annotations.Id;
@@ -109,5 +110,15 @@ public class Slide {
     public String toString() {
         ReflectionToStringBuilder.setDefaultStyle(ToStringStyle.SHORT_PREFIX_STYLE);
         return ReflectionToStringBuilder.toStringExclude(this, "id", "thumbnail", "pdfResource", "powerpointResource").toString();
+    }
+
+    public JSONObject getMetaData() {
+        JSONObject object = new JSONObject();
+
+        object.put("title", this.title);
+        object.put("description", this.description);
+        object.put("tags", getTagsToString());
+
+        return object;
     }
 }

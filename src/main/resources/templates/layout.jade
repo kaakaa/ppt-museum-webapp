@@ -27,6 +27,9 @@ html(lang="ja")
             li
               a(href="#", data-toggle="modal", data-target="#upload-modal")
                 span.glyphicon.glyphicon-upload  UploadSlide
+            li
+              a(href="#", data-toggle="modal", data-target="#backup-modal")
+                span.glyphicon.glyphicon-download  BackUp
         .github-ribbon
           include github_ribbon
     // upload button
@@ -51,6 +54,11 @@ html(lang="ja")
       .modal-dialog(role="resource")
         .modal-content
           include common/edit_form
+    // backup modal contents
+    .modal.fade#backup-modal(tabindex="-1", role="dialog", aria-labelledby="slideBackupModal")
+      .modal-dialog(role="resource")
+        .modal-content
+          include common/backup_modal
 
 
     // bower:js

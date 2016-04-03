@@ -1,0 +1,30 @@
+.modal-header
+  button.close(type="button", data-dismiss="modal", aria-label="Close")
+    span(aria-hidden="true") &times;
+  h4.modal-title#modalLabel BackUp
+.modal-body
+  form.backup-form(method="post", action="/ppt-museum/backup/slides")
+    .form-group
+      button.btn.btn-primary#backup-button(type="submit") BackUp Now
+  table.table.table-striped
+    thead
+      tr
+        th #
+        th BackUp Filename
+        th -
+        th -
+    tbody
+      - each backup, index in backups
+        tr
+          td #{index + 1}
+          td #{backup.filename}
+          td
+            form(method="get", action="/ppt-museum/backup/#{backup.filename}")
+              button.btn.btn-xs.btn-info(type="submit") Download
+          td
+            form(method="post", action="/ppt-museum/backup/delete/#{backup.filename}")
+              button.btn.btn-xs.btn-danger(type-"submit") Delete
+.modal-footer
+  button.btn.btn-default(type="button", data-dismiss="modal", aria-label="Close") Close
+
+

@@ -4,19 +4,27 @@ import org.kaakaa.pptmuseum.db.ResourceType;
 import org.kaakaa.pptmuseum.db.document.Resource;
 import org.kaakaa.pptmuseum.event.Event;
 import org.kaakaa.pptmuseum.event.EventException;
-import org.kaakaa.pptmuseum.event.db.slide.DeleteSlide;
-import org.kaakaa.pptmuseum.event.db.slide.UpdateSlide;
-import org.kaakaa.pptmuseum.event.db.slide.UploadSlide;
+import org.kaakaa.pptmuseum.event.EventExecuter;
+import org.kaakaa.pptmuseum.event.db.resource.BackupResources;
+import org.kaakaa.pptmuseum.event.db.resource.DeleteBackup;
+import org.kaakaa.pptmuseum.event.db.resource.GetBackup;
 import org.kaakaa.pptmuseum.event.db.resource.GetResource;
 import org.kaakaa.pptmuseum.event.db.search.AllSlideSearch;
 import org.kaakaa.pptmuseum.event.db.search.TagSearch;
-import org.kaakaa.pptmuseum.event.EventExecuter;
+import org.kaakaa.pptmuseum.event.db.slide.DeleteSlide;
+import org.kaakaa.pptmuseum.event.db.slide.UpdateSlide;
+import org.kaakaa.pptmuseum.event.db.slide.UploadSlide;
 import org.kaakaa.pptmuseum.jade.JadePages;
 import spark.ModelAndView;
 import spark.Response;
 import spark.template.jade.JadeTemplateEngine;
 
+import java.io.File;
 import java.net.UnknownHostException;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.TimeoutException;
@@ -27,9 +35,13 @@ import static spark.Spark.*;
  * Created by kaakaa on 16/02/09.
  */
 public class Main {
+    private static final int PORT = 80;
+    private static final String STATIC_FILE_LOCATION = "/public";
+    public static final Path BACKUP_ROOT = Paths.get("/ppt-museum/", "backups");
+
     public static void main(String[] args) throws TimeoutException, UnknownHostException {
-        port(80);
-        staticFileLocation("/public");
+        port(PORT);
+        staticFileLocation(STATIC_FILE_LOCATION);
 
         // top page
         get("/", (rq, rs) -> getTopPageView("1"), new JadeTemplateEngine());
@@ -53,7 +65,7 @@ public class Main {
         });
 
         // update slide info
-        post("/ppt-museum/slide/:id", (rq,rs) -> {
+        post("/ppt-museum/slide/:id", (rq, rs) -> {
             Event updateDocument = new UpdateSlide(rq);
             EventExecuter.execute(updateDocument);
             return redirectToTop(rs);
@@ -88,6 +100,29 @@ public class Main {
             rs.type(resource.getContentType());
             return resource.getFile();
         });
+
+        // backup
+        post("/ppt-museum/backup/slides", (rq, rs) -> {
+            LocalDateTime localDateTime = LocalDateTime.now();
+            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyyMMddHHmmssSSS");
+            String dest = new File(System.getProperty("java.io.tmpdir"), localDateTime.format(formatter)).getAbsolutePath();
+
+            Event<Integer> backupResource = new BackupResources(dest);
+            Integer num = EventExecuter.execute(backupResource);
+            return redirectToTop(rs);
+        });
+        get("/ppt-museum/backup/:filename", (rq, rs) -> {
+            Event<byte[]> getBackup = new GetBackup(rq);
+            byte[] result = EventExecuter.execute(getBackup);
+
+            rs.type("application/x-zip-compressed");
+            return result;
+        });
+        post("/ppt-museum/backup/delete/:filename", (rq, rs) -> {
+            Event deleteBackup = new DeleteBackup(rq);
+            EventExecuter.execute(deleteBackup);
+            return redirectToTop(rs);
+        });
     }
 
     /**
@@ -118,6 +153,7 @@ public class Main {
 
     /**
      * <p>Set redirecting to top page to response object</p>
+     *
      * @param rs response
      * @return dummy string
      */
