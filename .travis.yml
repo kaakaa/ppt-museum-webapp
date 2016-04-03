@@ -30,6 +30,5 @@ after_deploy:
 - export REPO=kaakaa/ppt-museum-web
 - export TAG=${TRAVIS_TAG}
 - docker build -f Dockerfile -t $REPO:$COMMIT .
-- docker tag $REPO:$COMMIT $REPO:$TAG
-- docker tag $REPO:$COMMIT $REPO
-- docker push $REPO:$COMMIT
+- docker tag $REPO:$COMMIT $REPO:latest
+- docker push $REPO
