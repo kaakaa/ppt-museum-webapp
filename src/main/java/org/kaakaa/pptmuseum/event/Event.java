@@ -2,7 +2,6 @@ package org.kaakaa.pptmuseum.event;
 
 import org.kaakaa.pptmuseum.db.MongoDBClient;
 import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 /**
  * Created by kaakaa on 16/03/19.

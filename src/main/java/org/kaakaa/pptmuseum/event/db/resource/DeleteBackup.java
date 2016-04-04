@@ -9,8 +9,6 @@ import spark.Request;
 
 import java.io.IOException;
 import java.nio.file.Files;
-import java.nio.file.Path;
-import java.util.Optional;
 
 /**
  * Created by kaakaa_hoe on 2016/04/03.

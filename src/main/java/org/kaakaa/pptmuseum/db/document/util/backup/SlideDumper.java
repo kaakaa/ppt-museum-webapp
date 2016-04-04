@@ -1,18 +1,18 @@
 package org.kaakaa.pptmuseum.db.document.util.backup;
 
 import org.json.simple.JSONObject;
-import org.kaakaa.pptmuseum.Main;
 import org.kaakaa.pptmuseum.db.document.Resource;
 import org.kaakaa.pptmuseum.db.document.Slide;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.zeroturnaround.zip.ZipUtil;
 
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.OutputStream;
-import java.nio.file.*;
-import java.nio.file.attribute.BasicFileAttributes;
+import java.nio.file.Files;
+import java.nio.file.InvalidPathException;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.function.Consumer;
 
 /**

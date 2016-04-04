@@ -1,6 +1,5 @@
 package org.kaakaa.pptmuseum.event.db.search;
 
-import org.kaakaa.pptmuseum.Main;
 import org.kaakaa.pptmuseum.db.document.Slide;
 import org.kaakaa.pptmuseum.db.document.util.backup.Backups;
 import org.kaakaa.pptmuseum.event.Event;

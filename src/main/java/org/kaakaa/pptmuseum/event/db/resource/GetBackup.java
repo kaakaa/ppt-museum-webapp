@@ -8,7 +8,6 @@ import org.slf4j.LoggerFactory;
 import spark.Request;
 
 import java.io.ByteArrayOutputStream;
-import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.file.Files;
