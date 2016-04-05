@@ -18,7 +18,7 @@ import java.io.IOException;
  * Created by kaakaa on 16/03/24.
  */
 public class JodConverter {
-    private static final String JOD_URL = "http://jod";
+    private static final String JOD_URL = "http://jod:8080";
     private static final String PATH = "/converter/converted/document.pdf";
 
     private static final Logger logger = LoggerFactory.getLogger(JodConverter.class);
