@@ -110,9 +110,7 @@ grunt {
     workDir = file("${project.projectDir}/src/main/web")
 }
 
-grunt_build.dependsOn 'installGrunt'
 grunt_build.dependsOn 'npmInstall'
-installGrunt.mustRunAfter npmInstall
 processResources.dependsOn grunt_build
 
 // build Dockerfile
