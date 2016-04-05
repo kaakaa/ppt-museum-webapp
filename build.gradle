@@ -4,7 +4,6 @@ plugins {
     id 'jacoco'
     id 'application'
     id 'maven'
-    id 'com.moowork.grunt' version '0.11'
     id 'com.moowork.node' version '0.11'
     id 'com.bmuschko.docker-remote-api' version '2.6.6'
     id 'com.github.kt3k.coveralls' version '2.5.0'
@@ -105,13 +104,14 @@ node {
     nodeModulesDir = file("${project.projectDir}/src/main/web")
 }
 
-// grunt
-grunt {
-    workDir = file("${project.projectDir}/src/main/web")
+task npmRunBuild(type: NpmTask) {
+    dependsOn 'npmInstall'
+    args = ['run', 'build']
+    execOverrides {
+        it.workingDir = 'src/main/web'
+    }
 }
-
-grunt_build.dependsOn 'npmInstall'
-processResources.dependsOn grunt_build
+processResources.dependsOn 'npmRunBuild'
 
 // build Dockerfile
 docker {
