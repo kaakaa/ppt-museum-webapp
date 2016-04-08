@@ -1,6 +1,8 @@
 package org.kaakaa.pptmuseum.jade;
 
 /**
+ * Jade pages collection
+ *
  * Created by kaakaa on 16/03/19.
  */
 public enum JadePages {
