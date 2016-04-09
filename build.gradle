@@ -11,12 +11,16 @@ plugins {
 }
 
 group 'org.kaakaa.ppt-museum'
-version '0.2.1'
+version '0.2.2'
 
 mainClassName = 'org.kaakaa.pptmuseum.Main'
 
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
+
+compileJava {
+    options.compilerArgs << "-Xlint:unchecked" << "-Xlint:deprecation"
+}
 
 repositories {
     mavenCentral()
