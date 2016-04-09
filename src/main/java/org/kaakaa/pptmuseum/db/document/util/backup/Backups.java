@@ -21,8 +21,7 @@ public class Backups {
         try {
             Files.newDirectoryStream(Main.BACKUP_ROOT, "*.zip").forEach(p -> this.backups.add(new Backup(p)));
         } catch (IOException e) {
-            logger.error("Search backup zip file error: ", e.getMessage());
-            logger.error("{}", e.getStackTrace());
+            logger.error("Search backup zip file error: ", e);
         }
     }
 

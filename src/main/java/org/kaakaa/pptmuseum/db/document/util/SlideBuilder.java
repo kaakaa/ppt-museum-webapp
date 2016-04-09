@@ -4,6 +4,8 @@ import org.apache.commons.fileupload.FileItem;
 import org.kaakaa.pptmuseum.db.ResourceType;
 import org.kaakaa.pptmuseum.db.document.Resource;
 import org.kaakaa.pptmuseum.db.document.Slide;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.UnsupportedEncodingException;
 import java.util.Arrays;
@@ -15,6 +17,8 @@ import java.util.Arrays;
  */
 class SlideBuilder {
     private Slide slide;
+
+    private static final Logger logger = LoggerFactory.getLogger(SlideBuilder.class);
 
     /**
      * <p>default constructor</p>
@@ -101,7 +105,7 @@ class SlideBuilder {
         try {
             s = new String(item.getString().getBytes("iso-8859-1"), "UTF-8");
         } catch (UnsupportedEncodingException e) {
-            e.printStackTrace();
+            logger.error("Parse request body error: ", e);
         }
         return s;
     }

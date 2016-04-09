@@ -2,6 +2,8 @@ package org.kaakaa.pptmuseum.db.document.util;
 
 import org.kaakaa.pptmuseum.db.ResourceType;
 import org.kaakaa.pptmuseum.db.document.Resource;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
@@ -13,6 +15,8 @@ import java.io.IOException;
  */
 public class NoThumbnailImage {
     private static Resource noThumbnailResource;
+
+    private static final Logger logger = LoggerFactory.getLogger(NoThumbnailImage.class);
 
     /**
      * <p>Get default resource model</p>
@@ -47,7 +51,7 @@ public class NoThumbnailImage {
             ImageIO.write(image, "png", baos);
             return baos.toByteArray();
         } catch (IOException e) {
-            e.printStackTrace();
+            logger.error("Read default image error: ", e);
         }
         return new byte[1024];
     }

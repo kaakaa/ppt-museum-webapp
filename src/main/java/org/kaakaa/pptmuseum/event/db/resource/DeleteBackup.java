@@ -13,7 +13,7 @@ import java.nio.file.Files;
 /**
  * Created by kaakaa_hoe on 2016/04/03.
  */
-public class DeleteBackup implements Event {
+public class DeleteBackup implements Event<Object> {
     private final String fileneme;
 
     private static final Logger logger = LoggerFactory.getLogger(DeleteBackup.class);
@@ -30,8 +30,7 @@ public class DeleteBackup implements Event {
                     try {
                         Files.delete(b.getZipPath());
                     } catch (IOException e) {
-                        logger.error("Delete backup zip error: {}", e.getMessage());
-                        logger.error("{}", e.getStackTrace());
+                        logger.error("Delete backup zip error: {}", e);
                     }
                 });
         return null;

@@ -15,7 +15,7 @@ import java.util.List;
 /**
  * Created by kaakaa on 16/03/19.
  */
-public class UploadSlide implements Event {
+public class UploadSlide implements Event<Object> {
 
     private final Request request;
 

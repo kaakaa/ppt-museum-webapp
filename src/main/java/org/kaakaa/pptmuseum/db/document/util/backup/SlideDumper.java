@@ -23,7 +23,7 @@ public class SlideDumper implements Consumer<Slide> {
 
     private static final Logger logger = LoggerFactory.getLogger(SlideDumper.class);
 
-    public SlideDumper(String root){
+    public SlideDumper(String root) {
         this.root = root;
     }
 
@@ -35,8 +35,7 @@ public class SlideDumper implements Consumer<Slide> {
             writeMeta(dest, slide);
             writeResources(dest, slide);
         } catch (IOException e) {
-            logger.error("Dump data error: {}", e.getMessage());
-            logger.error("{}", e.getStackTrace());
+            logger.error("Dump data error: {}", e);
             return;
         }
     }
@@ -48,7 +47,7 @@ public class SlideDumper implements Consumer<Slide> {
     private void writeMeta(Path dest, Slide slide) throws IOException {
         logger.info("Dump {}'s meta data", slide.getTitle());
         JSONObject metaJson = slide.getMetaData();
-        try(FileWriter writer = new FileWriter(dest.resolve(".meta").toFile())) {
+        try (FileWriter writer = new FileWriter(dest.resolve(".meta").toFile())) {
             writer.write(metaJson.toJSONString());
         }
     }
@@ -64,14 +63,14 @@ public class SlideDumper implements Consumer<Slide> {
         writeResource(dest, title, slide.getThumbnail(), "Thumbnail");
     }
 
-    private void writeResource(Path dest, String title,  Resource resource, String type) throws IOException {
-        if(null == resource) {
-            logger.warn("{}'s {} file is empty.",title, type);
+    private void writeResource(Path dest, String title, Resource resource, String type) throws IOException {
+        if (null == resource) {
+            logger.warn("{}'s {} file is empty.", title, type);
             return;
         }
 
         Path filePath = getFilePath(dest, title, resource);
-        try(OutputStream writer = Files.newOutputStream(filePath)) {
+        try (OutputStream writer = Files.newOutputStream(filePath)) {
             writer.write(resource.getFile());
         }
     }
@@ -80,7 +79,7 @@ public class SlideDumper implements Consumer<Slide> {
         String filename = String.format("%s.%s", title, resource.getExt());
         try {
             return dest.resolve(filename);
-        }catch (InvalidPathException e){
+        } catch (InvalidPathException e) {
             return dest.resolve(String.format("%s.%s", "DUMMY", resource.getExt()));
         }
     }

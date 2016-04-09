@@ -7,7 +7,7 @@ import spark.Request;
 /**
  * Created by kaakaa on 16/03/19.
  */
-public class DeleteSlide implements Event {
+public class DeleteSlide implements Event<Object> {
 
     private final Request request;
 

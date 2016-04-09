@@ -41,8 +41,7 @@ public class BackupResources implements Event<Integer>{
         try {
             compressDumps(Paths.get(this.root));
         } catch (IOException e) {
-            logger.error("Packing to zip error: {}", e.getMessage());
-            logger.error("{}", e.getStackTrace());
+            logger.error("Packing to zip error: {}", e);
         }
         afterLogging(logger);
         return numberOfSlides;

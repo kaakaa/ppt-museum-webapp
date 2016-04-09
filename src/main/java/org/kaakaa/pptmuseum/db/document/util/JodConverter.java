@@ -51,8 +51,7 @@ public class JodConverter {
                 EntityUtils.consume(resEntity);
             }
         } catch (IOException e) {
-            logger.info("JODConverting is failed: {}", e.getMessage());
-            logger.debug("{}", e.getStackTrace());
+            logger.info("JODConverting is failed: {}", e);
             return new byte[1024];
         }
         logger.info("Convert success.");

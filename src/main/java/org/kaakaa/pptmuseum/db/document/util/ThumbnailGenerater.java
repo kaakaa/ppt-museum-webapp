@@ -2,6 +2,8 @@ package org.kaakaa.pptmuseum.db.document.util;
 
 import org.apache.pdfbox.pdmodel.PDDocument;
 import org.apache.pdfbox.rendering.PDFRenderer;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
@@ -13,6 +15,8 @@ import java.io.IOException;
  * Created by kaakaa on 16/03/24.
  */
 public class ThumbnailGenerater {
+    private static final Logger logger = LoggerFactory.getLogger(ThumbnailGenerater.class);
+
     /**
      * <p>Generate thumbnail image from PDF bytes.</p>
      * @param bytes PDF bytes
@@ -26,7 +30,7 @@ public class ThumbnailGenerater {
             ImageIO.write(bufferedImage, "png", baos);
             return baos.toByteArray();
         } catch (IOException e) {
-            e.printStackTrace();
+            logger.error("Generate thumbnail image error: ", e);
         }
         return new byte[1024];
     }

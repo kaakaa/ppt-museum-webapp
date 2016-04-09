@@ -41,8 +41,7 @@ public class GetBackup implements Event<byte[]> {
                         }
                         return bout.toByteArray();
                     } catch (IOException e) {
-                        logger.error("Read zip file error: {}", e.getMessage());
-                        logger.error("{}", e.getStackTrace());
+                        logger.error("Read zip file error: {}", e);
                         return new byte[1024];
                     }
                 })

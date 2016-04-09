@@ -112,6 +112,7 @@ public class Slide {
         return ReflectionToStringBuilder.toStringExclude(this, "id", "thumbnail", "pdfResource", "powerpointResource").toString();
     }
 
+    @SuppressWarnings("unchecked")
     public JSONObject getMetaData() {
         JSONObject object = new JSONObject();
 

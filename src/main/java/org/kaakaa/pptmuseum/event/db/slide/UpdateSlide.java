@@ -7,7 +7,7 @@ import spark.Request;
 /**
  * Created by kaakaa on 16/03/24.
  */
-public class UpdateSlide implements Event {
+public class UpdateSlide implements Event<Object> {
     private final Request request;
 
     public UpdateSlide(Request rq) {

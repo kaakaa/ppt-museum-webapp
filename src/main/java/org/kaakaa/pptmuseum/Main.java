@@ -52,21 +52,21 @@ public class Main {
 
         // upload page
         post("/ppt-museum/upload", (rq, rs) -> {
-            Event uploadEvent = new UploadSlide(rq);
+            Event<Object> uploadEvent = new UploadSlide(rq);
             EventExecuter.execute(uploadEvent);
             return redirectToTop(rs);
         });
 
         // delete slide
         delete("/ppt-museum/slide/:id", (rq, rs) -> {
-            Event deleteEvent = new DeleteSlide(rq);
+            Event<Object> deleteEvent = new DeleteSlide(rq);
             EventExecuter.execute(deleteEvent);
             return 0;
         });
 
         // update slide info
         post("/ppt-museum/slide/:id", (rq, rs) -> {
-            Event updateDocument = new UpdateSlide(rq);
+            Event<Object> updateDocument = new UpdateSlide(rq);
             EventExecuter.execute(updateDocument);
             return redirectToTop(rs);
         });
@@ -119,7 +119,7 @@ public class Main {
             return result;
         });
         post("/ppt-museum/backup/delete/:filename", (rq, rs) -> {
-            Event deleteBackup = new DeleteBackup(rq);
+            Event<Object> deleteBackup = new DeleteBackup(rq);
             EventExecuter.execute(deleteBackup);
             return redirectToTop(rs);
         });
