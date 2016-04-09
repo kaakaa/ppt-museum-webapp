@@ -42,9 +42,8 @@ public class NoThumbnailImage {
      */
     private static byte[] readDefaultImage() {
         BufferedImage image = null;
-        try {
+        try(ByteArrayOutputStream baos = new ByteArrayOutputStream()) {
             image = ImageIO.read(NoThumbnailImage.class.getResource("/no_image.png"));
-            ByteArrayOutputStream baos = new ByteArrayOutputStream();
             ImageIO.write(image, "png", baos);
             return baos.toByteArray();
         } catch (IOException e) {
