@@ -11,8 +11,6 @@ plugins {
 }
 
 group 'org.kaakaa.ppt-museum'
-version '0.2.2'
-
 mainClassName = 'org.kaakaa.pptmuseum.Main'
 
 sourceCompatibility = 1.8
@@ -73,7 +71,6 @@ test {
 }
 
 build.dependsOn installDist
-afterReleaseBuild.dependsOn build
 
 // for installing node
 node {
@@ -101,7 +98,7 @@ docker {
 import com.bmuschko.gradle.docker.tasks.image.DockerBuildImage
 
 installDist.dependsOn assemble
-task buildDockerImage(type: DockerBuildImage) {
+task buildDockerImage(type: DockerBuildImage, group: 'Docker Tasks', description: 'Create docker images for this app') {
     dependsOn clean, installDist
     inputDir = rootDir
     tag = 'kaakaa/ppt-museum-web'
