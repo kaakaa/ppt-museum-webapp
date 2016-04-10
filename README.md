@@ -32,6 +32,16 @@ Additionally, We have task `buildDockerImage` for creating docker image.
 ./gradlew buildDockerImage 
 ```
 
+## Release
+
+After pushing all commits, execute follow command.
+
+```
+./gradlew release
+```
+
+> [researchgate/gradle-release: gradle-release is a plugin for providing a Maven-like release process for projects using Gradle](https://github.com/researchgate/gradle-release)
+
 # Docker Image
 
 [ppt-museum-web](https://hub.docker.com/r/kaakaa/ppt-museum-web/ "kaakaa/ppt-museum-web")
