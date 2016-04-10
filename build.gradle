@@ -3,11 +3,11 @@ plugins {
     id 'groovy'
     id 'jacoco'
     id 'application'
-    id 'maven'
     id 'com.moowork.node' version '0.11'
     id 'com.bmuschko.docker-remote-api' version '2.6.6'
     id 'com.github.kt3k.coveralls' version '2.5.0'
     id 'cz.malohlava' version '1.0.1'
+    id 'net.researchgate.release' version '2.3.4'
 }
 
 group 'org.kaakaa.ppt-museum'
@@ -61,32 +61,6 @@ jar {
     }
 }
 
-artifacts {
-    archives jar
-}
-
-uploadArchives {
-    repositories {
-        mavenDeployer {
-            repository(url: "file://${projectDir}/mavenRepo")
-        }
-    }
-}
-
-[install.repositories.mavenInstaller, uploadArchives.repositories.mavenDeployer]*.pom*.whenConfigured { pom ->
-    pom.project {
-        inceptionYear '2016'
-        packaging 'jar'
-        licenses {
-            license {
-                name 'MIT License'
-                url 'https://opensource.org/licenses/mit-license.php'
-                distribution 'repo'
-            }
-        }
-    }
-}
-
 jacocoTestReport {
     reports {
         xml.enabled true
@@ -99,6 +73,7 @@ test {
 }
 
 build.dependsOn installDist
+afterReleaseBuild.dependsOn build
 
 // for installing node
 node {
@@ -134,13 +109,19 @@ task buildDockerImage(type: DockerBuildImage) {
 
 // for graph generator
 visteg {
-    enabled		= true
-    colouredNodes	= true
-    colouredEdges	= true
-    destination		= "${buildDir}/reports/visteg.dot"
-    exporter		= 'dot'
-    colorscheme		= 'spectral11'
-    nodeShape		= 'box'
-    startNodeShape	= 'hexagon'
-    endNodeShape	= 'doubleoctagon'
+    enabled = true
+    colouredNodes = true
+    colouredEdges = true
+    destination = "${buildDir}/reports/visteg.dot"
+    exporter = 'dot'
+    colorscheme = 'spectral11'
+    nodeShape = 'box'
+    startNodeShape = 'hexagon'
+    endNodeShape = 'doubleoctagon'
+}
+
+// for release
+release {
+    tagTemplate = "bump up version"
+    scmAdapters = [net.researchgate.release.GitAdapter]
 }
