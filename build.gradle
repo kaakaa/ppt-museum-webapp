@@ -119,10 +119,3 @@ visteg {
     startNodeShape = 'hexagon'
     endNodeShape = 'doubleoctagon'
 }
-
-// for release
-release {
-    failOnUpdateNeeded = false
-    tagTemplate = "bump up version"
-    scmAdapters = [net.researchgate.release.GitAdapter]
-}
