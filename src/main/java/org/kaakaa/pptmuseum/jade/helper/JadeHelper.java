@@ -9,7 +9,7 @@ import java.util.stream.IntStream;
  * <p>
  * Created by kaakaa on 16/02/27.
  */
-public class ListHelper {
+public class JadeHelper {
     /* The number of uploaded slides */
     private final int numOfSlide;
     /* The number of slides per pagination */
@@ -21,7 +21,7 @@ public class ListHelper {
      * @param numOfSlide The number os uploaded slides
      * @Param pageLimit The number of slides per pagination
      */
-    public ListHelper(int numOfSlide, int pageLimit) {
+    public JadeHelper(int numOfSlide, int pageLimit) {
         this.numOfSlide = numOfSlide;
         this.pageLimit = pageLimit;
     }
@@ -30,8 +30,8 @@ public class ListHelper {
      * Groups items into chunk of the given size.
      *
      * @param list group items
-     * @param n given size
-     * @param <T> type of group items
+     * @param n    given size
+     * @param <T>  type of group items
      * @return chunk list
      */
     public <T> List<List<T>> eachSlice(List<T> list, int n) {
@@ -44,7 +44,9 @@ public class ListHelper {
                 l = new ArrayList<>();
             }
         }
-        result.add(l);
+        if (l.size() > 0) {
+            result.add(l);
+        }
         return result;
     }
 
@@ -54,10 +56,10 @@ public class ListHelper {
      * @return maximum pagination
      */
     public int getCeilSize() {
-        if (this.numOfSlide == 0) {
+        if (this.numOfSlide <= 0 || this.pageLimit <= 0) {
             return 1;
         }
-        return ((int) this.numOfSlide / this.pageLimit) + 1;
+        return (int) Math.ceil((double) this.numOfSlide / this.pageLimit);
     }
 
     /**

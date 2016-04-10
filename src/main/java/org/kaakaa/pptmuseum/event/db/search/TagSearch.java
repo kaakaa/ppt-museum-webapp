@@ -4,7 +4,7 @@ import org.kaakaa.pptmuseum.db.document.Slide;
 import org.kaakaa.pptmuseum.db.document.util.backup.Backups;
 import org.kaakaa.pptmuseum.event.Event;
 import org.kaakaa.pptmuseum.event.EventException;
-import org.kaakaa.pptmuseum.jade.helper.ListHelper;
+import org.kaakaa.pptmuseum.jade.helper.JadeHelper;
 
 import java.util.HashMap;
 import java.util.List;
@@ -27,7 +27,7 @@ public class TagSearch implements Event<Map<String, Object>> {
         List<Slide> result = mongoDBClient.searchFilteredKeyword(keyword);
         map.put("slides", result);
         map.put("backups", new Backups().getBackups());
-        map.put("helper", new ListHelper(result.size(),99));
+        map.put("helper", new JadeHelper(result.size(),99));
         map.put("index", 1);
         map.put("keyword", keyword);
         return map;
