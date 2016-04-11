@@ -54,8 +54,12 @@ sourceSets {
 
 jar {
     manifest {
-        attributes 'Implementation-Title': 'ppt-museum', 'Implementation-Version': version
+        attributes 'Implementation-Title': 'ppt-museum'
+        attributes 'Implementation-Version': version
         attributes 'Main-Class': mainClassName
+        attributes 'Built-By': System.getProperty('user.name')
+        attributes 'Built-JDK': System.getProperty('java.version')
+        attributes 'Built-Time': new Date().format('yyyy-MM-dd HH:mm:ssZ')
     }
 }
 
