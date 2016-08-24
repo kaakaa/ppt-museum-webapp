@@ -34,6 +34,9 @@ dependencies {
     compile 'org.apache.httpcomponents:httpclient:4.5.1'
     compile 'org.apache.httpcomponents:httpmime:4.5.1'
     compile 'org.apache.pdfbox:pdfbox:2.0.0'
+    compile 'org.bouncycastle:bcprov-jdk15on:1.54'
+    compile 'org.bouncycastle:bcmail-jdk15on:1.54'
+    compile 'org.bouncycastle:bcpkix-jdk15on:1.54'
     compile 'org.apache.commons:commons-lang3:3.4'
     compile 'org.slf4j:slf4j-api:1.7.20'
     compile 'ch.qos.logback:logback-classic:1.1.7'
@@ -91,6 +94,7 @@ task npmRunBuild(type: NpmTask) {
         it.workingDir = 'src/main/web'
     }
 }
+
 processResources.dependsOn 'npmRunBuild'
 
 // build Dockerfile
