@@ -50,7 +50,7 @@ public class MongoDBClient {
      * @return all slides size
      */
     public int allSlideSize() {
-        return datastore.createQuery(Slide.class).asList().size();
+        return (int)datastore.getCount(Slide.class);
     }
 
     /**
