@@ -6,6 +6,7 @@ import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
 import java.nio.file.Files;
+import java.nio.file.NoSuchFileException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -20,6 +21,8 @@ public class Backups {
     public Backups() {
         try {
             Files.newDirectoryStream(Main.BACKUP_ROOT, "*.zip").forEach(p -> this.backups.add(new Backup(p)));
+        } catch (NoSuchFileException e) {
+            logger.debug("There is no backup files.");
         } catch (IOException e) {
             logger.error("Search backup zip file error: ", e);
         }
